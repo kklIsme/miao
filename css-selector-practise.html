@@ -7,50 +7,55 @@
 
     <style>
       /* 只能在这个style标签里写css，不能改变html结构 */
-      body>p:nth-of-type(1){
+      body>p:first-child{
         color: red;
       }
 
-      
-      p.a:hover{
-        color: red;
-      }
-      p.a:active{
-        color: green;
-      }
-      p.a:focus{
+      [tabindex="1"]:focus{
         color: blue;
       }
-
-
-      p.c span{
+      [tabindex="1"]:hover{
         color: red;
       }
-      p.c span span:nth-child(odd){
+      [tabindex="1"]:active{
         color: green;
       }
-      p.c span span:nth-child(even){
+     
+
+      .a.c span{
+        color: red;
+      }
+      .a.c span span:nth-child(odd){
+        color: green;
+      }
+      .a.c span span:nth-child(even){
         color: blue;
       }
       
-
-      div a:hover{
-        color: pink;
-      }
       div a:visited{
         color: orange;
       }
-      div a:nth-of-type(5),div a:nth-of-type(6){
+      div a:link{
+        color: pink;
+      }
+      /*i不区分大小写*/
+      div a[href^="mailto:" i]{
         color: blue;
       }
-      div a:nth-of-type(7),div a:nth-of-type(8){
+      div a[href^="tel:" ]{
         color: yellow;
       }
-      div a:nth-of-type(9),div a:nth-of-type(10){
+      div a[href^="aaa" ]{
         font-size: 30px;
       }
 
-      .a ul li:nth-of-type(4),.a ul li:nth-of-type(5),.a ul li:nth-of-type(6),.a ul li:nth-of-type(7){
+      
+
+      
+      .a ul li:nth-of-type(4),
+      .a ul li:nth-of-type(5),
+      .a ul li:nth-of-type(6),
+      .a ul li:nth-of-type(7){
         color: red;
       }
 
@@ -63,8 +68,24 @@
         color: blue;
       }
 
-      div.b ul li:nth-of-type(n+65):nth-of-type(-n+100){
+      div.b ul li:nth-of-type(n+65){
         color: green;
+      }
+
+      /* .prime ul li{
+        color: lightgreen;
+      }
+
+      .prime ul li:first-child,
+      .prime ul li:nth-of-type(2n+4),
+      .prime ul li:nth-of-type(3n+9),
+      .prime ul li:nth-of-type(5n+10),
+      .prime ul li:nth-of-type(7n+49){
+        color: lightblue;
+      } */
+
+      .prime ul li:not(:first-child):not(:nth-of-type(2n+4)):not(:nth-of-type(3n+9)):not(:nth-of-type(5n+25)):not(:nth-of-type(7n+49)){
+        color: lightcoral;
       }
 
 
