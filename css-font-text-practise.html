@@ -8,7 +8,13 @@
     /* 只能在这里写css，不能改变页面的HTML结构 */
     /*第一题*/
     h1 {
-      text-shadow: 2px 2px 0px gray;
+      text-shadow:
+        1px 1px  gray,
+        2px 2px  gray,
+        3px 3px  gray,
+        4px 4px  gray,
+        5px 5px  gray,
+        6px 6px  gray;
     }
     h1 span{
       color: lightblue;
@@ -17,9 +23,15 @@
 
     /*第二题*/
     h3{
-      font: normal 60px/1em "华文彩云",sans-serif;
+      /* /* font: normal 60px/1em "华文彩云",sans-serif; */
       color:lightblue;
     }
+    /* h3{
+      font-size: 4em;
+      text-shadow: 0 0 1px lightblue,0 0 1px lightblue,0 0 1px lightblue,0 0 1px lightblue,0 0 1px lightblue;
+      color:white;
+    } */
+
 
     /*第三题*/
     .b{
@@ -27,6 +39,7 @@
     }
     .b input{
       font: inherit;
+      text-transform: uppercase;
     }
 
     /*第四题*/
@@ -37,34 +50,35 @@
     }
 
     /*第五题*/
-    .a{
+    p.a{
       font: italic 32px sans-serif;
       text-indent: 2.4em;
       text-align: right;
     }
-    .a b{
+    p.a b{
       text-decoration: underline lightblue;
       color: lightseagreen;
     }
-    .a > span{
+    p.a > span{
       text-decoration: line-through underline;
     }
 
     /*第六题*/
-    .d{
+    p.d{
       font: normal 15px/2em sans-serif;
       text-indent: 2em;
+      text-align: justify;
       word-spacing: 15px;
       letter-spacing: 5px;
     }
 
     /*第七题*/
-    .c span{
+    p.c span{
       font: 150% sans-serif;
     }
 
     /*第八题*/
-    .f{
+    div.f{
       white-space: pre;
     }
 
@@ -85,7 +99,7 @@
   <p class="d">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, autem, ad. Quos fugit quam, vitae doloribus quo quisquam aut iure! Exercitationem ea in voluptatibus a, perspiciatis libero, eum quod? Et!</p>
 
   <p class="c">
-    <span>aa <span>bb <span>cc <span></span>dd</span></span></span>
+    <span>aa <span>bb <span>cc <span>dd</span></span></span></span>
   </p>
 
   <div class="f">
@@ -98,3 +112,5 @@
   </div>
 </body>
 </html>
+
+
