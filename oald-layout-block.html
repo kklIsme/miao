@@ -23,6 +23,7 @@
       height:100vh;
       background-color: pink;
       border-right: 3px solid #000;
+      overflow: auto;
     }
 
     aside .top{
@@ -61,6 +62,7 @@
       font-size: 20px;
     }
 
+    /*中间部分*/
     main{
       box-sizing: border-box;
       width: calc(100% - 600px);
@@ -69,9 +71,10 @@
       background-color: bisque;
       margin-left: 200px;
       margin-top:-100vh;
+      margin-right: 400px;
       border-right: 2px solid #000;
     }
-
+    /*中间标题部分*/
     main .fantasy{
       height: 50px;
       padding-left: 30px;
@@ -80,12 +83,14 @@
       overflow: auto;
     }
 
+    /*中间单词解释部分*/
     main div{
       box-sizing: border-box;
       padding-left: 15px;
       padding-top: 20px;
       height: calc(100vh - 50px);
-      overflow-y: scroll;
+      overflow:auto;
+      display: flow-root;
     }
 
     main div ol{
@@ -108,6 +113,7 @@
       font-size:40px sans-serif;
       border-right: 2px solid black;
       overflow-y: scroll;
+      display: flow-root;
     }
 
     .right{
@@ -119,6 +125,7 @@
       margin-top: -100vh;
       padding: 20px;
       overflow-y: scroll;
+      display: flow-root;
     }
   </style>
 </head>
