@@ -10,34 +10,45 @@
       margin: 0 auto;
     }
       .header{
-        margin: 20px 50px;
+        margin: 20px 20px;
         background-color: red;
       }
       .header p{
         width: 600px;
-        padding: 5px auto;
+         margin:auto;
+        background-color: red;
       }
 
       .content{
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-right: 10px;
         width: 600px;
         height: 220px;
-        margin: 0 auto;
+        margin:auto;
         border: 2px solid #000;
       }
       .content .head{
         height: 60px;
-        margin: 10px;
         overflow-y: scroll;
+        margin-bottom: 10px;
+        margin-top: 10px;
       }
       .content .middle{
         height: 50px;
-        margin: 0 10px;
         background-color: rgba(238, 130, 238);
+        margin-bottom: 10px;
       }
       .content .foot{
         height: 60px;
-        margin: 10px;
         overflow-y: scroll;
+        margin-bottom: 10px;
+      }
+
+      /*利用margin为负将两边各自向左向右拉10px*/
+      .content .middle:hover{
+        margin-left: -10px;
+        margin-right: -10px;
       }
 
 
@@ -45,17 +56,12 @@
         margin: 60px 45%;
       }
       .footer div{
-        width: 0px;
-        height: 0px;
-        margin: 20px 30px 30px 30px;
-        border:50px solid;
-        border-color:black blue pink green;
-        border-top-width:0;
-        border-right-width:50px;
-        border-bottom-width:86.6px;
-        border-left-width:50px;
-        border-left-color: transparent;
-        border-right-color: transparent;
+        width: 0;
+        height: 0;
+        border: 50px solid;
+        border-color: red #0000 lightblue #0000; /*#0000为透明色*/
+        border-width: 0 50px 50px 50px;
+        margin: auto;
       }
   </style>
 </head>

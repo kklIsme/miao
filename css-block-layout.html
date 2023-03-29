@@ -17,7 +17,7 @@
 
     .header p {
       width: 600px;
-      padding: 0 30%;
+      margin: 0 auto;
       color: white;
     }
 
@@ -36,6 +36,7 @@
     }
 
     .content .middle div {
+      box-sizing: border-box;
       background-color: lightblue;
       width: 180px;
       height: 40px;
@@ -60,32 +61,31 @@
     }
 
     .content .middle div:nth-child(4n+5) {
-      margin-top: -240px;
+      margin-top: -220px;
     }
 
     /*link部分*/
-    .content .foot{
-      width: 100%;
+
+    .links{
+      width: 600px;
+      margin: auto;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
     }
 
-    .content .foot p{
-      border-bottom: 1px dotted black;
+    .links li{
+      border-bottom: 1px dotted;
+      margin-bottom: -1px;
     }
 
     /*版权部分*/
     .footer{
-      width: 100%;
-      height: 80px;
-      margin-top: 20px;
+     text-align: center;
       background-color: lightgreen;
     }
 
-    .footer p{
-      width: 40%;
-      padding:0 42%;
-      padding-bottom: 20px;
-      white-space: pre;
-    }
+
   </style>
 </head>
 
@@ -121,22 +121,22 @@
       <div>产品</div>
       <div>产品</div>
     </div>
-
-    <div class="foot">
-      <p>link</p>
-      <p>link</p>
-      <p>link</p>
-      <p>link</p>
-      <p>link</p>
-    </div>
   </div>
+
+    <ul class="links">
+      <li>links</li>
+      <li>links</li>
+      <li>links</li>
+      <li>links</li>
+      <li>links</li>
+    </ul>
 
 
   <div class="footer">
-    <p>
-                  ©版权所有
+
+                  ©版权所有 <br>
       本页所有布局均使用块元素
-    </p>
+
   </div>
 </body>
 
