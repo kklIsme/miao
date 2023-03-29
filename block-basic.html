@@ -1,95 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    *{
+    * {
       margin: 0 auto;
     }
-      .header{
-        margin: 20px 20px;
-        background-color: red;
-      }
-      .header p{
-        width: 600px;
-         margin:auto;
-        background-color: red;
-      }
+    /*顶部*/
+    .header {
+      margin: 20px 20px;
+      background-color: red;
+    }
 
-      .content{
-        box-sizing: border-box;
-        padding-left: 10px;
-        padding-right: 10px;
-        width: 600px;
-        height: 220px;
-        margin:auto;
-        border: 2px solid #000;
-      }
-      .content .head{
-        height: 60px;
-        overflow-y: scroll;
-        margin-bottom: 10px;
-        margin-top: 10px;
-      }
-      .content .middle{
-        height: 50px;
-        background-color: rgba(238, 130, 238);
-        margin-bottom: 10px;
-      }
-      .content .foot{
-        height: 60px;
-        overflow-y: scroll;
-        margin-bottom: 10px;
-      }
+    .header p {
+      width: 600px;
+      margin: auto;
+      background-color: red;
+    }
+    /*内容区*/
+    .content {
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 600px;
+      height: 220px;
+      margin: auto;
+      border: 2px solid #000;
+    }
+    /*第一段话*/
+    .content .head {
+      height: 60px;
+      overflow-y: scroll;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+    /*中间的矩形*/
+    .content .middle {
+      height: 50px;
+      background-color: rgba(238, 130, 238);
+      margin-bottom: 10px;
+    }
+    /*第二段话*/
+    .content .foot {
+      height: 60px;
+      overflow-y: scroll;
+      margin-bottom: 10px;
+    }
 
-      /*利用margin为负将两边各自向左向右拉10px*/
-      .content .middle:hover{
-        margin-left: -10px;
-        margin-right: -10px;
-      }
+    /*利用margin为负将两边各自向左向右拉10px*/
+    .content .middle:hover {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
 
 
-      .footer{
-        margin: 60px 45%;
-      }
-      .footer div{
-        width: 0;
-        height: 0;
-        border: 50px solid;
-        border-color: red #0000 lightblue #0000; /*#0000为透明色*/
-        border-width: 0 50px 50px 50px;
-        margin: auto;
-      }
+    .footer {
+      margin: 60px 45%;
+    }
+    /*三角形*/
+    .footer div {
+      width: 0;
+      height: 0;
+      border: 50px solid;
+      border-color: red #0000 lightblue #0000;
+      /*#0000为透明色*/
+      border-width: 0 50px 50px 50px;
+      margin: auto;
+    }
+
   </style>
 </head>
+
 <body>
-    <div class="header">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt at, ea natus cupiditate assumenda deserunt ex maxime dignissimos. Soluta laudantium id architecto fugit labore fuga consequatur placeat laboriosam dolorum! Incidunt!
-        </p>
+  <div class="header">
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt at, ea natus cupiditate assumenda deserunt ex
+      maxime dignissimos. Soluta laudantium id architecto fugit labore fuga consequatur placeat laboriosam dolorum!
+      Incidunt!
+    </p>
+  </div>
+
+
+  <div class="content">
+    <p class="head">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae sapiente voluptas officiis, praesentium, nemo iure
+      cumque nihil, facere hic asperiores dicta commodi magni, voluptates eaque esse atque nesciunt! Cupiditate, modi.
+    </p>
+
+    <div class="middle">
+
     </div>
 
-
-    <div class="content">
-          <p class="head">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae sapiente voluptas officiis, praesentium, nemo iure cumque nihil, facere hic asperiores dicta commodi magni, voluptates eaque esse atque nesciunt! Cupiditate, modi.
-          </p>
-
-          <div class="middle">
-
-          </div>
-
-          <p class="foot">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi accusantium deleniti consequuntur, enim nulla voluptatum qui ducimus esse rem eius eligendi consequatur sint. Sunt ut, est iusto neque numquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam animi perspiciatis eos, molestias provident, quae ullam! Obcaecati suscipit optio labore iusto veniam facere, amet officiis, eveniet voluptatibus molestiae, dignissimos dolor!
-          </p>
-    </div>
+    <p class="foot">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos modi accusantium deleniti consequuntur, enim nulla
+      voluptatum qui ducimus esse rem eius eligendi consequatur sint. Sunt ut, est iusto neque numquam. Lorem ipsum
+      dolor sit amet, consectetur adipisicing elit. Laboriosam animi perspiciatis eos, molestias provident, quae ullam!
+      Obcaecati suscipit optio labore iusto veniam facere, amet officiis, eveniet voluptatibus molestiae, dignissimos
+      dolor!
+    </p>
+  </div>
 
 
-    <div class="footer">
-            <div></div>
-    </div>
+  <div class="footer">
+    <div></div>
+  </div>
 </body>
+
 </html>
