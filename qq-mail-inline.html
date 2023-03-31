@@ -6,9 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    *{
+      box-sizing: border-box;
+    }
     body{
       margin: 0;
       font-size: 0; /*用于消除行内块之间的空格*/
+    }
+    body *{
+      font-size: 16px;
     }
     /*顶部*/
     .header{
@@ -16,7 +22,6 @@
       width: 100%;
       height: 100px;
       background-color: lightpink;
-      box-sizing: border-box;
       border-bottom: 2px solid black;
     }
 
@@ -26,10 +31,8 @@
       width: 200px;
       height: calc(100vh - 100px);
       background-color: lightskyblue;
-      box-sizing:border-box;
       border-right: 2px solid #000;
       overflow-y: scroll;
-      font-size: 16px;
       padding: 10px;
     }
 
@@ -39,9 +42,7 @@
       width: calc(100% - 200px);
       height: calc(100vh - 100px);
       background-color: lightgoldenrodyellow;
-      box-sizing: border-box;
       overflow-y: scroll;
-      font-size: 16px;
       padding: 10px;
     }
   </style>

@@ -6,10 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    *{
+      box-sizing: border-box;
+    }
     body{
       margin: 0;
-      font-size: 0;
+      font-size: 0;/*消除行内块之间的空格*/
       min-width: 930px;/*整个页面能缩小到的最小宽度*/
+    }
+
+    body *{
+      font-size: 16px;/*使每个行内块中的文字大小为16px 覆盖之前的零字号*/
     }
 
     /*左边栏*/
@@ -18,23 +25,19 @@
       width: 200px;
       height: 100vh;
       background-color: lightskyblue;
-      font-size: 16px;
       overflow-y: scroll;
       padding: 10px;
-      box-sizing: border-box;
     }
 
     /*内容区*/
     .content{
       display: inline-block;
       width: calc(100% - 600px);
-      min-width: 330px;/*该部分能缩小到的最小宽度*/
+       min-width: 330px;/*该部分能缩小到的最小宽度 */
       height: 100vh;
       background-color: lightseagreen;
-      font-size: 16px;
       overflow-y:scroll;
       padding: 10px;
-      box-sizing: border-box;
     }
 
     /*右侧左边栏*/
@@ -43,7 +46,6 @@
       width: 200px;
       height: 100vh;
       background-color: lightgreen;
-      font-size: 16px;
       overflow-y: scroll;
       overflow: hidden;
       text-align: center;
@@ -55,7 +57,6 @@
       width: 200px;
       height: 100vh;
       background-color: lightsalmon;
-      font-size: 16px;
       overflow-y: scroll;
       text-align: center;
     }
