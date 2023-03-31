@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      text-align: center;
+    }
+
+    .menu {
+      width: 400px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      background-color: lightblue;
+      position: fixed;
+      top:30px;
+      left: 500px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      padding: 8px;
+      position: relative;
+    }
+
+    .menu ul {
+      border: 1px solid gray;
+      display: none;
+      right: -202px;
+      top: 0;
+      position: absolute;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 200px;
+    }
+
+    .menu ul ul {
+      left: 100%;
+      position: absolute;
+      top: 0;
+    }
+
+    .menu li:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .menu li:hover>ul {
+      display: block;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ul class="menu">
+    <li>
+      <div>电视剧</div>
+      <ul>
+        <li>
+          <div>中国</div>
+          <ul>
+            <li>悬疑</li>
+            <li>都市</li>
+          </ul>
+        </li>
+
+        <li>美国</li>
+
+        <li>
+          <div>香港</div>
+          <ul>
+            <li>警匪</li>
+            <li>喜剧</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+
+
+    <li>
+      <div>电影</div>
+
+      <ul>
+        <li>
+          <div>喜剧</div>
+          <ul>
+            <li>《你好，李焕英》</li>
+            <li>《唐人街探案3》</li>
+          </ul>
+        </li>
+
+
+
+        <li>
+          <div>战争</div>
+          <ul>
+            <li>《红海行动》</li>
+            <li>《复仇者联盟》</li>
+          </ul>
+        </li>
+
+
+
+
+        <li>
+          <div>科幻</div>
+          <ul>
+            <li>《流浪地球》</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+
+
+    <li>
+      <div>综艺</div>
+      <ul>
+        <li>
+          <div>户外</div>
+          <ul>
+            <li>《我们的客栈》</li>
+          </ul>
+        </li>
+
+
+        <li>
+          <div>音乐类</div>
+          <ul>
+            <li>《声生不息》</li>
+            <li>《中国好声音》</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+
+
+
+</body>
+
+</html>
