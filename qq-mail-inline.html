@@ -1,124 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    *{
+    * {
+      margin: 0;
       box-sizing: border-box;
     }
-    body{
-      margin: 0;
-      font-size: 0; /*用于消除行内块之间的空格*/
+
+    html,
+    body {
+      height: 100%;
+      min-width: 600px;
     }
-    body *{
+
+    .wrapper {
+      font-size: 0; /*零字号消除行内块之间的空格*/
+      width: 100%;
+      height: 100%;
+      min-width: 600px;
+    }
+
+    .wrapper>* { /*wrapper中的所有子元素字号大小为16px*/
       font-size: 16px;
     }
+
     /*顶部*/
-    .header{
-      display: inline-block;
-      width: 100%;
+    header {
       height: 100px;
-      background-color: lightpink;
-      border-bottom: 2px solid black;
+      background-color: lightblue;
+      border-bottom: 3px solid;
     }
-
-    /*左侧边栏*/
-    .aside{
-      display: inline-block;
+    /*侧边栏*/
+    aside {
       width: 200px;
-      height: calc(100vh - 100px);
-      background-color: lightskyblue;
-      border-right: 2px solid #000;
-      overflow-y: scroll;
+      height: calc(100% - 100px);
+      background-color: lightgreen;
+      display: inline-block;
+      overflow: auto;
+      vertical-align: top;
+      padding: 10px;
+      border-right: 3px solid;
+    }
+    /*内容区*/
+    main {
+      width: calc(100% - 200px);
+      height: calc(100% - 100px);
+      background-color: pink;
+      display: inline-block;
+      vertical-align: top;
       padding: 10px;
     }
 
-    /*内容区*/
-    .main{
-      display: inline-block;
-      width: calc(100% - 200px);
-      height: calc(100vh - 100px);
-      background-color: lightgoldenrodyellow;
-      overflow-y: scroll;
-      padding: 10px;
-    }
   </style>
 </head>
+
 <body>
-  <span class="header">
+  <div class="wrapper">
 
-  </span>
+    <header></header>
 
-  <span class="aside">
-   <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-   </ul>
-  </span>
+    <aside>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </aside>
 
-  <span class="main">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt dolor, facere corrupti non illum eos consequatur beatae quo. Expedita eos perferendis nostrum delectus vel reiciendis asperiores incidunt ab nihil, itaque nisi repellat architecto quam magnam, doloribus repellendus fuga quasi tempora quaerat numquam mollitia nobis! Est, nisi temporibus qui modi architecto fuga totam facilis impedit magnam aliquam optio provident iure repellendus vitae libero doloribus animi voluptatibus perspiciatis, fugit tempora hic sequi! Quae, neque! Quia nihil officia cum unde sed obcaecati sequi, illum minima atque dolores reprehenderit ea perspiciatis libero facilis corporis temporibus, optio consectetur provident? Ab, doloribus ullam harum recusandae repellendus consectetur! Incidunt commodi architecto consequuntur nulla fuga dignissimos dolorem quam impedit? Maxime quod ipsum quas repellat eligendi? Tempora facilis provident consequuntur. Aliquid hic dolore, similique eaque ad blanditiis omnis animi! Quia ducimus ex aspernatur veniam? Corrupti quasi dolorum explicabo consequatur ipsa repellat assumenda modi culpa optio eum aspernatur ex debitis obcaecati, numquam consequuntur, tenetur aut, necessitatibus possimus cupiditate odio soluta. Inventore officiis delectus laboriosam repellendus, eos quam fugiat necessitatibus, earum aspernatur enim culpa, vel provident minus rerum nam. Magni maiores neque placeat? Consequatur aperiam repudiandae maxime doloribus modi, obcaecati quo porro veritatis ipsa eum aliquid esse? Atque iste qui ipsam explicabo, officia ut praesentium obcaecati odit, quasi repellendus voluptate illo facilis nobis nemo cumque quibusdam culpa est? Asperiores similique illo quae. Ea minima aperiam, at autem, possimus odio omnis dolorum officia tenetur vitae magni reiciendis voluptatem natus, modi repellendus ipsam perspiciatis voluptates corporis alias minus accusamus qui enim veniam harum. Possimus illum nihil illo eveniet cupiditate enim quam quasi est sint accusamus beatae odit, non reiciendis et ipsum deserunt! Praesentium qui quos harum perspiciatis sit nobis dolor commodi cupiditate voluptatem deleniti in, culpa voluptates reprehenderit perferendis numquam quibusdam impedit dignissimos excepturi eaque. Obcaecati eaque quia, illo doloribus consequatur inventore soluta?
-  </span>
+    <main>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias fugiat in iusto iste nobis eos est quam vel optio,
+      velit. Iure necessitatibus vel ex qui voluptatem perspiciatis ullam rerum quod culpa quas praesentium, repellat
+      natus, laborum similique, optio? In excepturi sapiente cupiditate animi quibusdam ex, impedit labore vero?
+      Accusantium quis inventore, ex maiores fugiat sunt ipsum fugit voluptate deleniti minima illo esse possimus quas
+      sint sit, at, eius repudiandae culpa hic ratione reiciendis quia iure. In necessitatibus adipisci, maiores
+      laboriosam ipsum dolore. Ratione temporibus mollitia iure, repellat sunt, earum molestias possimus veritatis
+      perferendis tempore hic aut maxime nesciunt vero odio debitis deserunt. Aperiam animi eaque qui laborum, quasi
+      error delectus maiores, quidem molestias distinctio, sapiente. Tenetur voluptatem amet, natus cupiditate corporis
+      quibusdam provident assumenda sapiente suscipit delectus nisi dolore repellendus eligendi nesciunt sit quod
+      tempora voluptates blanditiis reiciendis. Omnis recusandae, incidunt, quasi quaerat architecto quia, sapiente,
+      facere provident quibusdam tempora aliquid vitae. Praesentium officia commodi, at, eligendi blanditiis hic cumque
+      explicabo vero vel tempore assumenda, enim obcaecati dolore earum fugiat eos, perspiciatis odit ipsum architecto
+      vitae debitis! Ducimus molestias accusamus neque iusto totam odio, assumenda reiciendis voluptates sequi vel ullam
+      fuga tenetur, temporibus, facere, vero aspernatur quidem ut voluptate repellat?
+    </main>
+
+  </div>
 </body>
+
 </html>

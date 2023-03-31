@@ -10,6 +10,7 @@
     * {
       margin: 0 auto;
     }
+
     /*顶部*/
     .header {
       background-color: #000;
@@ -31,10 +32,11 @@
     }
 
     /*盒子排列*/
-    .content .middle{
+    .content .middle {
       width: 100%;
     }
-/*  块级元素排列 */
+
+    /*  块级元素排列 */
 
     /* .content .middle div {
       box-sizing: border-box;
@@ -66,30 +68,40 @@
     }  */
 
     /*行内块元素排列盒子*/
-    .content  span{
-      display: inline-block;
-      width: 180px;
-      height: 40px;
-      background-color: lightblue;
-      box-sizing: border-box;
-      margin-bottom: 15px;
-      margin-right: 25px;
+    div.box {
+      width: 650px;
+      margin: auto;
+      overflow: hidden;
+      margin-bottom:50px ;
+    }
+
+    div.box ul {
+      list-style-type: none;
+      padding: 0;
+      /* width: 630px; */
+      margin: auto;
+      font-size: 0;
+      margin-left: 3px;
+      margin-top: 5px;
+    }
+
+    div.box ul li {
+      font-size: 16px;
       text-align: center;
-      line-height: 34px; /*行高需要减去边框值才能在垂直方向居中*/
-      border: 3px solid #000;
-    }
-
-    .content  span:nth-of-type(3n+3){
-      margin-right: 0;
-    }
-
-    .content  span:hover{
-      background-color: lightgreen;
+      line-height: 24px;
+      width: 150px;
+      height: 30px;
+      border: 3px solid;
+      display: inline-block;
+      /* margin: 8px 8px; */
+      margin-right: 60px;
+      margin-bottom: 15px;
+      background-color:lightblue;
     }
 
     /*link部分*/
 
-    .links{
+    .links {
       width: 600px;
       margin: auto;
       padding: 0;
@@ -97,17 +109,16 @@
       overflow: hidden;
     }
 
-    .links li{
+    .links li {
       border-bottom: 1px dotted;
       margin-bottom: -1px;
     }
 
     /*版权部分*/
-    .footer{
-     text-align: center;
+    .footer {
+      text-align: center;
       background-color: lightgreen;
     }
-
 
   </style>
 </head>
@@ -147,35 +158,39 @@
     </div> -->
 
     <!-- 行内块元素排列盒子 -->
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
-    <span>产品</span>
+    <div class="box">
+      <ul>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+      </ul>
+    </div>
 
 
   </div>
 
-    <ul class="links">
-      <li>links</li>
-      <li>links</li>
-      <li>links</li>
-      <li>links</li>
-      <li>links</li>
-    </ul>
+  <ul class="links">
+    <li>links</li>
+    <li>links</li>
+    <li>links</li>
+    <li>links</li>
+    <li>links</li>
+  </ul>
 
 
   <div class="footer">
 
-                  ©版权所有 <br>
-      本页所有布局均使用块元素
+    ©版权所有 <br>
+    本页所有布局均使用块元素
 
   </div>
 </body>
