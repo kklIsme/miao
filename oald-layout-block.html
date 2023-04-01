@@ -1,291 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    html{
-      height: 100%;
-    }
-    *{
+    * {
       margin: 0;
-    }
-    body{
-      margin: 0;
-      min-width: 930px; /*整个页面能缩小到的最小宽度*/
+      box-sizing: border-box;
     }
 
-    /*左侧边栏*/
-    aside{
-      box-sizing: border-box;
+    html,
+    body {
+      height: 100%;
+      min-width: 900px;
+      /*整个页面能缩小到的最小宽度*/
+    }
+
+    aside,
+    main,
+    .left,
+    .right {
+      padding: 10px;
+    }
+
+    .left,
+    .right {
+      text-align: center;
+    }
+
+    /*侧边栏*/
+    aside {
       width: 200px;
-      height:100vh;
-      background-color: pink;
-      border-right: 3px solid #000;
+      height: 100%;
+      background-color: lightskyblue;
+      border-right: 2px solid #000;
+      overflow: auto;
+
+    }
+
+    /*内容区*/
+    main {
+      width: calc(100% - 600px);
+      height: 100%;
+      background-color: lightgreen;
+      margin-left: 200px;
+      margin-top: -100vh;
+      border-right: 2px solid #000;
       overflow: auto;
     }
 
-    /*左侧边栏的头部*/
-    aside .top{
-      height: 120px;
-    }
-
-    /*左侧边栏标题*/
-    aside .top h2{
-      margin: 0;
-      padding-left: 30px;
-      padding-top: 20px;
-    }
-    /*左侧边栏表单*/
-    aside .top form{
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    aside .top input{
-      box-sizing: border-box;
-      width: 146px;
-      height: 33px;
-    }
-
-    aside .top button{
-      box-sizing: border-box;
-      width: 40px;
-      height: 25px;
-      padding-top: 5px;
-      vertical-align: middle;
-    }
-    /*左侧边栏单词列表*/
-    aside .index{
-      height: calc(100vh - 120px);
-      overflow-y: scroll;
-      padding-left: 35px;
-      font-size: 20px;
-    }
-
-    /*中间部分*/
-    main{
-      box-sizing: border-box;
-      width: calc(100% - 600px);
-      min-width: 330px;/*该部分能缩小到的最小宽度*/
-      height: 100vh;
-      background-color: bisque;
-      margin-left: 200px;
-      margin-top:-100vh;
-      margin-right: 400px;
+    /*右侧左栏*/
+    .left {
+      width: 200px;
+      height: 100%;
+      background-color: pink;
+      margin-left: calc(100% - 400px);
+      /*由aside和main的margin-left相加得到*/
+      margin-top: -100vh;
       border-right: 2px solid #000;
     }
-    /*中间标题部分*/
-    main .fantasy{
-      height: 50px;
-      padding-left: 30px;
-      padding-top: 15px;
-      border-bottom: 2px solid #000;
-      overflow: auto;
-    }
 
-    /*中间单词解释部分*/
-    main div{
-      box-sizing: border-box;
-      padding-left: 15px;
-      padding-top: 20px;
-      height: calc(100vh - 50px);
-      overflow:auto;
-    }
-
-    main div ol{
-      margin-top: 15px;
-      box-sizing: border-box;
-    }
-
-    main div li{
-      margin-bottom: 5px;
-    }
-    /*Vocabulary部分*/
-    .left{
-      box-sizing: border-box;
+    /*右侧右栏*/
+    .right {
       width: 200px;
-      height: 100vh;
-      background-color: pink;
-      margin-left: calc(200px + calc(100% - 600px));
+      height: 100%;
+      background-color: lightcyan;
+      margin-left: calc(100% - 200px);
       margin-top: -100vh;
-      padding: 20px;
-      font-size:40px sans-serif;
-      border-right: 2px solid black;
-      overflow-y: scroll;
     }
-    /*History部分*/
-    .right{
-      box-sizing: border-box;
-      width: 200px;
-      height: 100vh;
-      background-color: lightseagreen;
-      margin-left: calc(400px + calc(100% - 600px));
-      margin-top: -100vh;
-      padding: 20px;
-      overflow-y: scroll;
-    }
+
   </style>
 </head>
+
 <body>
-
   <aside>
-    <div class="top">
-      <h2>
-        OALD Seven
-      </h2>
-
-      <form action="https://www.baidu.com">
-        <input type="text">
-        <button></button>
-      </form>
-    </div>
-
-    <div class="index">
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-      <div><a href="https://www.baidu.com">word</a></div>
-    </div>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </aside>
 
   <main>
-    <div class="fantasy">
-      fantasy
-    </div>
-
-    <div>
-      Lorem, ipsum.
-      <ol>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ullam fugit eveniet quia praesentium est et, neque quos voluptas quas. At, rem. Repudiandae quisquam quo aspernatur reiciendis non, aut nesciunt quod molestias in, natus, blanditiis qui? Dolorum vitae possimus omnis!</li>
-      </ol>
-    </div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquam eius quas minima fugit obcaecati
+    veritatis officiis fugiat corrupti totam. Quidem, repellendus blanditiis, a obcaecati maiores neque consectetur
+    nemo, facilis error dolorum atque iure rem consequuntur ut ad provident aspernatur quam eos quisquam dicta saepe
+    incidunt. Cumque facere quos odit nam, velit pariatur architecto sit aliquam? Quis nihil, minus iste tenetur, eius
+    ipsam placeat ad laudantium alias sed minima consequatur inventore maiores laborum. Sequi ab vero harum itaque
+    officia. Nobis similique optio repudiandae, ullam iure at deserunt impedit sed necessitatibus eligendi eius neque
+    atque nisi tempore voluptas quas esse. Odio maxime similique eum neque asperiores enim veritatis quo ipsum
+    perferendis, ut itaque ex accusantium unde magnam corrupti consectetur doloremque cum illum esse praesentium
+    blanditiis. Nemo, et rerum corporis vitae dolorum maiores dolorem quisquam temporibus dolores illo dolore magni
+    veniam iusto nisi officiis. Cum magni hic quo cupiditate fugiat! A amet necessitatibus numquam enim, rem nobis
+    deleniti consequatur quas cumque, eius neque aspernatur libero dolores? Quis possimus sed ab voluptate error
+    aperiam. Obcaecati consequatur architecto culpa! In, nesciunt possimus amet alias beatae magni, tenetur nostrum
+    culpa quidem fugiat nisi voluptate nemo sequi quasi nulla iure illo fuga! Vitae voluptatibus non corporis natus et
+    vel optio voluptate necessitatibus ratione, debitis sunt. Accusamus modi cumque sed! Veniam accusantium cumque optio
+    quae, exercitationem magni dolor nulla non error culpa accusamus animi dolores, sequi tenetur quo. Omnis similique
+    repellat fuga nostrum pariatur explicabo nobis atque modi, est vitae facere cupiditate aliquid voluptatem deleniti
+    amet repudiandae laudantium dicta, optio assumenda, dolore hic expedita delectus animi rem! Sequi mollitia est sint,
+    nesciunt voluptatum voluptas aperiam suscipit. Cum voluptatibus asperiores minus fugit nulla eius hic doloremque
+    velit laborum consequatur quas dignissimos accusantium nam quis architecto voluptate sint sunt beatae,
+    exercitationem impedit veritatis mollitia dolore molestiae. Sequi explicabo delectus soluta aut eum, beatae numquam
+    vel amet laboriosam dolor culpa alias porro officiis laborum rerum nostrum reiciendis similique saepe ullam
+    temporibus ad in iure voluptatibus at. Sint recusandae nisi quisquam perspiciatis incidunt officiis accusamus
+    facilis illum officia magni! Maxime, deleniti dicta! Et velit temporibus quis quisquam ratione, facilis obcaecati
+    quaerat suscipit quae, qui deleniti eius aut, corrupti aperiam adipisci veritatis ducimus. Ipsam quibusdam nulla eum
+    dicta labore itaque dolorem, nisi, minima soluta earum aperiam distinctio sapiente harum voluptas odit ratione minus
+    dolorum quasi officiis cumque reiciendis. Libero deleniti harum adipisci hic blanditiis, nesciunt corporis voluptas
+    quisquam perspiciatis molestias itaque velit, eaque, quia repellat ducimus. Quaerat enim veniam esse ipsum expedita
+    est sed voluptatem aut, laboriosam adipisci dignissimos, doloribus excepturi aperiam itaque molestiae, omnis laborum
+    vel architecto voluptatibus minus tenetur exercitationem. Debitis doloribus exercitationem illum, consequuntur earum
+    odit. Dolores aliquid id cum. Mollitia laudantium sit expedita molestias, adipisci officia suscipit consequatur quia
+    delectus maiores nesciunt eligendi aliquid similique quaerat id nostrum veniam perspiciatis dolores debitis? Placeat
+    delectus nobis deleniti qui, aliquid alias laudantium vero quia. Ut enim, cumque accusamus ducimus repudiandae
+    minus! Quas magnam commodi placeat ipsam unde necessitatibus id, adipisci quam. Soluta, asperiores consequatur error
+    nostrum ipsum minima temporibus, praesentium impedit eum eligendi aspernatur eveniet. Iusto, nam explicabo
+    necessitatibus consequatur veritatis vel dolor veniam laborum dicta mollitia illo beatae sit ipsa atque, ipsum
+    doloremque voluptas delectus tenetur dolore! Quaerat quis nobis, mollitia, quidem ut doloremque soluta eius eos
+    neque consequatur ipsa laudantium, repudiandae unde quos dolor. Ratione pariatur deleniti repellendus quisquam
+    libero. Ex nulla nostrum error deserunt quam cumque corporis sed odio fugiat voluptatum, accusantium voluptates
+    praesentium quod ab necessitatibus quia eaque dicta saepe doloribus hic possimus, qui alias? In, minus atque
+    laboriosam ad laborum dolorem aut distinctio illum reprehenderit aperiam nisi eveniet voluptate modi eligendi totam,
+    iure officiis cupiditate! Fugiat necessitatibus consequuntur vitae, doloremque odio voluptas consequatur? Sunt
+    aspernatur, corrupti architecto quae et vitae dolorem rem quasi. Qui nihil earum ab quisquam, dignissimos alias
+    magni non velit quia aspernatur ad est numquam deserunt repellat asperiores libero molestias beatae accusamus nemo
+    exercitationem cupiditate, obcaecati laudantium dolores? Voluptate sit odio dolor ea commodi ipsum praesentium eius
+    ut nihil maiores quasi, tempore doloribus cumque, molestiae soluta laudantium autem eveniet velit optio officia
+    totam! Laudantium assumenda atque, porro doloribus accusantium corrupti reiciendis fuga ad dolorem hic nulla
+    inventore excepturi? Quis voluptas laborum fugiat dolores, tempora neque reprehenderit sunt? Quaerat, illo. Harum
+    error magni corporis, officia non deleniti, ab sapiente ratione asperiores doloremque facere quam necessitatibus at
+    atque labore omnis, alias aspernatur modi? Eum culpa labore officiis dolores, in corrupti error dicta dolorum
+    dignissimos unde vero veniam laboriosam aut atque ut natus qui voluptatibus non esse hic modi! Harum cum ipsa quae
+    tempore sit temporibus eos sed aut minima laboriosam porro blanditiis provident eius exercitationem, odio, minus
+    doloremque, molestiae corrupti cupiditate veritatis possimus facilis. Ipsa natus ipsam voluptas hic voluptate
+    accusamus repudiandae voluptatem corporis sunt sint, exercitationem error minima reiciendis sed quia alias veritatis
+    maxime quos inventore eligendi labore ex pariatur ad iure. Ab voluptatem tenetur quam mollitia sed ipsam quasi
+    nesciunt rem at temporibus, sequi placeat atque ipsa minus corporis animi neque pariatur repellat omnis autem dolor
+    fuga modi quas aut. Odio voluptates, nesciunt tenetur ratione ab tempore temporibus facilis, ut doloribus,
+    consequatur iusto dicta omnis dignissimos? Sint earum magni sequi! Molestias ex rem vel. Iure corrupti voluptatum ab
+    repellat labore. Illo corporis nihil perspiciatis nostrum corrupti explicabo eius. Soluta rem repudiandae quidem
+    deserunt? Consequatur animi necessitatibus blanditiis, quae deserunt eligendi consectetur eius similique
+    accusantium, laborum nobis quas deleniti non tempore quasi voluptate reprehenderit, autem ipsum quia corrupti
+    cupiditate officia! Unde facilis eius nihil maxime culpa laborum perferendis aut consectetur similique voluptatum.
+    Quibusdam tempora minima ipsam, voluptas, tenetur sed ducimus facilis, esse explicabo aspernatur doloribus error
+    fuga? Minus quaerat quos, repellat dolore at pariatur illum fugit eaque fuga, dolores et asperiores. Iste distinctio
+    sint mollitia natus illum? Placeat distinctio quisquam possimus? Aspernatur blanditiis dignissimos quae repudiandae
+    fuga dolorum nesciunt impedit harum aliquam excepturi, vero quam modi tempore nemo consectetur quia! Cumque maxime
+    perferendis dolorum illo neque doloremque? Harum mollitia libero voluptatem nobis incidunt atque sapiente. Pariatur,
+    molestiae et assumenda, ipsam consectetur voluptas asperiores cupiditate consequuntur maxime magnam amet tempore
+    quos, praesentium deserunt suscipit!
   </main>
 
   <div class="left">
-    Vocabulary
+    left
   </div>
 
   <div class="right">
-    History
+    right
   </div>
-
 </body>
+
 </html>
