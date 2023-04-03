@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .heart {
+      position: relative;
+      top: 100px;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      background-color: gray;
+      transform: rotate(-45deg);
+    }
+
+    .heart:before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: gray;
+    }
+
+    .heart:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: gray;
+      border-radius: 50%;
+    }
+
+
+
+
+    .heart:hover {
+      width: 80px;
+      height: 80px;
+      background-color: pink;
+      transition: 2s;
+    }
+
+    .heart:hover:before {
+      width: 80px;
+      height: 80px;
+      transition: 2s;
+      background-color: pink;
+    }
+
+    .heart:hover:after {
+      width: 80px;
+      height: 80px;
+      transition: 2s;
+      background-color: pink;
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="heart"></div>
+</body>
+
+</html>
