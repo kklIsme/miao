@@ -7,52 +7,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    * {
-      margin: 0;
-      text-align: center;
+    ul {
+      list-style: none;
+      padding: 0;
     }
 
     .menu {
-      width: 400px;
-      border: 1px solid rgba(0, 0, 0, 0.3);
-      background-color: lightblue;
-      position: fixed;
-      top:30px;
-      left: 500px;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+      width: 220px;
+      font-size: 0;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: lightgreen;
     }
 
-    .menu li {
-      padding: 8px;
-      position: relative;
+    .menu ul>li {
+      width: 130px;
     }
 
-    .menu ul {
-      border: 1px solid gray;
-      display: none;
-      right: -202px;
-      top: 0;
-      position: absolute;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 200px;
+    .menu>li {
+      font-size: 16px;
+      display: inline-block;
+      margin-right: 50px;
     }
 
-    .menu ul ul {
-      left: 100%;
-      position: absolute;
-      top: 0;
+    .menu>li:last-child {
+      margin-right: 0;
     }
 
     .menu li:hover {
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: lightblue;
+    }
+
+
+    .menu li {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .menu ul {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      display: none;
+    }
+
+    .menu ul ul {
+      position: absolute;
+      left: 100%;
+      top: 0;
     }
 
     .menu li:hover>ul {
       display: block;
+    }
+
+
+
+    .menu ul li ul::before {
+      content: ">";
+      position: absolute;
+      right: 100%;
     }
 
   </style>
@@ -61,23 +74,53 @@
 <body>
   <ul class="menu">
     <li>
-      <div>电视剧</div>
+      电视剧
       <ul>
         <li>
-          <div>中国</div>
+          国产剧
           <ul>
-            <li>悬疑</li>
-            <li>都市</li>
+            <li>狂飙</li>
+            <li>他是谁</li>
+            <li>琅琊榜</li>
           </ul>
         </li>
-
-        <li>美国</li>
-
         <li>
-          <div>香港</div>
+          美剧
           <ul>
-            <li>警匪</li>
-            <li>喜剧</li>
+            <li>怪奇物语</li>
+            <li>绝命毒师</li>
+            <li>老友记</li>
+          </ul>
+        </li>
+        <li>英剧</li>
+      </ul>
+    </li>
+
+
+
+    <li>
+      电影
+      <ul>
+        <li>
+          动作
+          <ul>
+            <li>怒火·重案</li>
+            <li>狩猎</li>
+          </ul>
+        </li>
+        <li>
+          喜剧
+          <ul>
+            <li>你好，李焕英</li>
+            <li>这个杀手不太冷静</li>
+            <li>唐人街探案3</li>
+          </ul>
+        </li>
+        <li>
+          科幻
+          <ul>
+            <li>流浪地球</li>
+            <li>沙丘</li>
           </ul>
         </li>
       </ul>
@@ -86,66 +129,34 @@
 
 
     <li>
-      <div>电影</div>
-
+      综艺
       <ul>
         <li>
-          <div>喜剧</div>
+          真人秀
           <ul>
-            <li>《你好，李焕英》</li>
-            <li>《唐人街探案3》</li>
+            <li>快乐再出发</li>
+            <li>极限挑战</li>
           </ul>
         </li>
-
-
-
         <li>
-          <div>战争</div>
+          脱口秀
           <ul>
-            <li>《红海行动》</li>
-            <li>《复仇者联盟》</li>
+            <li>奇葩说</li>
+            <li>脱口秀大会</li>
+            <li>吐槽大会</li>
           </ul>
         </li>
-
-
-
-
         <li>
-          <div>科幻</div>
+          音乐
           <ul>
-            <li>《流浪地球》</li>
+            <li>声生不息</li>
+            <li>乐队的夏天</li>
           </ul>
         </li>
       </ul>
     </li>
 
-
-
-    <li>
-      <div>综艺</div>
-      <ul>
-        <li>
-          <div>户外</div>
-          <ul>
-            <li>《我们的客栈》</li>
-          </ul>
-        </li>
-
-
-        <li>
-          <div>音乐类</div>
-          <ul>
-            <li>《声生不息》</li>
-            <li>《中国好声音》</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
   </ul>
-
-
-
-
 </body>
 
 </html>
