@@ -7,7 +7,7 @@
   <title>Document</title>
   <style>
 
-    input + label.heart{
+    input + label.heart{ /*input后面紧跟的类名为heart的label元素*/
       display: inline-block;
       width: 100px;
       height: 100px;
@@ -23,14 +23,14 @@
 
     input:checked + .heart:hover img{
       margin-left: -2800px;
-      transition: 2s steps(28); /*利用步进式使得爱心不抖动*/
+      transition: 2s steps(28); /*利用步进式使得爱心不抖动 每步移动100px*/
     }
   </style>
 </head>
 <body>
     <input type="checkbox" id="change" hidden>
     <label class="heart" for="change">
-        <img src="1_MTZW1G1mE7LSX1CnhTYeHA.png" alt="">
+        <img src="1_MTZW1G1mE7LSX1CnhTYeHA.png">
     </label>
 </body>
 </html>
