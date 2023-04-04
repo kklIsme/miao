@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
+  <!-- css样式 -->
+  <!-- <style>
     /*外层椭圆*/
       input + label{  /*input后面紧跟的label元素*/
         display: inline-block;
@@ -38,7 +39,54 @@
         margin-left: 122px;
       }
 
-  </style>
+  </style> -->
+
+
+  <!-- less样式 -->
+<style type="text/less">
+  /*外层椭圆*/
+    input + label{  /*input后面紧跟的label元素*/
+      display: inline-block;
+      width: 270px;
+      height: 155px;
+      border-radius: 100px;
+      border: 3px solid grey;
+      box-sizing: border-box;
+      transition: 0.8s;
+
+          /*内层圆*/
+          &:before{
+              content: "";
+              display: block;
+              width: 144px;
+              height: 144px;
+              border-radius: 100px;
+              margin: 3px;
+              transition: 0.8s;
+              box-shadow: 0 5px 10px gray;
+              background-color: white;
+          }
+
+    }
+
+    /*外层椭圆被点击选中时*/
+    input:checked + label{
+          border-color: #30f349;
+          box-shadow: inset 15px 0 0 78px #30f349;
+
+
+            /*内层圆被点击选中时*/
+              &:before{
+                  margin-left: 122px;
+              }
+    }
+
+
+
+
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/less@4" ></script>
 </head>
 <body>
       <input type="checkbox" id="ios" hidden>

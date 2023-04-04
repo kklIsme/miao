@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
+
+  <!-- css样式 -->
+  <!-- <style>
 
     input + label.heart{ /*input后面紧跟的类名为heart的label元素*/
       display: inline-block;
@@ -25,7 +27,44 @@
       margin-left: -2800px;
       transition: 2s steps(28); /*利用步进式使得爱心不抖动 每步移动100px*/
     }
-  </style>
+  </style> -->
+
+
+  <!-- less样式 -->
+<style type="text/less">
+
+  input{
+      & + label.heart{ /*input后面紧跟的类名为heart的label元素*/
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          border: 5px solid #000;
+          margin: 200px 700px;
+          overflow: hidden;
+          cursor: pointer;
+
+                img{
+                transition: none;
+              }
+      }
+
+      &:checked{
+
+        & + .heart{
+            &:hover{
+               img{
+                    margin-left: -2800px;
+                    transition: 2s steps(28); /*利用步进式使得爱心不抖动 每步移动100px*/
+               }
+            }
+        }
+      }
+  }
+
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/less@4" ></script>
 </head>
 <body>
     <input type="checkbox" id="change" hidden>
