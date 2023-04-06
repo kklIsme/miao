@@ -12,6 +12,7 @@
       margin: 0;
     }
 
+    html,
     body{
       min-width: 800px;
       height: 100%;
@@ -19,30 +20,46 @@
     }
 
     .wrapper{
-      width: 100%;
       height: 100%;
       text-align: center;
     }
 
     aside{
       width: 200px;
-      height: 100vh;
+      height: 100%;
       float: left;
       background-color: palegreen;
       border-right: 2px solid #000;
     }
 
-    main{
-      width: calc(100% - 600px);
-      height: 100vh;
-      float: left;
+    .left{
+      width: 200px;
+      height: 100%;
+      float: right;
+      background-color: pink;
       border-right: 2px solid #000;
+      overflow: auto;
+    }
+
+    .right{
+      width: 200px;
+      height: 100%;
+      float: right;
+      background-color: skyblue;
+      overflow: auto;
+    }
+
+    main{  /*必须将未设置宽度的元素(包括CSS样式及HTML结构)放在所有已设置浮动元素的后面，剩余宽度占据包含块的剩余水平空间才会生效*/
+      height: 100%;
+      border-right: 2px solid #000;
+      display: flow-root;
     }
 
     main header{
       height: 100px;
       background-color: antiquewhite;
       border-bottom: 2px solid #000;
+      display: flow-root;
     }
 
     main .content{
@@ -51,21 +68,7 @@
       text-align: initial;
       overflow: auto;
       padding: 20px;
-    }
-
-    .left{
-      width: 200px;
-      height: 100vh;
-      float: right;
-      background-color: pink;
-      border-right: 2px solid #000;
-    }
-
-    .right{
-      width: 200px;
-      height: 100vh;
-      float: right;
-      background-color: skyblue;
+      display: flow-root;
     }
   </style>
 </head>
@@ -75,6 +78,16 @@
       <aside>
         aside
       </aside>
+
+
+
+      <div class="right">
+        right
+      </div>
+
+      <div class="left">
+        left
+      </div>
 
       <main>
 
@@ -88,14 +101,6 @@
          </div>
 
       </main>
-
-      <div class="right">
-        right
-      </div>
-
-      <div class="left">
-        left
-      </div>
 
 
     </div>

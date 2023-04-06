@@ -10,6 +10,7 @@
       box-sizing: inherit;
     }
 
+    html,
     body{
       margin: 0;
       box-sizing: border-box;
@@ -31,19 +32,18 @@
 
     aside{
       width: 200px;
-      height: calc(100vh - 100px);
+      height: calc(100% - 100px);
       float: left;
       border-right: 2px solid #000;
       background-color: pink;
       text-align: center;
     }
 
-    main{
-      width: calc(100% - 200px);
-      height: calc(100vh - 100px);
-      float: left;
+    main{   /*受浮动元素的影响的元素,水平方向收缩以避开浮动元素,实现main元素的宽度占据包含块的剩余水平空间*/
+      height: calc(100% - 100px);
       background-color:lightgreen;
       padding: 20px;
+      display: flow-root;
       overflow: auto;
     }
 
