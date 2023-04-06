@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style type="text/less">
+    .slider {
+      position: relative;
+      top: 0;
+      left: 500px;
+      width: 750px;
+      height: 730px;
+      overflow: hidden;
+    }
+
+    .picture img {
+      position: absolute;
+      width: 500px;
+      height: 700px;
+      opacity: 0;
+      transition: 2s;
+    }
+
+    input{
+      display: none;
+    }
+
+
+    input:nth-child(1):checked ~ .picture img:nth-child(1),
+    input:nth-child(2):checked ~ .picture img:nth-child(2),
+    input:nth-child(3):checked ~ .picture img:nth-child(3),
+    input:nth-child(4):checked ~ .picture img:nth-child(4){
+      opacity: 1;
+    }
+
+    .index{
+      position: absolute;
+      top: 650px;
+      left: 150px;
+          label{
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              margin-right: 30px;
+              border: 3px solid white;
+              border-radius: 333px;
+              text-indent: -9999px;
+              cursor: pointer;
+                &:hover{
+                  background-color: lightblue;
+                }
+            }
+    }
+
+
+    input:nth-child(1):checked ~ .index label:nth-child(1),
+    input:nth-child(2):checked ~ .index label:nth-child(2),
+    input:nth-child(3):checked ~ .index label:nth-child(3),
+    input:nth-child(4):checked ~ .index label:nth-child(4){
+      background-color: pink;
+    }
+
+    .arrow{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      font-size: 80px;
+      color: lemonchiffon;
+      cursor: pointer;
+    }
+
+    .left{
+      position: absolute;
+      top: 300px;
+      left: -10px;
+    }
+
+    .right{
+      position: absolute;
+      top: 300px;
+      left: 450px;
+    }
+
+    /* .arrow label:nth-child(1):active ~ .picture img:nth-child(1),
+    .arrow label:nth-child(2):active ~ .picture img:nth-child(2),
+    .arrow label:nth-child(3):active ~ .picture img:nth-child(3),
+    .arrow label:nth-child(4):active ~ .picture img:nth-child(4){
+      opacity: 1;
+    } */
+
+
+
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+</head>
+
+<body>
+  <div class="slider">
+
+
+    <input type="radio" name="choose" id="sd1" checked>
+    <input type="radio" name="choose" id="sd2">
+    <input type="radio" name="choose" id="sd3">
+    <input type="radio" name="choose" id="sd4">
+
+
+    <div class="picture">
+      <img src="https://pic3.zhimg.com/v2-7322723d3e8429f51771a18b69be2e23_r.jpg">
+      <img src="https://p8.itc.cn/images01/20230225/a1410f4f5407487583642892a7ab65c5.jpeg">
+      <img src="https://p8.itc.cn/images01/20230225/13a84bce55944bc4bef5e8065db4375c.jpeg">
+      <img src="https://p6.itc.cn/images01/20230225/3c98ed24d5334cfe9e063cbe1e7d41db.jpeg">
+    </div>
+
+    <div class="index">
+      <label for="sd1">1</label>
+      <label for="sd2">2</label>
+      <label for="sd3">3</label>
+      <label for="sd4">4</label>
+    </div>
+
+
+
+
+    <div class="arrow left">
+      <label for="sd1"><</label>
+      <label for="sd2"><</label>
+      <label for="sd3"><</label>
+      <label for="sd4"><</label>
+    </div>
+
+    <div class="arrow right">
+      <label for="sd1">></label>
+      <label for="sd2">></label>
+      <label for="sd3">></label>
+      <label for="sd4">></label>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+</body>
+
+</html>
