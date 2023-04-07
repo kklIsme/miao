@@ -17,7 +17,7 @@
       overflow: hidden;
     }
 
-    .picture img {
+    img {
       position: absolute;
       width: 500px;
       height: 700px;
@@ -71,27 +71,43 @@
       overflow: hidden;
       font-size: 80px;
       color: lemonchiffon;
-      cursor: pointer;
     }
 
     .left{
       position: absolute;
       top: 300px;
       left: -10px;
+
+        label{
+          position: absolute;
+          cursor: pointer;
+        }
     }
 
     .right{
       position: absolute;
       top: 300px;
       left: 450px;
+
+        label{
+          position: absolute;
+          cursor: pointer;
+        }
     }
 
-    /* .arrow label:nth-child(1):active ~ .picture img:nth-child(1),
-    .arrow label:nth-child(2):active ~ .picture img:nth-child(2),
-    .arrow label:nth-child(3):active ~ .picture img:nth-child(3),
-    .arrow label:nth-child(4):active ~ .picture img:nth-child(4){
-      opacity: 1;
-    } */
+    input:nth-child(1):checked ~ .right>label:nth-child(2),
+    input:nth-child(2):checked ~ .right>label:nth-child(3),
+    input:nth-child(3):checked ~ .right>label:nth-child(4),
+    input:nth-child(4):checked ~ .right>label:nth-child(1){
+      display:block;
+    }
+
+    input:nth-child(1):checked ~ .left >abel:nth-child(4),
+    input:nth-child(2):checked ~ .left >abel:nth-child(1),
+    input:nth-child(3):checked ~ .left >abel:nth-child(2),
+    input:nth-child(4):checked ~ .left >abel:nth-child(3){
+      display:block;
+    }
 
 
 
