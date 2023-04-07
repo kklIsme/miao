@@ -95,19 +95,22 @@
         }
     }
 
-    input:nth-child(1):checked ~ .right>label:nth-child(2),
-    input:nth-child(2):checked ~ .right>label:nth-child(3),
-    input:nth-child(3):checked ~ .right>label:nth-child(4),
-    input:nth-child(4):checked ~ .right>label:nth-child(1){
+
+    input:nth-child(4):checked ~ .left >abel:nth-child(1),
+    input:nth-child(1):checked ~ .left >abel:nth-child(2),
+    input:nth-child(2):checked ~ .left >abel:nth-child(3),
+    input:nth-child(3):checked ~ .left >abel:nth-child(4){
       display:block;
     }
 
-    input:nth-child(1):checked ~ .left >abel:nth-child(4),
-    input:nth-child(2):checked ~ .left >abel:nth-child(1),
-    input:nth-child(3):checked ~ .left >abel:nth-child(2),
-    input:nth-child(4):checked ~ .left >abel:nth-child(3){
+    input:nth-child(2):checked ~ .right>label:nth-child(1),
+    input:nth-child(3):checked ~ .right>label:nth-child(2),
+    input:nth-child(4):checked ~ .right>label:nth-child(3),
+    input:nth-child(1):checked ~ .right>label:nth-child(4){
       display:block;
     }
+
+
 
 
 
@@ -143,17 +146,17 @@
 
 
     <div class="arrow left">
-      <label for="sd1"><</label>
-      <label for="sd2"><</label>
-      <label for="sd3"><</label>
-      <label for="sd4"><</label>
+      <label for="sd1" style="z-index: 4;"><</label>
+      <label for="sd2" style="z-index: 3;"><</label>
+      <label for="sd3" style="z-index: 2;"><</label>
+      <label for="sd4" style="z-index: 1;"><</label>
     </div>
 
     <div class="arrow right">
-      <label for="sd1">></label>
-      <label for="sd2">></label>
-      <label for="sd3">></label>
-      <label for="sd4">></label>
+      <label for="sd1" style="z-index: 4;">></label>
+      <label for="sd2" style="z-index: 3;">></label>
+      <label for="sd3" style="z-index: 2;">></label>
+      <label for="sd4" style="z-index: 1;">></label>
     </div>
 
 
