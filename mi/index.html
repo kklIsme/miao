@@ -35,6 +35,7 @@
       font-size: 16px;
     }
 
+    /*顶部导航*/
     header{
       width: 100%;
       height: 40px;
@@ -154,6 +155,7 @@
 
     }
 
+    /*小米图标一行的导航*/
     .top{
               width: 100%;
               height: 100px;
@@ -204,6 +206,7 @@
                             width: 100%;
                             box-shadow: 0 0 5px #d6d6d6;
                             display: none;
+                            background-color: white;
                               ul{
                                 margin: 36px 40px;
                                 li{
@@ -264,11 +267,207 @@
 
 
 
+
+    /*轮播图所在区域*/
     .content-swiper{
         width: 100%;
-        height: 460px;
-        background-color: lightgreen;
+        /* background-color: lightgreen; */
+        position: relative;
+            .left{
+              width: 20%;
+              height: 100%;
+              background-color: #a5a3a3;
+              overflow: hidden;
+                ul{
+                  margin-top: 15px;
+                  margin-bottom: 15px;
+                  li{
+                    height: 42px;
+                    line-height: 42px;
+                    padding-left: 30px;
+                    color:#fff;
+                    cursor: pointer;
+                        &::after{
+                          content: ">";
+                          font-weight: bold;
+                          position: absolute;
+                          left: 210px;
+                        }
+
+                        &:hover{
+                          background: #ff6700;
+                              #Phone{
+                                display: block;
+                              }
+                        }
+
+
+
+                        #Phone{
+                          position: absolute;
+                          top: 0;
+                          left: 250px;
+                          z-index: 999;
+                          height: 100%;
+                          background-color: white;
+                          box-shadow:0 0 5px gray;
+                          display: none;
+                              div{
+                                width: 200px;
+                                height: 60px;
+                                margin: 10px;
+                                padding: 10px;
+                                  &:nth-child(n+7){
+                                    margin-left: 220px;
+                                    margin-top: -420px;
+                                  }
+
+                                  img{
+                                    vertical-align: middle;
+                                  }
+                                  span{
+                                    vertical-align: middle;
+                                    color: #333;
+                                    font-size: 12px;
+                                      &:hover{
+                                        color: #ff6700;
+                                      }
+                                  }
+                              }
+                        }
+
+                  }
+                }
+
+
+            }
+
+            .right{
+              position: absolute;
+              right: 0;
+              top: 0;
+              width: 80%;
+              height: 100%;
+              background-color: lightgreen;
+                        .slider {
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                            img {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                opacity: 0;
+                                transition: 2s;
+                              }
+                          }
+
+
+
+                        input{
+                          display: none;
+                        }
+
+
+                        input:nth-child(1):checked ~ .picture img:nth-child(1),
+                        input:nth-child(2):checked ~ .picture img:nth-child(2),
+                        input:nth-child(3):checked ~ .picture img:nth-child(3),
+                        input:nth-child(4):checked ~ .picture img:nth-child(4){
+                          opacity: 1;
+                        }
+
+                        .index{
+                          position: absolute;
+                          right: 50px;
+                          bottom: 10px;
+                              label{
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                margin-right: 10px;
+                                border: 1px solid gray;
+                                border-radius: 333px;
+                                text-indent: -9999px;
+                                cursor: pointer;
+                                    &:hover{
+                                      background-color: white;
+                                    }
+                                }
+                        }
+            }
     }
+
+    /*轮播图下方(各类服务区域)*/
+    .content-swiper-bottom{
+      position: relative;
+      margin-top: 20px;
+      width: 100%;
+      height: 170px;
+      background-color: white;
+          .left{
+            width: 20%;
+            height: 100%;
+            background-color: pink;
+                section{
+                  width: 82px;
+                  height: 85px;
+                  float: left;
+                  border: 1px solid #665e57;
+                  background-color: rgba(95,87,80);
+
+                      a{
+                        color: #cfcdcb;
+                        font-size: 10px;
+                        padding: 16px;
+                            img{
+                            width: 24px;
+                            height: 24px;
+                            margin-left: 10px;
+                            margin-top: 20px;
+                          }
+
+                            span{
+                              padding-left: 15px;
+                            }
+
+                        &:hover{
+                          color: white;
+                        }
+                      }
+
+
+                }
+          }
+
+          .right{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80%;
+            height: 100%;
+                ul{
+
+                  li{
+                    display: inline-block;
+                    margin-left: 5px;
+                    /* box-shadow: 0 0 5px gray; */
+                      img{
+                        width: 316px;
+                        height: 100%;
+                      }
+
+                  }
+                }
+          }
+    }
+
+
+
 
 
 
@@ -329,9 +528,9 @@
     <div class="top">
 
 
-        <a href="https://www.mi.com">
-          <div class="logo"></div>
-        </a>
+      <a href="https://www.mi.com">
+        <div class="logo"></div>
+      </a>
 
       <div class="nav">
         <ul>
@@ -649,7 +848,745 @@
     </div>
 
     <div class="content-swiper">
+      <div class="left">
+        <ul>
+          <li>
+            手机
+            <section id="Phone">
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+            </section>
+          </li>
 
+
+          <li>
+            电视
+            <section id="Phone">
+
+              <div>
+                <a href="https://www.mi.com/shop/buy/detail?product_id=15101">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b656495821144d92bd932d91eedcf659.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Redmi X65</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/buy/detail?product_id=15101">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b656495821144d92bd932d91eedcf659.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Redmi X65</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/buy/detail?product_id=15101">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b656495821144d92bd932d91eedcf659.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Redmi X65</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/buy/detail?product_id=15101">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b656495821144d92bd932d91eedcf659.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Redmi X65</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/buy/detail?product_id=15101">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b656495821144d92bd932d91eedcf659.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Redmi X65</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/buy/detail?product_id=15101">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b656495821144d92bd932d91eedcf659.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Redmi X65</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/buy/detail?product_id=15101">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b656495821144d92bd932d91eedcf659.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Redmi X65</span>
+                </a>
+              </div>
+            </section>
+
+          </li>
+
+
+          <li>
+            家电
+            <section id="Phone">
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+            </section>
+          </li>
+
+
+          <li>
+            笔记本&nbsp;平板
+            <section id="Phone">
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+            </section>
+          </li>
+
+
+          <li>
+            出行&nbsp;穿戴
+            <section id="Phone">
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+            </section>
+          </li>
+
+
+          <li>
+            耳机&nbsp;音箱
+            <section id="Phone">
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+            </section>
+          </li>
+
+
+          <li>
+            健康&nbsp;儿童
+            <section id="Phone">
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+            </section>
+          </li>
+
+
+          <li>
+            生活&nbsp;箱包
+            <section id="Phone">
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+            </section>
+          </li>
+
+
+          <li>
+            智能&nbsp;路由器
+            <section id="Phone">
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+            </section>
+          </li>
+
+
+          <li>
+            电源&nbsp;配件
+            <section id="Phone">
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.mi.com/shop/search?keyword=xiaomimix%E7%B3%BB%E5%88%97">
+                  <img
+                    src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90"
+                    alt="">
+                  <span>Xiaomi Mix系列</span>
+                </a>
+              </div>
+            </section>
+          </li>
+        </ul>
+      </div>
+
+      <div class="right">
+        <div class="slider">
+
+
+          <input type="radio" name="choose" id="sd1" checked>
+          <input type="radio" name="choose" id="sd2">
+          <input type="radio" name="choose" id="sd3">
+          <input type="radio" name="choose" id="sd4">
+
+
+          <div class="picture">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0d03df40a5e8ef760731a8f4f3f61172.jpg?w=2452&h=920">
+            <img
+              src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6494adc68900269b551de5ba96bd10a9.jpg?thumb=1&w=1533&h=575&f=webp&q=90">
+            <img
+              src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7c21d01bbe93eafc7d07d3796a3c59c.jpg?thumb=1&w=1533&h=575&f=webp&q=90">
+            <img
+              src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/08a9d7eec7b055bac247b5068f817b1d.jpg?thumb=1&w=1533&h=575&f=webp&q=90">
+          </div>
+
+          <div class="index">
+            <label for="sd1">1</label>
+            <label for="sd2">2</label>
+            <label for="sd3">3</label>
+            <label for="sd4">4</label>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="content-swiper-bottom">
+      <div class="left">
+        <section>
+          <a href="https://mi.com">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&h=48"
+              alt="">
+            <span>保障服务</span>
+          </a>
+        </section>
+        <section>
+          <a href="https://mi.com">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&h=48"
+              alt="">
+            <span>企业团购</span>
+          </a>
+        </section>
+        <section>
+          <a href="https://mi.com">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48"
+              alt="">
+            <span style="padding-left: 21px;">F码通道</span>
+          </a>
+        </section>
+        <section>
+          <a href="https://mi.com">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&h=48"
+              alt="">
+            <span style="padding-left: 20px;">米粉卡</span>
+          </a>
+        </section>
+        <section>
+          <a href="https://mi.com">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48"
+              alt="">
+            <span>以旧换新</span>
+          </a>
+        </section>
+        <section>
+          <a href="https://mi.com">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48"
+              alt="">
+            <span style="padding-left: 20px;">功能区</span>
+          </a>
+        </section>
+
+      </div>
+
+      <div class="right">
+        <ul>
+          <li>
+              <a href="https://mi.com">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0cf5e958bc88727b50c5c5fba7a8f47a.jpg?w=632&h=340" alt="">
+          </a>
+          </li>
+
+
+          <li>
+            <a href="https://mi.com">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6dd2f3e0de4e6cbba98fd3799cfa5bf7.jpg?w=632&h=340" alt="">
+          </a>
+          </li>
+
+
+          <li>
+              <a href="https://mi.com">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7d4be1a9e701e16de498f89b1865867.jpg?w=632&h=340" alt="">
+          </a>
+          </li>
+
+        </ul>
+      </div>
     </div>
   </div>
 
