@@ -7,476 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <style type="text/less">
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: inherit;
-      list-style: none;
-      text-decoration: none;
-    }
-
-    html,body{
-      height: 100%;
-      min-width: 1230px;
-      box-sizing: border-box;
-      color: rgb(176,176,176);
-      overflow: auto;
-    }
-
-    .wrapper{
-      width: 1230px;
-      height: 100%;
-      margin: 0 auto;
-      font-size: 0;
-    }
-
-    .wrapper > *{
-      font-size: 16px;
-    }
-
-    /*顶部导航*/
-    header{
-      width: 100%;
-      height: 40px;
-      background-color: rgb(51, 51, 51);
-
-            nav{
-
-              position: relative;
-                    a{
-                      color: rgb(176,176,176);
-                    }
-                    span{
-                          color: rgba(66,66,66);
-                        }
-
-
-
-                    ul.left{
-                        width: 830px;
-                        position: absolute;
-                        top:10px;
-
-                          li{
-                              display: inline-block;
-                              font-size: 12px;
-                              height: 20px;
-                              line-height: 20px;
-
-                                & a:hover{
-                                  color: white;
-                                }
-                            }
-
-                                #download{
-                                  span{
-                                    position: absolute;
-                                    z-index: 999;
-                                    top:30px;
-                                    left:690px;
-                                    display:inline-block;
-                                    width: 130px;
-                                    height: 150px;
-                                    background-color:white;
-                                    color:black;
-                                    font-size: 14px;
-                                    text-align: center;
-                                    display: none;
-                                    box-shadow:0 0 3px gray;
-                                        img{
-                                          width: 90px;
-                                          height: 90px;
-                                          margin-top: 25px;
-                                          margin-left: 20px;
-                                          margin-right: 20px;
-                                        }
-                                  }
-
-
-
-                                    &:hover span{
-                                      display: block;
-                                    }
-                                }
-                      }
-
-                      ul.right{
-                        width: 240px;
-                        position: absolute;
-                        top:10px;
-                        left: 950px;
-
-                        li{
-                              display: inline-block;
-                              font-size: 12px;
-
-                                & a:hover{
-                                  color: white;
-                                }
-                            }
-                      }
-
-                      .shopcar{
-                        float: right;
-                        display: inline-block;
-                        width: 120px;
-                        height: 40px;
-                        line-height: 40px;
-                        text-align: center;
-                        font-size: 12px;
-                        background-color: rgba(66,66,66);
-                        color: rgb(176,176,176);
-                        cursor: pointer;
-                          &:hover{
-                            color: orange;
-                            background-color: #fff;
-                             .product{
-                              display: block;
-                             }
-                          }
-
-                          div.product{
-                                  position: absolute;
-                                  right: 0;
-                                  z-index: 999;
-                                  width: 320px;
-                                  height: 100px;
-                                  background-color: white;
-                                  box-shadow: 0 0 5px gray;
-                                  display: none;
-                                      p{
-                                        color: black;
-                                        margin-top:30px;
-                                      }
-                                }
-                      }
-          }
-
-    }
-
-    /*小米图标一行的导航*/
-    .top{
-              width: 100%;
-              height: 100px;
-              position: relative;
-
-                  .logo{
-                    display: inline-block;
-                    width: 100px;
-                    height: 100px;
-                    background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png);
-                    background-size: 50px;
-                    background-repeat:no-repeat;
-                    margin-top: 20px;
-                  }
-
-                  .nav{
-                    position: absolute;
-                    left: 240px;
-                    top: 40px;
-                    width: 100%;
-                    display: inline-block;
-                        ul{
-
-                            li{
-                            display: inline-block;
-                            font-size: 12px;
-                            margin-right: 20px;
-                            font-weight: bold;
-                                a{
-                                  color:#333 ;
-                                  &:hover{
-                                      color: rgba(255,103,0);
-                                    }
-                                }
-
-                            &:hover + #Product{
-                              display: block;
-                            }
-                            }
-
-
-                          #Product{
-                            position: absolute;
-                            z-index: 999;
-                            top: 60px;
-                            left: -240px;
-                            border-top: 1px solid #e0e0e0;
-                            width: 100%;
-                            box-shadow: 0 0 5px #d6d6d6;
-                            display: none;
-                            background-color: white;
-                              ul{
-                                margin: 36px 40px;
-                                li{
-                                  text-align: center;
-                                  font-size: 10px;
-                                  margin-right: 20px;
-                                      div{
-                                        color: #000;
-                                        margin-top: 20px;
-                                        margin-bottom: 12px;
-                                      }
-
-                                      span{
-                                        color:#ff7b21;
-                                      }
-                                }
-                              }
-                          }
-
-
-
-
-                        }
-
-                        form{
-                          position: absolute;
-                          left: 685px;
-                          top:-12px;
-                          font-size: 0;
-                            input{
-                            display: inline-block;
-                            width: 250px;
-                            height: 58px;
-                            padding: 10px;
-                            font-size: 14px;
-                            border: 1px solid rgba(0,0,0,0.3);
-                          }
-                            #submit{
-                              position: absolute;
-                              top: 0;
-                              display: inline-block;
-                              width: 58px;
-                              height: 58px;
-                              background: #fff;
-                              border: 1px solid rgba(0,0,0,0.3);
-                              border-left: none;
-                              cursor: pointer;
-                                  &:active{
-                                    background: #ff6700;
-                                  }
-                            }
-
-                        }
-
-
-                  }
-            }
-
-
-
-
-    /*轮播图所在区域*/
-    .content-swiper{
-        width: 100%;
-        /* background-color: lightgreen; */
-        position: relative;
-            .left{
-              width: 20%;
-              height: 100%;
-              background-color: #a5a3a3;
-              overflow: hidden;
-                ul{
-                  margin-top: 15px;
-                  margin-bottom: 15px;
-                  li{
-                    height: 42px;
-                    line-height: 42px;
-                    padding-left: 30px;
-                    color:#fff;
-                    cursor: pointer;
-                        &::after{
-                          content: ">";
-                          font-weight: bold;
-                          position: absolute;
-                          left: 210px;
-                        }
-
-                        &:hover{
-                          background: #ff6700;
-                              #Phone{
-                                display: block;
-                              }
-                        }
-
-
-
-                        #Phone{
-                          position: absolute;
-                          top: 0;
-                          left: 250px;
-                          z-index: 999;
-                          height: 100%;
-                          background-color: white;
-                          box-shadow:0 0 5px gray;
-                          display: none;
-                              div{
-                                width: 200px;
-                                height: 60px;
-                                margin: 10px;
-                                padding: 10px;
-                                  &:nth-child(n+7){
-                                    margin-left: 220px;
-                                    margin-top: -420px;
-                                  }
-
-                                  img{
-                                    vertical-align: middle;
-                                  }
-                                  span{
-                                    vertical-align: middle;
-                                    color: #333;
-                                    font-size: 12px;
-                                      &:hover{
-                                        color: #ff6700;
-                                      }
-                                  }
-                              }
-                        }
-
-                  }
-                }
-
-
-            }
-
-            .right{
-              position: absolute;
-              right: 0;
-              top: 0;
-              width: 80%;
-              height: 100%;
-              background-color: lightgreen;
-                        .slider {
-                            position: absolute;
-                            top:0;
-                            left:0;
-                            width: 100%;
-                            height: 100%;
-                            overflow: hidden;
-                            img {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                                opacity: 0;
-                                transition: 2s;
-                              }
-                          }
-
-
-
-                        input{
-                          display: none;
-                        }
-
-
-                        input:nth-child(1):checked ~ .picture img:nth-child(1),
-                        input:nth-child(2):checked ~ .picture img:nth-child(2),
-                        input:nth-child(3):checked ~ .picture img:nth-child(3),
-                        input:nth-child(4):checked ~ .picture img:nth-child(4){
-                          opacity: 1;
-                        }
-
-                        .index{
-                          position: absolute;
-                          right: 50px;
-                          bottom: 10px;
-                              label{
-                                display: inline-block;
-                                width: 10px;
-                                height: 10px;
-                                margin-right: 10px;
-                                border: 1px solid gray;
-                                border-radius: 333px;
-                                text-indent: -9999px;
-                                cursor: pointer;
-                                    &:hover{
-                                      background-color: white;
-                                    }
-                                }
-                        }
-            }
-    }
-
-    /*轮播图下方(各类服务区域)*/
-    .content-swiper-bottom{
-      position: relative;
-      margin-top: 20px;
-      width: 100%;
-      height: 170px;
-      background-color: white;
-          .left{
-            width: 20%;
-            height: 100%;
-            background-color: pink;
-                section{
-                  width: 82px;
-                  height: 85px;
-                  float: left;
-                  border: 1px solid #665e57;
-                  background-color: rgba(95,87,80);
-
-                      a{
-                        color: #cfcdcb;
-                        font-size: 10px;
-                        padding: 16px;
-                            img{
-                            width: 24px;
-                            height: 24px;
-                            margin-left: 10px;
-                            margin-top: 20px;
-                          }
-
-                            span{
-                              padding-left: 15px;
-                            }
-
-                        &:hover{
-                          color: white;
-                        }
-                      }
-
-
-                }
-          }
-
-          .right{
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 80%;
-            height: 100%;
-                ul{
-
-                  li{
-                    display: inline-block;
-                    margin-left: 5px;
-                    /* box-shadow: 0 0 5px gray; */
-                      img{
-                        width: 316px;
-                        height: 100%;
-                      }
-
-                  }
-                }
-          }
-    }
-
-
-
-
-
-
-
-
-
-
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
@@ -1494,9 +1026,10 @@
 
 
           <div class="picture">
-            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0d03df40a5e8ef760731a8f4f3f61172.jpg?w=2452&h=920">
+
             <img
               src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6494adc68900269b551de5ba96bd10a9.jpg?thumb=1&w=1533&h=575&f=webp&q=90">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0d03df40a5e8ef760731a8f4f3f61172.jpg?w=2452&h=920">
             <img
               src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7c21d01bbe93eafc7d07d3796a3c59c.jpg?thumb=1&w=1533&h=575&f=webp&q=90">
             <img
@@ -1536,7 +1069,7 @@
           <a href="https://mi.com">
             <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48"
               alt="">
-            <span style="padding-left: 21px;">F码通道</span>
+            <span style="margin-left: 5px;;">F码通道</span>
           </a>
         </section>
         <section>
@@ -1566,23 +1099,26 @@
       <div class="right">
         <ul>
           <li>
-              <a href="https://mi.com">
-            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0cf5e958bc88727b50c5c5fba7a8f47a.jpg?w=632&h=340" alt="">
-          </a>
+            <a href="https://mi.com">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0cf5e958bc88727b50c5c5fba7a8f47a.jpg?w=632&h=340"
+                alt="">
+            </a>
           </li>
 
 
           <li>
             <a href="https://mi.com">
-            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6dd2f3e0de4e6cbba98fd3799cfa5bf7.jpg?w=632&h=340" alt="">
-          </a>
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6dd2f3e0de4e6cbba98fd3799cfa5bf7.jpg?w=632&h=340"
+                alt="">
+            </a>
           </li>
 
 
           <li>
-              <a href="https://mi.com">
-            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7d4be1a9e701e16de498f89b1865867.jpg?w=632&h=340" alt="">
-          </a>
+            <a href="https://mi.com">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7d4be1a9e701e16de498f89b1865867.jpg?w=632&h=340"
+                alt="">
+            </a>
           </li>
 
         </ul>
