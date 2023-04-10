@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .table{
+      width: 1150px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .table  thead tr th {
+      border-top: 2px solid #dee2e6;
+    }
+
+    .table  thead tr th {
+      padding-right: 150px;
+    }
+
+    .table  tbody tr {
+      border-top: 2px solid #dee2e6;
+    }
+
+    .table  tbody tr:nth-child(1) {
+      border-top: 4px solid #dee2e6;
+    }
+
+    /*dark*/
+    .table-dark {
+      background-color: #000;
+      color: #fff;
+    }
+
+    /*striped*/
+    .table-striped tbody tr:nth-child(2n+1) {
+      background-color: #f2f2f2;
+    }
+
+    /*bordered*/
+    .table-bordered thead tr th,
+    .table-bordered tbody tr th,
+    .table-bordered tbody tr td{
+      border: 3px solid #dee2e6;
+    }
+
+
+    /*hover*/
+    .table-hover tbody tr:nth-child(1):hover,
+    .table-hover tbody tr:nth-child(2):hover,
+    .table-hover tbody tr:nth-child(3):hover{
+      background-color: rgba(236,236,236);
+    }
+
+
+    /*缩小*/
+    .table-sm{
+      width: 625px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .table-sm  thead tr th {
+      padding-right: 75px;
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</body>
+
+</html>
