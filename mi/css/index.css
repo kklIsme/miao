@@ -469,7 +469,7 @@ header nav .shopcar div.product p {
 
 
 .content-swiper-bottom .left section a span {
-  padding-left: 15px;
+  padding-left: 16px;
 }
 
 
@@ -497,3 +497,121 @@ header nav .shopcar div.product p {
   width: 316px;
   height: 100%;
 }
+
+main{
+  background-color: #f5f5f5;
+}
+
+main div.ImgOnes{
+  padding-top: 25px;
+  margin: 22px 0;
+}
+
+main div.Phone{
+  width: 100%;
+}
+
+main div.Phone .top{
+  height: 60px;
+  color: #000;
+}
+
+main div.Phone .top .phone{
+  float: left;
+  font-size: 22px;
+  line-height: 60px;
+  font-weight: 200;
+}
+
+main div.Phone .top .more{
+  float: right;
+  font-size: 16px;
+  line-height: 60px;
+  padding-right: 40px;
+}
+
+main div.Phone .top .more .box{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #b0b0b0;
+  border-radius: 100px;
+  bottom: 40px;
+  left:65px;
+  margin-left: 20px;
+}
+
+main div.Phone .top .more .box::before{
+  content: ">";
+  color: white;
+  position: relative;
+  bottom: 20px;
+  left: 5px;
+  font-size: 20px;
+}
+
+
+main .Phone .content{
+margin-top: 20px;
+overflow: hidden;
+}
+
+main .Phone .content ul{
+  height: 614px;
+  width: 100%;
+}
+
+main .Phone .content ul li{
+  display: block;
+  float: left;
+  width: 234px;
+  height: 300px;
+  background-color: white;
+  padding-top: 30px;
+  margin-right: 16px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+main .Phone .content ul li:nth-child(5),
+main .Phone .content ul li:nth-child(9){
+  margin-right: 0;
+}
+
+main .Phone .content ul li div a div{
+  text-align: center;
+  font-size: 12px;
+}
+
+main .Ai{
+  width: 100%;
+  margin-top: 20px;
+}
+
+main .Ai .top{
+  height: 60px;
+  color: black;
+}
+
+main .Ai .top .left{
+  width: 100px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+main .Ai .top .right{
+  width: 100px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 16px;
+  margin-left: 1140px;
+  margin-top: -60px;
+}
+
+main .Ai .top .right span:nth-child(2){
+  margin-left: 20px;
+}
+
+
