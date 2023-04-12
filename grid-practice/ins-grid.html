@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .ins {
+      margin: 80px;
+      display: grid;
+      width: 150px;
+      height: 350px;
+      grid-template-columns: repeat(3, 50px);
+      grid-template-rows: repeat(7, 50px);
+      background-color: lightblue;
+      box-sizing: border-box;
+
+      >span {
+        border: 1px solid #000;
+        text-align: center;
+        line-height: 48px;
+      }
+
+      >.big-first {
+        grid-column: 1/3;
+        grid-row: 2/4;
+        background-color: lightgreen;
+        line-height: 98px;
+      }
+
+      >.big-second {
+        grid-column: 2/4;
+        grid-row: 5/7;
+        background-color: lightgreen;
+        line-height: 98px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="ins">
+    <span>ins</span>
+    <span>ins</span>
+    <span>ins</span>
+    <span>ins</span>
+    <span>ins</span>
+    <span class="big-first">ins</span>
+    <span>ins</span>
+    <span>ins</span>
+    <span>ins</span>
+    <span>ins</span>
+    <span>ins</span>
+    <span class="big-second">ins</span>
+    <span>ins</span>
+    <span>ins</span>
+    <span>ins</span>
+
+  </div>
+</body>
+
+</html>

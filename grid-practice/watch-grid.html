@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .watch {
+      width: 90%;
+      height: 600px;
+      display: grid;
+      grid-template-columns: repeat(5, 240px);
+      grid-template-rows: repeat(4, 300px);
+      grid-auto-flow: row;
+      background-color: #f5f5f5;
+      gap: 20px;
+      margin: 50px;
+      position: relative;
+    }
+
+    #watch-s2 {
+      grid-column: 1/2;
+      grid-row: 1/3;
+    }
+
+    .Buds {
+      grid-column: 240px;
+      grid-row: 300px;
+      text-align: center;
+      text-decoration: none;
+      background-color: white;
+
+      >.name {
+        font-size: 14px;
+        margin-top: 0;
+        color: black;
+      }
+
+      >.description {
+        margin: 0 10px;
+        font-size: 12px;
+        color: #b0b0b0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      >.price {
+        font-size: 12px;
+        color: #ff6700;
+      }
+    }
+
+    .Necklace {
+      grid-column: 5/6;
+      grid-row: 2/3;
+      width: 100%;
+      height: 140px;
+      background-color: white;
+      position: relative;
+      text-decoration: none;
+
+
+      >.left {
+        width: 80px;
+        height: 100px;
+        color: black;
+        margin-left: 20px;
+        margin-top: 40px;
+
+        >.name {
+          font-size: 12px;
+        }
+
+        >.price {
+          font-size: 12px;
+          color: orange;
+        }
+      }
+
+      >.img {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+      }
+    }
+
+    .more {
+      width: 240px;
+      height: 150px;
+      background-color: white;
+      position: absolute;
+      bottom: -20px;
+      right: 88px;
+      text-decoration: none;
+
+      .left {
+        width: 100px;
+        height: 100px;
+        margin-left: 20px;
+        margin-top: 50px;
+
+        >h4 {
+          color: black;
+          font-weight: 500;
+          margin-bottom: -5px;
+        }
+
+        >p {
+          color: #b0b0b0;
+          font-size: 12px;
+        }
+      }
+
+      .img {
+        position: absolute;
+        top: 40px;
+        right: 20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="watch">
+    <a href="https://www.mi.com/xiaomi-watch-s2" id="watch-s2" target="_blank">
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c9550c95ee33a22dc8db677dada00f09.jpg?thumb=1&w=234&h=614&f=webp&q=90"
+        alt="">
+    </a>
+
+    <a href="https://www.mi.com/xiaomibuds4pro" class="Buds" target="_blank">
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90"
+        alt="">
+      <p class="name">Xiaomi Buds 4 Pro</p>
+      <p class="description">48dB智能动态降噪｜骨声纹通话降噪 | 独立空间音频</p>
+      <p class="price">949元</p>
+    </a>
+
+    <a href="https://www.mi.com/xiaomibuds4pro" class="Buds" target="_blank">
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202204211422_ce41ed00fe7fb79df35101222880121d.png?thumb=1&w=200&h=200&f=webp&q=90"
+        alt="">
+      <p class="name">Xiaomi Buds 3 Pro</p>
+      <p class="description">40dB自适应降噪 ｜空间音频 ｜ HiFi高保真音质</p>
+      <p class="price">469元</p>
+    </a>
+
+    <a href="https://www.mi.com/xiaomibuds4pro" class="Buds" target="_blank">
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202204211422_ce41ed00fe7fb79df35101222880121d.png?thumb=1&w=200&h=200&f=webp&q=90"
+        alt="">
+      <p class="name">Xiaomi Buds 3 Pro</p>
+      <p class="description">40dB自适应降噪 ｜空间音频 ｜ HiFi高保真音质</p>
+      <p class="price">469元</p>
+    </a>
+
+    <a href="https://www.mi.com/xiaomibuds4pro" class="Buds" target="_blank">
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202204211422_ce41ed00fe7fb79df35101222880121d.png?thumb=1&w=200&h=200&f=webp&q=90"
+        alt="">
+      <p class="name">Xiaomi Buds 3 Pro</p>
+      <p class="description">40dB自适应降噪 ｜空间音频 ｜ HiFi高保真音质</p>
+      <p class="price">469元</p>
+    </a>
+
+    <a href="https://www.mi.com/xiaomibuds4pro" class="Buds" target="_blank">
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202204211422_ce41ed00fe7fb79df35101222880121d.png?thumb=1&w=200&h=200&f=webp&q=90"
+        alt="">
+      <p class="name">Xiaomi Buds 3 Pro</p>
+      <p class="description">40dB自适应降噪 ｜空间音频 ｜ HiFi高保真音质</p>
+      <p class="price">469元</p>
+    </a>
+
+    <a href="https://www.mi.com/xiaomibuds4pro" class="Buds" target="_blank">
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202204211422_ce41ed00fe7fb79df35101222880121d.png?thumb=1&w=200&h=200&f=webp&q=90"
+        alt="">
+      <p class="name">Xiaomi Buds 3 Pro</p>
+      <p class="description">40dB自适应降噪 ｜空间音频 ｜ HiFi高保真音质</p>
+      <p class="price">469元</p>
+    </a>
+
+    <a href="https://www.mi.com/xiaomibuds4pro" class="Buds" target="_blank">
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202204211422_ce41ed00fe7fb79df35101222880121d.png?thumb=1&w=200&h=200&f=webp&q=90"
+        alt="">
+      <p class="name">Xiaomi Buds 3 Pro</p>
+      <p class="description">40dB自适应降噪 ｜空间音频 ｜ HiFi高保真音质</p>
+      <p class="price">469元</p>
+    </a>
+
+    <a href="https://www.mi.com/shop/buy/detail?product_id=16584" class="Necklace" target="_blank">
+      <div class="left">
+        <p class="name">Xiaomi降噪蓝牙耳机Necklace</p>
+        <p class="price">399元</p>
+      </div>
+
+      <div class="img">
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209261427_67cd5fddb341f0e0fb0a2295e643b0d8.png?thumb=1&w=100&h=100&f=webp&q=90"
+          alt="">
+      </div>
+    </a>
+
+    <a href="https://www.mi.com/shop/search?keyword=%E8%80%B3%E6%9C%BA" class="more" target="_blank">
+
+      <div class="left">
+        <h4>浏览更多</h4>
+        <p>耳机</p>
+      </div>
+
+      <div class="img">
+        <img src="./arrow.png" alt="">
+      </div>
+    </a>
+
+
+
+  </div>
+</body>
+
+</html>
