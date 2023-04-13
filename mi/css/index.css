@@ -115,7 +115,16 @@ header nav .shopcar {
   background-color: #424242;
   color: #b0b0b0;
   cursor: pointer;
+  >i{
+    margin-right: 4px;
+    font-size: 20px;
+    line-height: 20px;
+    vertical-align: -4px;
+  }
+
+
 }
+
 
 
 header nav .shopcar:hover {
@@ -252,7 +261,7 @@ header nav .shopcar div.product p {
 }
 
 
-.top .nav form #submit {
+.top .nav form #search {
   position: absolute;
   top: 0;
   display: inline-block;
@@ -262,6 +271,11 @@ header nav .shopcar div.product p {
   border: 1px solid rgba(0,0,0,0.3);
   border-left: none;
   cursor: pointer;
+  font-size: 20px;
+    &:hover{
+      background-color: #ff6700;
+      opacity: 0.9;
+    }
 }
 
 
@@ -499,7 +513,7 @@ header nav .shopcar div.product p {
 }
 
 main{
-  background-color: #f5f5f5;
+  background-color: white;
 }
 
 main div.ImgOnes{
@@ -527,28 +541,39 @@ main div.Phone .top .more{
   float: right;
   font-size: 16px;
   line-height: 60px;
-  padding-right: 40px;
 }
 
-main div.Phone .top .more .box{
-  position: relative;
-  width: 20px;
-  height: 20px;
-  background-color: #b0b0b0;
-  border-radius: 100px;
-  bottom: 40px;
-  left:65px;
-  margin-left: 20px;
+main div.Phone .top .more i{
+  width: 12px;
+  height: 12px;
+  padding: 4px;
+  margin-left: 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  line-height: 12px;
+  background: #b0b0b0;
+  color: #fff;
+  vertical-align: 1px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
-main div.Phone .top .more .box::before{
-  content: ">";
-  color: white;
-  position: relative;
-  bottom: 20px;
-  left: 5px;
-  font-size: 20px;
+main div.Phone .top .more a{
+  color: black;
 }
+
+main div.Phone .top .more a:hover{
+  color: #ff6700;
+  >.iconfont:hover{
+    color: #ff6700;
+  }
+}
+
+main div.Phone .top .more .iconfont:hover{
+  background-color: #ff6700;
+}
+
+
 
 
 main .Phone .content{
@@ -559,6 +584,7 @@ overflow: hidden;
 main .Phone .content ul{
   height: 614px;
   width: 100%;
+  box-shadow: 0 0 5px gray;
 }
 
 main .Phone .content ul li{
@@ -602,16 +628,164 @@ main .Ai .top .left{
 }
 
 main .Ai .top .right{
-  width: 100px;
-  height: 60px;
-  line-height: 60px;
-  font-size: 16px;
-  margin-left: 1140px;
-  margin-top: -60px;
+  width: 200px;
+  height: 200px;
+  float: right;
+  position: relative;
+  bottom: 30px;
+  >.tabs{
+    float: right;
+    &:hover > span {
+      color: black;
+      transition: none;
+      > section {
+        visibility: hidden;
+        transition: none;
+      }
+    }
+    > span {
+      color: black;
+      transition: 0s 9999s;
+      font-size: 14px;
+      cursor: pointer;
+      &:hover {
+        color: #ff6700;
+        border-bottom: 2px solid #ff6700;
+        transition: none;
+        > section {
+          visibility: visible;
+          transition: none;
+        }
+      }
+
+      >.watch{
+        position: absolute;
+        top: -20px;
+        right: -60px;
+        box-shadow: 0 0 5px gray;
+        display: grid;
+        grid-template-columns: repeat(5, 240px);
+        grid-template-rows: repeat(4, 150px);
+        grid-auto-flow: row;
+        background-color: white;
+        gap: 10px;
+        margin: 50px;
+
+          >#watch-s2 {
+            grid-column: span 1;
+            grid-row: span 4;
+            background-color: #fff;
+          }
+
+          >.Buds {
+            grid-column: span 1;
+            grid-row: span 2;
+            text-align: center;
+            text-decoration: none;
+            background-color: white;
+
+            >.name {
+              font-size: 14px;
+              margin-top: 0;
+              color: black;
+            }
+
+            >.description {
+              margin: 0 10px;
+              font-size: 12px;
+              color: #b0b0b0;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+
+            >.price {
+              font-size: 12px;
+              color: #ff6700;
+            }
+          }
+
+          >.Necklace {
+            grid-column: span 1;
+            grid-row: span 2;
+            width: 100%;
+            height: 140px;
+            background-color: white;
+            position: relative;
+            text-decoration: none;
+
+
+            >.left {
+              width: 100px;
+              height: 100px;
+              color: black;
+              margin-left: 20px;
+              margin-top: 20px;
+
+              >.name {
+                font-size: 12px;
+                width: 110px;
+                height: 30px;
+              }
+
+              >.price {
+                font-size: 12px;
+                color: orange;
+              }
+            }
+
+            >.img {
+              position: absolute;
+              top: 30px;
+              right: 20px;
+            }
+          }
+
+          >.more {
+            width: 240px;
+            height: 150px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            grid-column: span 1;
+            grid-row-end: span 1;
+            height: 140px;
+            background-color: white;
+            text-decoration: none;
+
+            .left {
+              width: 100px;
+              height: 100px;
+              margin-left: 20px;
+              margin-top: 30px;
+
+              >h4 {
+                color: black;
+                font-weight: 500;
+                margin-bottom: -5px;
+              }
+
+              >p {
+                color: #b0b0b0;
+                font-size: 12px;
+              }
+            }
+
+            .img {
+              position: absolute;
+              top: 40px;
+              right: 20px;
+
+            }
+          }
+
+
+
+      }
+    }
+
+  }
 }
 
-main .Ai .top .right span:nth-child(2){
-  margin-left: 20px;
-}
 
 
