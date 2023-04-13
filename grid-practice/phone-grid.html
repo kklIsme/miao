@@ -13,16 +13,17 @@
 
     .phone {
       display: grid;
-      width: 450px;
+      position: absolute; /*给定绝对定位使宽度随子元素的多少自动扩张*/
+      right: 400px;
+      top: 80px;
       height: 400px;
       grid-template-rows: repeat(6, 50px);
-      grid-template-columns: repeat(2, 200px);
+      grid-auto-columns: 200px;
       gap: 20px;
       grid-auto-flow: column;
       box-shadow: 0 0 5px gray;
 
       >a {
-        display: inline-block;
         width: 200px;
         height: 50px;
 
@@ -112,7 +113,7 @@
       </span>
     </a>
 
-    </ div>
+    </div>
 
 
 

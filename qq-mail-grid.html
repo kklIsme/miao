@@ -23,20 +23,18 @@
       box-sizing: border-box;
       height: 100%;
       display: grid;
-      grid-template-columns: 1fr 7fr;
-      grid-template-rows: 1fr 6fr;
+      grid-template-columns: 200px auto;
+      grid-template-rows: 100px auto;
     }
 
     header {
-      grid-column: 1/3;
+      grid-column:span 2;
       background-color: lightblue;
       border-bottom: 2px solid #000;
       text-align: center;
     }
 
     aside {
-      grid-column: 1/2;
-      grid-row: 2/3;
       background-color: pink;
       border-right: 2px solid #000;
       overflow: auto;
@@ -45,8 +43,6 @@
     }
 
     main {
-      grid-column: 2/3;
-      grid-row: 2/3;
       background-color: lightgreen;
       overflow: auto;
       padding: 20px;
