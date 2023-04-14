@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /*第一种 块元素*/
+
+    /* .box{
+      width: 400px;
+      height: 400px;
+      background-color: lightblue;
+      border: 2px solid #000;
+      >main{
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+        margin:auto;
+        margin-top: 100px;
+      }
+    } */
+
+    /*第二种 flex*/
+
+    /* .box{
+      display: flex;
+      width: 400px;
+      height: 400px;
+      background-color: lightblue;
+      border: 2px solid #000;
+      >main{
+        margin:auto;
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+      }
+    } */
+
+
+    /*第三种 grid*/
+
+    /* .box{
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      width: 400px;
+      height: 400px;
+      background-color: lightblue;
+      border: 2px solid #000;
+      >main{
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+      }
+    } */
+
+
+    /* 第四种 表单元格 */
+
+    /* .box {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      width: 400px;
+      height: 400px;
+      background-color: lightblue;
+      border: 2px solid #000;
+
+      >main {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+      }
+    } */
+
+    /* 第五种 transform */
+
+    /* .box {
+      width: 400px;
+      height: 400px;
+      background-color: lightblue;
+      border: 2px solid #000;
+      position: relative;
+
+
+      >main {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+      }
+    } */
+
+    /* 第六种 定位 */
+
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: lightblue;
+      border: 2px solid #000;
+      position: relative;
+
+
+      >main {
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        margin:auto;
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+    <main>
+
+    </main>
+
+  </div>
+</body>
+
+</html>

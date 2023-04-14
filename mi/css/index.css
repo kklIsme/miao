@@ -504,6 +504,11 @@ header nav .shopcar div.product p {
 .content-swiper-bottom .right ul li {
   display: inline-block;
   margin-left: 5px;
+  &:hover{
+    transform: translateY(-2px);
+    transition:.2s;
+    box-shadow:0 0 5px gray
+  }
 }
 
 
@@ -584,7 +589,6 @@ overflow: hidden;
 main .Phone .content ul{
   height: 614px;
   width: 100%;
-  box-shadow: 0 0 5px gray;
 }
 
 main .Phone .content ul li{
@@ -597,6 +601,11 @@ main .Phone .content ul li{
   margin-right: 16px;
   margin-bottom: 14px;
   text-align: center;
+  &:hover{
+    transform: translateY(-2px);
+    transition:.2s;
+    box-shadow:0 0 5px gray;
+  }
 }
 
 main .Phone .content ul li:nth-child(5),
@@ -662,7 +671,6 @@ main .Ai .top .right{
         position: absolute;
         top: -20px;
         right: -60px;
-        box-shadow: 0 0 5px gray;
         display: grid;
         grid-template-columns: repeat(5, 240px);
         grid-template-rows: repeat(4, 150px);
@@ -675,6 +683,11 @@ main .Ai .top .right{
             grid-column: span 1;
             grid-row: span 4;
             background-color: #fff;
+              &:hover{
+                transform: translateY(-2px);
+                transition:.2s;
+                box-shadow:0 0 5px gray;
+                }
           }
 
           >.Buds {
@@ -683,6 +696,11 @@ main .Ai .top .right{
             text-align: center;
             text-decoration: none;
             background-color: white;
+            &:hover{
+              transform: translateY(-2px);
+              transition:.2s;
+              box-shadow:0 0 5px gray;
+            }
 
             >.name {
               font-size: 14px;
@@ -713,6 +731,11 @@ main .Ai .top .right{
             background-color: white;
             position: relative;
             text-decoration: none;
+            &:hover{
+              transform: translateY(-2px);
+              transition:.2s;
+              box-shadow:0 0 5px gray;
+            }
 
 
             >.left {
@@ -752,6 +775,11 @@ main .Ai .top .right{
             height: 140px;
             background-color: white;
             text-decoration: none;
+            &:hover{
+              transform: translateY(-2px);
+              transition:.2s;
+              box-shadow:0 0 5px gray;
+            }
 
             .left {
               width: 100px;
