@@ -621,6 +621,7 @@ main .Phone .content ul li div a div{
 main .Ai{
   width: 100%;
   margin-top: 20px;
+  height: 720px;
 }
 
 main .Ai .top{
@@ -814,6 +815,53 @@ main .Ai .top .right{
 
   }
 }
+
+.footer{
+  .img-bottom{
+    >a{
+      >img{
+        width:100%;
+      }
+    }
+  }
+
+  .footer-service{
+    height: 60px;
+    border-bottom: 1px solid #b0b0b0;
+    >ul{
+      display: grid;
+      grid-template-columns:repeat(5,1fr);
+      gap: 10px;
+      margin-left: 20px;
+      >li{
+        margin-top: 20px;
+        display: inline-block;
+        height: 25px;
+        >a{
+          line-height: 25px;
+          text-align: center;
+          font-size: 16px;
+          color: #616161;
+          >i{
+            font-size: 24px;
+            vertical-align: bottom;
+          }
+          &:hover{
+            color: #ff6700;
+          }
+        }
+      }
+      >li + li::before{
+        content: " ";
+        border-left: 1px solid #b0b0b0;
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+
+
 
 
 
