@@ -1,4 +1,3 @@
-
 .wrapper {
   width: 1230px;
   height: 100%;
@@ -7,7 +6,7 @@
 }
 
 
-.wrapper > * {
+.wrapper>* {
   font-size: 16px;
 }
 
@@ -115,7 +114,8 @@ header nav .shopcar {
   background-color: #424242;
   color: #b0b0b0;
   cursor: pointer;
-  >i{
+
+  >i {
     margin-right: 4px;
     font-size: 20px;
     line-height: 20px;
@@ -201,7 +201,7 @@ header nav .shopcar div.product p {
 }
 
 
-.top .nav ul li:hover + #Product {
+.top .nav ul li:hover+#Product {
   display: block;
 }
 
@@ -257,7 +257,7 @@ header nav .shopcar div.product p {
   height: 58px;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid rgba(0,0,0,0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 
@@ -268,14 +268,15 @@ header nav .shopcar div.product p {
   width: 54px;
   height: 58px;
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-left: none;
   cursor: pointer;
   font-size: 20px;
-    &:hover{
-      background-color: #ff6700;
-      opacity: 0.9;
-    }
+
+  &:hover {
+    background-color: #ff6700;
+    opacity: 0.9;
+  }
 }
 
 
@@ -410,10 +411,10 @@ header nav .shopcar div.product p {
 }
 
 
-.content-swiper .right input:nth-child(1):checked ~ .picture img:nth-child(1),
-.content-swiper .right input:nth-child(2):checked ~ .picture img:nth-child(2),
-.content-swiper .right input:nth-child(3):checked ~ .picture img:nth-child(3),
-.content-swiper .right input:nth-child(4):checked ~ .picture img:nth-child(4) {
+.content-swiper .right input:nth-child(1):checked~.picture img:nth-child(1),
+.content-swiper .right input:nth-child(2):checked~.picture img:nth-child(2),
+.content-swiper .right input:nth-child(3):checked~.picture img:nth-child(3),
+.content-swiper .right input:nth-child(4):checked~.picture img:nth-child(4) {
   opacity: 1;
 }
 
@@ -504,10 +505,11 @@ header nav .shopcar div.product p {
 .content-swiper-bottom .right ul li {
   display: inline-block;
   margin-left: 5px;
-  &:hover{
+
+  &:hover {
     transform: translateY(-2px);
-    transition:.2s;
-    box-shadow:0 0 5px gray
+    transition: .2s;
+    box-shadow: 0 0 5px gray
   }
 }
 
@@ -517,38 +519,38 @@ header nav .shopcar div.product p {
   height: 100%;
 }
 
-main{
+main {
   background-color: white;
 }
 
-main div.ImgOnes{
+main div.ImgOnes {
   padding-top: 25px;
   margin: 22px 0;
 }
 
-main div.Phone{
+main div.Phone {
   width: 100%;
 }
 
-main div.Phone .top{
+main div.Phone .top {
   height: 60px;
   color: #000;
 }
 
-main div.Phone .top .phone{
+main div.Phone .top .phone {
   float: left;
   font-size: 22px;
   line-height: 60px;
   font-weight: 200;
 }
 
-main div.Phone .top .more{
+main div.Phone .top .more {
   float: right;
   font-size: 16px;
   line-height: 60px;
 }
 
-main div.Phone .top .more i{
+main div.Phone .top .more i {
   width: 12px;
   height: 12px;
   padding: 4px;
@@ -563,35 +565,36 @@ main div.Phone .top .more i{
   transition: all .4s;
 }
 
-main div.Phone .top .more a{
+main div.Phone .top .more a {
   color: black;
 }
 
-main div.Phone .top .more a:hover{
+main div.Phone .top .more a:hover {
   color: #ff6700;
-  >.iconfont:hover{
+
+  >.iconfont:hover {
     color: #ff6700;
   }
 }
 
-main div.Phone .top .more .iconfont:hover{
+main div.Phone .top .more .iconfont:hover {
   background-color: #ff6700;
 }
 
 
 
 
-main .Phone .content{
-margin-top: 20px;
-overflow: hidden;
+main .Phone .content {
+  margin-top: 20px;
+  overflow: hidden;
 }
 
-main .Phone .content ul{
+main .Phone .content ul {
   height: 614px;
   width: 100%;
 }
 
-main .Phone .content ul li{
+main .Phone .content ul li {
   display: block;
   float: left;
   width: 234px;
@@ -601,35 +604,36 @@ main .Phone .content ul li{
   margin-right: 16px;
   margin-bottom: 14px;
   text-align: center;
-  &:hover{
+
+  &:hover {
     transform: translateY(-2px);
-    transition:.2s;
-    box-shadow:0 0 5px gray;
+    transition: .2s;
+    box-shadow: 0 0 5px gray;
   }
 }
 
 main .Phone .content ul li:nth-child(5),
-main .Phone .content ul li:nth-child(9){
+main .Phone .content ul li:nth-child(9) {
   margin-right: 0;
 }
 
-main .Phone .content ul li div a div{
+main .Phone .content ul li div a div {
   text-align: center;
   font-size: 12px;
 }
 
-main .Ai{
+main .Ai {
   width: 100%;
   margin-top: 20px;
   height: 720px;
 }
 
-main .Ai .top{
+main .Ai .top {
   height: 60px;
   color: black;
 }
 
-main .Ai .top .left{
+main .Ai .top .left {
   width: 100px;
   height: 60px;
   line-height: 60px;
@@ -637,38 +641,44 @@ main .Ai .top .left{
   font-weight: 200;
 }
 
-main .Ai .top .right{
+main .Ai .top .right {
   width: 200px;
   height: 200px;
   float: right;
   position: relative;
   bottom: 30px;
-  >.tabs{
+
+  >.tabs {
     float: right;
-    &:hover > span {
+
+    &:hover>span {
       color: black;
       transition: none;
-      > section {
+
+      >section {
         visibility: hidden;
         transition: none;
       }
     }
-    > span {
+
+    >span {
       color: black;
       transition: 0s 9999s;
       font-size: 14px;
       cursor: pointer;
+
       &:hover {
         color: #ff6700;
         border-bottom: 2px solid #ff6700;
         transition: none;
-        > section {
+
+        >section {
           visibility: visible;
           transition: none;
         }
       }
 
-      >.watch{
+      >.watch {
         position: absolute;
         top: -20px;
         right: -60px;
@@ -680,133 +690,137 @@ main .Ai .top .right{
         gap: 10px;
         margin: 50px;
 
-          >#watch-s2 {
-            grid-column: span 1;
-            grid-row: span 4;
-            background-color: #fff;
-              &:hover{
-                transform: translateY(-2px);
-                transition:.2s;
-                box-shadow:0 0 5px gray;
-                }
+        >#watch-s2 {
+          grid-column: span 1;
+          grid-row: span 4;
+          background-color: #fff;
+
+          &:hover {
+            transform: translateY(-2px);
+            transition: .2s;
+            box-shadow: 0 0 5px gray;
+          }
+        }
+
+        >.Buds {
+          grid-column: span 1;
+          grid-row: span 2;
+          text-align: center;
+          text-decoration: none;
+          background-color: white;
+
+          &:hover {
+            transform: translateY(-2px);
+            transition: .2s;
+            box-shadow: 0 0 5px gray;
           }
 
-          >.Buds {
-            grid-column: span 1;
-            grid-row: span 2;
-            text-align: center;
-            text-decoration: none;
-            background-color: white;
-            &:hover{
-              transform: translateY(-2px);
-              transition:.2s;
-              box-shadow:0 0 5px gray;
-            }
+          >.name {
+            font-size: 14px;
+            margin-top: 0;
+            color: black;
+          }
+
+          >.description {
+            margin: 0 10px;
+            font-size: 12px;
+            color: #b0b0b0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          >.price {
+            font-size: 12px;
+            color: #ff6700;
+          }
+        }
+
+        >.Necklace {
+          grid-column: span 1;
+          grid-row: span 2;
+          width: 100%;
+          height: 140px;
+          background-color: white;
+          position: relative;
+          text-decoration: none;
+
+          &:hover {
+            transform: translateY(-2px);
+            transition: .2s;
+            box-shadow: 0 0 5px gray;
+          }
+
+
+          >.left {
+            width: 100px;
+            height: 100px;
+            color: black;
+            margin-left: 20px;
+            margin-top: 20px;
 
             >.name {
-              font-size: 14px;
-              margin-top: 0;
-              color: black;
-            }
-
-            >.description {
-              margin: 0 10px;
               font-size: 12px;
-              color: #b0b0b0;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
+              width: 110px;
+              height: 30px;
             }
 
             >.price {
               font-size: 12px;
-              color: #ff6700;
+              color: orange;
             }
           }
 
-          >.Necklace {
-            grid-column: span 1;
-            grid-row: span 2;
-            width: 100%;
-            height: 140px;
-            background-color: white;
-            position: relative;
-            text-decoration: none;
-            &:hover{
-              transform: translateY(-2px);
-              transition:.2s;
-              box-shadow:0 0 5px gray;
-            }
-
-
-            >.left {
-              width: 100px;
-              height: 100px;
-              color: black;
-              margin-left: 20px;
-              margin-top: 20px;
-
-              >.name {
-                font-size: 12px;
-                width: 110px;
-                height: 30px;
-              }
-
-              >.price {
-                font-size: 12px;
-                color: orange;
-              }
-            }
-
-            >.img {
-              position: absolute;
-              top: 30px;
-              right: 20px;
-            }
-          }
-
-          >.more {
-            width: 240px;
-            height: 150px;
+          >.img {
             position: absolute;
-            right: 0;
-            bottom: 0;
-            grid-column: span 1;
-            grid-row-end: span 1;
-            height: 140px;
-            background-color: white;
-            text-decoration: none;
-            &:hover{
-              transform: translateY(-2px);
-              transition:.2s;
-              box-shadow:0 0 5px gray;
+            top: 30px;
+            right: 20px;
+          }
+        }
+
+        >.more {
+          width: 240px;
+          height: 150px;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          grid-column: span 1;
+          grid-row-end: span 1;
+          height: 140px;
+          background-color: white;
+          text-decoration: none;
+
+          &:hover {
+            transform: translateY(-2px);
+            transition: .2s;
+            box-shadow: 0 0 5px gray;
+          }
+
+          .left {
+            width: 100px;
+            height: 100px;
+            margin-left: 20px;
+            margin-top: 30px;
+
+            >h4 {
+              color: black;
+              font-weight: 500;
+              margin-bottom: -5px;
             }
 
-            .left {
-              width: 100px;
-              height: 100px;
-              margin-left: 20px;
-              margin-top: 30px;
-
-              >h4 {
-                color: black;
-                font-weight: 500;
-                margin-bottom: -5px;
-              }
-
-              >p {
-                color: #b0b0b0;
-                font-size: 12px;
-              }
-            }
-
-            .img {
-              position: absolute;
-              top: 40px;
-              right: 20px;
-
+            >p {
+              color: #b0b0b0;
+              font-size: 12px;
             }
           }
+
+          .img {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+
+          }
+        }
 
 
 
@@ -816,43 +830,49 @@ main .Ai .top .right{
   }
 }
 
-.footer{
-  .img-bottom{
-    >a{
-      >img{
-        width:100%;
+.footer {
+  .img-bottom {
+    >a {
+      >img {
+        width: 100%;
       }
     }
   }
 
-  .footer-service{
+  .footer-service {
     height: 60px;
     border-bottom: 1px solid #b0b0b0;
-    >ul{
+
+    >ul {
       display: grid;
-      grid-template-columns:repeat(5,1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 10px;
       margin-left: 20px;
-      >li{
+
+      >li {
         margin-top: 20px;
         display: inline-block;
         height: 25px;
-        >a{
+
+        >a {
           line-height: 25px;
           text-align: center;
           font-size: 16px;
           color: #616161;
-          >i{
+
+          >i {
             font-size: 24px;
             vertical-align: bottom;
           }
-          &:hover{
+
+          &:hover {
             color: #ff6700;
           }
         }
       }
-      >li + li::before{
-        content: " ";
+
+      >li+li::before {
+        content: "";
         border-left: 1px solid #b0b0b0;
         margin-right: 40px;
       }
@@ -860,8 +880,59 @@ main .Ai .top .right{
   }
 }
 
+.footer-link {
+  >table {
+    width: 69%;
+    margin-left: 140px;
+    float: left;
+    border-spacing: 10px;
+    text-align: left;
 
+    >thead {
+      >tr {
+        >th {
+          font-size: 14px;
+          font-weight: 500;
+          color: #000;
+        }
+      }
+    }
 
+    >tbody {
+      >tr {
+        >td {
+          font-size: 12px;
 
+          >a {
+            color: #757575;
+            margin-right: 75px;
 
+            &:hover {
+              color: #ff6700;
+            }
+          }
+        }
+      }
+    }
+  }
 
+  .right{
+    width: 19%;
+    float: right;
+    >h3{
+      margin-top: 5px;
+      margin-left: 45px;
+      font-size: 22px;
+      color:#ff6700;
+      font-weight: normal;
+    }
+    >p{
+      margin-left: 45px;
+      font-size: 12px;
+      color: #000;
+    }
+    >a{
+
+    }
+  }
+}
