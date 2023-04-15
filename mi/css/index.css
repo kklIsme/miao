@@ -81,6 +81,7 @@ header nav ul.left #download span img {
 
 header nav ul.left #download:hover span {
   display: block;
+  transition: .5s;
 }
 
 
@@ -835,6 +836,7 @@ main .Ai .top .right {
 }
 
 .footer {
+  /* 底部图片 */
   .img-bottom {
     >a {
       >img {
@@ -843,9 +845,10 @@ main .Ai .top .right {
     }
   }
 
+  /* 底部预约维修服务区域 */
   .footer-service {
     height: 60px;
-    border-bottom: 1px solid #b0b0b0;
+    border-bottom: 1px solid #e0e0e0;
 
     >ul {
       display: grid;
@@ -877,17 +880,19 @@ main .Ai .top .right {
 
       >li+li::before {
         content: "";
-        border-left: 1px solid #b0b0b0;
+        border-left: 1px solid #e0e0e0;
         margin-right: 40px;
       }
     }
   }
 }
 
+/* 底部选购指南区域 */
 .footer-link {
   >table {
     width: 69%;
     margin-left: 140px;
+    margin-top: 20px;
     float: left;
     border-spacing: 10px;
     text-align: left;
@@ -921,10 +926,11 @@ main .Ai .top .right {
   }
 
   .right{
+    margin-top: 20px;
     width: 19%;
     float: right;
+    border-left: 1px solid #e0e0e0;
     >h3{
-      margin-top: 5px;
       margin-left: 45px;
       font-size: 22px;
       color:#ff6700;
@@ -939,4 +945,68 @@ main .Ai .top .right {
 
     }
   }
+}
+
+/* 侧边导航栏 */
+.nav-aside{
+  width: 60px;
+  position: fixed;
+  right: 20px;
+  top:40%;
+    >a{
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border: 1px solid #f5f5f5;
+      text-align: center;
+      font-size: 12px;
+      color: #b0b0b0;
+      white-space:nowrap;
+      >img{
+        margin-top: 10px;
+        width: 20px;
+        height: 20px;
+      }
+      &:first-child{
+        position: relative;
+       .code{
+        display: none;
+       position: absolute;
+        right:70px;
+        top:0;
+        width: 120px;
+        height: 170px;
+
+        background-color: #fff;
+        border: 1px solid #f5f5f5;
+        >img{
+          width: 100px;
+          height: 100px;
+          display:block;
+          margin:6px auto;
+        }
+        >p{
+          margin-left: -30px;
+          margin-top: -10px;
+          font-size: 12px;
+          white-space: pre;
+        }
+       }
+       &:hover .code{
+        display: block;
+        transition: .5s;
+        >p{
+          color:#b0b0b0 ;
+        }
+       }
+      }
+      &:last-child{
+        margin-top: 10px;
+        transition: .5s;
+      }
+      &:hover{
+        color: #ff6700;
+      }
+    }
+
 }
