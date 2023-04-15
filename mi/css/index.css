@@ -171,6 +171,10 @@ header nav .shopcar div.product p {
   background-size: 50px;
   background-repeat: no-repeat;
   margin-top: 20px;
+  &:active{
+    transform: scale(90%);
+    transition:.2s;
+  }
 }
 
 
