@@ -11,9 +11,10 @@ html,
 body {
   height: 100%;
   min-width: 1230px;
+  min-height: 600px;
   box-sizing: border-box;
   color: #b0b0b0;
-  overflow: auto;
+  overflow: atuo;
   font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
 }
 
