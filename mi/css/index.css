@@ -207,6 +207,7 @@ header nav .shopcar div.product p {
 
 
 .top .nav ul li:hover+#Product {
+  transition: .5s;
   display: block;
 }
 
@@ -233,7 +234,16 @@ header nav .shopcar div.product p {
   text-align: center;
   font-size: 10px;
   margin-right: 20px;
+  >img{
+    border-right: 1px solid #e0e0e0;
+  }
+  &:last-child{
+    >img{
+      border-right: none;
+    }
+  }
 }
+
 
 
 .top .nav ul #Product ul li div {
