@@ -20,6 +20,29 @@
       line-height: 200px;
     }
 
+
+    /*笑脸*/
+    section{
+			width: 50px;
+			height: 50px;
+			background-color: lightblue;
+			text-align: center;
+			line-height: 50px;
+			margin: 200px auto;
+			transition: 100s linear;
+			transform:
+			rotate(0deg)
+			translate(100px)
+			rotate(calc(-1 * 0deg));
+		}
+
+		body:hover section{
+			transform:
+			rotate(7200deg)
+			translate(100px)
+			rotate(calc(-1 * 7200deg));
+		}
+
     /*第一种 块元素*/
 
     .first{
@@ -139,6 +162,13 @@
 </head>
 
 <body>
+
+
+  <section>
+		😀
+	</section>
+
+
   <div class="first">
     <main>
       first
