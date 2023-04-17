@@ -129,17 +129,17 @@ header nav .shopcar {
 
 
 header nav .shopcar:hover {
-  color: orange;
+  color: #ff6700;
   background-color: #fff;
 }
 
 
 header nav .shopcar:hover .product {
-  display: block;
+  height: 100px;
 }
 
 
-header nav .shopcar div.product {
+header nav .shopcar .product {
   position: absolute;
   right: 0;
   z-index: 999;
@@ -147,7 +147,9 @@ header nav .shopcar div.product {
   height: 100px;
   background-color: white;
   box-shadow: 0 0 5px gray;
-  display: none;
+  overflow: hidden;
+  height: 0;
+  transition: .5s;
 }
 
 
@@ -205,10 +207,9 @@ header nav .shopcar div.product p {
   color: #ff6700;
 }
 
-
 .top .nav ul li:hover+#Product {
+  height: 230px;
   transition: .5s;
-  display: block;
 }
 
 
@@ -217,10 +218,10 @@ header nav .shopcar div.product p {
   z-index: 999;
   top: 60px;
   left: -240px;
-  border-top: 1px solid #e0e0e0;
   width: 100%;
   box-shadow: 0 0 5px #d6d6d6;
-  display: none;
+  height: 0;
+  overflow: hidden;
   background-color: white;
 }
 
@@ -259,39 +260,42 @@ header nav .shopcar div.product p {
 
 
 .top .nav form {
+  display: flex;
   position: absolute;
-  left: 685px;
+  left: 735px;
   top: -12px;
-  font-size: 0;
+  &:active{
+    border: 1px solid #ff6700;
+  }
 }
 
 
 .top .nav form input {
-  display: inline-block;
-  width: 250px;
-  height: 58px;
+  outline: none;
+  width: 200px;
+  height: 50px;
   padding: 10px;
   font-size: 14px;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  &:active{
+    border: 1px solid #ff6700;
+  }
 }
 
 
 .top .nav form #search {
-  position: absolute;
-  top: 0;
-  display: inline-block;
   width: 54px;
-  height: 58px;
+  height: 50px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-left: none;
   cursor: pointer;
   font-size: 20px;
-
-  &:hover {
-    background-color: #ff6700;
-    opacity: 0.9;
+  &:active{
+    border: 1px solid #ff6700;
   }
+
 }
 
 
@@ -524,7 +528,7 @@ header nav .shopcar div.product p {
   &:hover {
     transform: translateY(-2px);
     transition: .2s;
-    box-shadow: 0 0 5px gray
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
   }
 }
 
@@ -623,7 +627,7 @@ main .Phone .content ul li {
   &:hover {
     transform: translateY(-2px);
     transition: .2s;
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
   }
 }
 
@@ -713,7 +717,7 @@ main .Ai .top .right {
           &:hover {
             transform: translateY(-2px);
             transition: .2s;
-            box-shadow: 0 0 5px gray;
+            box-shadow: 0 15px 30px rgba(0,0,0,.1);
           }
         }
 
@@ -727,7 +731,7 @@ main .Ai .top .right {
           &:hover {
             transform: translateY(-2px);
             transition: .2s;
-            box-shadow: 0 0 5px gray;
+            box-shadow: 0 15px 30px rgba(0,0,0,.1);
           }
 
           >.name {
@@ -763,7 +767,7 @@ main .Ai .top .right {
           &:hover {
             transform: translateY(-2px);
             transition: .2s;
-            box-shadow: 0 0 5px gray;
+            box-shadow: 0 15px 30px rgba(0,0,0,.1);
           }
 
 
@@ -808,7 +812,7 @@ main .Ai .top .right {
           &:hover {
             transform: translateY(-2px);
             transition: .2s;
-            box-shadow: 0 0 5px gray;
+            box-shadow: 0 15px 30px rgba(0,0,0,.1);
           }
 
           .left {
@@ -821,11 +825,13 @@ main .Ai .top .right {
               color: black;
               font-weight: 500;
               margin-bottom: -5px;
+              font-size: 20px;
             }
 
             >p {
               color: #b0b0b0;
               font-size: 12px;
+              margin-top: -30px;
             }
           }
 
@@ -846,6 +852,9 @@ main .Ai .top .right {
 }
 
 .footer {
+
+  margin-top: 20px;
+
   /* 底部图片 */
   .img-bottom {
     >a {
@@ -1020,3 +1029,14 @@ main .Ai .top .right {
     }
 
 }
+
+/* @media(width < 1460px){
+    .nav-aside{
+      left: 50%;
+      right: auto;
+      width: 20px;
+      margin-left: calc(1230px / 2);
+      transform: translate(calc(1230px / 2));
+    }
+
+} */
