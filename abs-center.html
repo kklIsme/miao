@@ -113,8 +113,8 @@
       }
     }
 
-    /* 第五种 transform */
-
+    /* 第五种 transform   最常用*/
+    /*里外可以都不写宽高也能实现*/
     .fifth {
       margin-top: 50px;
       width: 400px;
@@ -126,9 +126,9 @@
 
       >main {
         position: absolute;
-        top:50%;
+        top:50%; /*包含块的50%*/
         left:50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%); /*自身宽度的50%*/
         width: 200px;
         height: 200px;
         background-color: lightgreen;
@@ -154,6 +154,27 @@
         margin:auto;
         width: 200px;
         height: 200px;
+        background-color: lightgreen;
+      }
+    }
+
+    /* 第七种 行内块 */
+    .seventh{
+      height: 400px;
+      width: 400px;
+      line-height: 400px;
+      font-size: 0;
+      text-align: center;
+      background-color: lightblue;
+      border: 2px solid #000;
+
+      >main{
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        font-size: 16px;
+        display:inline-block;
+        vertical-align: middle;
         background-color: lightgreen;
       }
     }
@@ -202,6 +223,12 @@
   <div class="sixth">
     <main>
       sixth
+    </main>
+  </div>
+
+  <div class="seventh">
+    <main>
+      seventh
     </main>
   </div>
 </body>
