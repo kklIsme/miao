@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer {
+      width: 600px;
+      height: 600px;
+      position: absolute;
+      left: 200px;
+      top: 100px;
+      perspective: 400px;
+
+
+
+      .rect {
+        width: 500px;
+        height: 500px;
+        background-color: transparent;
+        position: absolute;
+        left: 100px;
+        top: 0;
+        transform-style: preserve-3d;
+        transition: 5s;
+        &:hover{
+          transform:rotatex(360deg) rotatey(360deg);
+        }
+
+
+        >div {
+          width: 200px;
+          height: 200px;
+          position: absolute;
+          left: 50px;
+          top: 50px;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-rows: repeat(6, 1fr);
+
+          >section {
+            border: 1px solid #fff;
+          }
+        }
+
+        .top {
+          transform: rotateX(90deg);
+          background-blend-mode: screen;
+          background-image: linear-gradient(to right,rgb(255,0,0),rgb(255,255,0)),
+          linear-gradient(to bottom,rgb(255,0,0),rgb(255,0,255));
+        }
+
+        .bottom {
+          background-color: aqua;
+          transform: rotateX(-90deg) translateZ(200px);
+        }
+
+        .back {
+          background-color: pink;
+          transform: translateZ(-100px) translateY(100px);
+        }
+
+        .left {
+          transform: rotateY(90deg) translateZ(-100px) translateY(100px);
+          background-blend-mode: screen;
+          background-image: linear-gradient(to right,rgb(0,255,0),rgb(255,255,0)),
+          linear-gradient(to bottom,rgb(0,255,0),rgb(0,255,255));
+        }
+
+        .right {
+          background-color: lightgreen;
+          transform: rotateY(90deg) translateZ(100px) translateY(100px);
+        }
+
+        .front {
+          transform: translateZ(100px) translateY(100px);
+          background-blend-mode: screen;
+          background-image: linear-gradient(to right,rgb(0,0,255),rgb(255,0,255)),
+          linear-gradient(to bottom,rgb(0,0,255),rgb(0,255,255));
+        }
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="rect">
+
+      <div class="top">
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </div>
+
+      <div class="bottom">
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </div>
+
+      <div class="left">
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </div>
+
+      <div class="right">
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </div>
+
+      <div class="front">
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </div>
+
+      <div class="back">
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
