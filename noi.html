@@ -430,7 +430,7 @@
   }
 </script>
 
-<script id="ch0104/19" type="over">
+<script id="ch0104/19" >
 
   var num1 = +prompt("请输入第一个整数")
   var num2 = +prompt("请输入第二个整数")
@@ -446,8 +446,13 @@
     var result = num1 * num2
     console.log(result)
   }else if(operator == "/"){
+    if(num2 == 0){
+      console.log("Divided by zero!")
+    }else{
     var result = num1 / num2
     console.log(result)
+    }
+
   }else{
     console.log("Invalid operator!")
   }
