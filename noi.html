@@ -4,7 +4,7 @@
   var b = +prompt("请输入b")
   var c = a + b
 
-  console.log("c=" + c)
+  console.log(c)
 
 </script>
 
@@ -15,7 +15,7 @@
   var c = +prompt("请输入c")
   var sum = (a + b) * c
 
-  console.log("sum=" + sum)
+  console.log(sum)
 
 </script>
 
@@ -26,7 +26,7 @@
   var c = +prompt("请输入c")
   var result = (a + b) / c
 
-  console.log("result=" + result)
+  console.log(result)
 </script>
 
 
@@ -37,7 +37,7 @@
   var result = Math.trunc(a / b)
   var yushu = a % b
 
-  console.log("整数商为" + result + "余数为" + yushu)
+  console.log(result,yushu)
 </script>
 
 <script id="ch0103/05" type="over">
@@ -46,7 +46,7 @@
   var b = +prompt("请输入b")
   var result = (a / b).toFixed(9)
 
-  console.log("结果为" + result)
+  console.log(result)
 </script>
 
 <script id="ch0103/06" type="over">
@@ -55,7 +55,7 @@
   var deathnum = +prompt("请输入死亡数")
   var result = ((deathnum / confirmnum) * 100).toFixed(3)
 
-  console.log("死亡率为" + result + "%")
+  console.log(result + "%")
 </script>
 
 <script id="ch0103/07" type="over" >
@@ -67,7 +67,7 @@
   var d = +prompt("请输入d")
   var result = ((a * x ** 3) + (b * x ** 2) + (c * x) + d).toFixed(7)
 
-  console.log("f(x)的结果为" + result)
+  console.log(result)
 </script>
 
 <script id="ch0103/08" type="over">
@@ -75,7 +75,7 @@
   var huashi = +prompt("请输入华氏温度")
   var result = 5 * (huashi - 32) / 9
 
-  console.log("摄氏温度为" + result)
+  console.log(result)
 </script>
 
 <script id="ch0103/09" type="over">
@@ -85,7 +85,7 @@
   var C = (2 * Math.PI * r).toFixed(4)
   var S = (Math.PI * r ** 2).toFixed(4)
 
-  console.log("直径为" + zhijing + "周长为" + C + "面积为" + S)
+  console.log(zhijing,C,S)
 </script>
 
 <script id="ch0103/10" type="over">
@@ -94,7 +94,7 @@
   var r2 = +prompt("请输入电阻r2的阻值")
   var result = ( 1 / (1 / r1 + 1 / r2) ).toFixed(2)
 
-  console.log("并联电阻的阻值为" + result)
+  console.log(result)
 </script>
 
 <script id="ch0103/11" type="over">
@@ -103,7 +103,7 @@
   var b = +prompt("请输入b")
   var result = (a % b).toFixed(4)
 
-  console.log("余数为" + result)
+  console.log(result)
 </script>
 
 <script id="ch0103/12" type="over">
@@ -111,7 +111,7 @@
   var r = +prompt("请输入球的半径")
   var V = ( 4 / 3 * (3.14 * r ** 3)).toFixed(2)
 
-  console.log("球的体积为" + V)
+  console.log(V)
 </script>
 
 <script id="ch0103/13" type="over">
@@ -122,7 +122,7 @@
   var gewei = num % 10
   var result = gewei + "" + shiwei + "" + baiwei + ""
 
-  console.log("反向输出的结果为" + result)
+  console.log(result)
 </script>
 
 <script id="ch0103/14" type="over">
@@ -132,7 +132,7 @@
   var V = Math.PI * r ** 2 *h
   var result = Math.ceil(20000 / V)
 
-  console.log("大象需要喝" + result + "桶水")
+  console.log(result)
 </script>
 
 <script id="ch0103/15" type="over">
@@ -142,7 +142,7 @@
   var time = +prompt("经过了多少个小时")
   var result = sum - Math.ceil(time / eat)
 
-  console.log("此时还剩下" + result + "个苹果")
+  console.log(result)
 </script>
 
 <script id="ch0103/16" type="over">
@@ -153,7 +153,7 @@
   var Yb = +prompt("请输入A的纵坐标")
   var result = Math.sqrt(((Xa - Xb) ** 2) + ((Ya - Yb) ** 2)).toFixed(3)
 
-  console.log("AB的长度为" + result)
+  console.log(result)
 </script>
 
 <script id="ch0103/17" type="over">
@@ -166,7 +166,7 @@
   var Y3 = +prompt("请输入C的纵坐标")
   var result = ((Math.max(X1,X2,X3) - Math.min(X1,X2,X3)) * (Math.max(Y1,Y2,Y3) - Math.min(Y1,Y2,Y3)) * 0.5).toFixed(2)
 
-  console.log("三角形的面积为" + result)
+  console.log(result)
 
 </script>
 
@@ -177,7 +177,7 @@
   var num = +prompt("请输入要求的项数")
   var result = a1 + (num - 1) * (a2 - a1)
 
-  console.log("第100项为" + result)
+  console.log(result)
 </script>
 
 <script id="ch0103/19" type="over">
@@ -186,15 +186,75 @@
   var B = +prompt("请输入B(小于或等于50000的正整数)")
   var result = A * B
 
-  console.log("结果为" + result)
+  console.log(result)
 </script>
 
-<script id="ch0103/20">
+<script id="ch0103/20" type="over">
 
   var n = +prompt("请输入幂的次数(需在0~31之间)")
   var result = Math.pow(2,n)
 
-  console.log("2的" + n + "次幂为" + result)
+  console.log(result)
 </script>
+
+<!-- ============================================================================================================================================ -->
+
+<!-- <script id="ch0104/01" type="over">
+
+  var N = +prompt("请输入N")
+  if (N > 0){
+    document.write("positive")
+  } else if (N == 0){
+    document.write("zero")
+  } else if (N < 0){
+    document.write("negative")
+  }
+</script>
+
+<script id="ch0104/02" type="over">
+
+  var num = +prompt("请输入一个小数")
+  var result = (Math.abs(num)).toFixed(2)
+
+  document.write("该数的绝对值为" + result)
+</script>
+
+<script id="ch0104/03" type="over">
+
+  var num = +prompt("请输入一个整数")
+  if(num % 2 !== 0){
+    document.write("odd")
+  }else{
+    document.write("even")
+  }
+</script>
+
+<script id="ch0104/04" type="over">
+
+  var input = prompt("请输入一个字符")
+  if(input.charCodeAt() % 2 !== 0){
+    document.write("YES")
+  }else{
+    document.write("NO")
+  }
+</script>
+
+<script id="ch0104/05" type="over">
+
+  var x = +prompt("请输入一个整数")
+  var y = +prompt("请输入一个整数")
+  if(x > y){
+    document.write(">")
+  }else if(x === y){
+    document.write("=")
+  }else if(x < y){
+    document.write("<")
+  }
+</script>
+
+<script id="ch0104/06">
+
+
+</script> -->
 
 
