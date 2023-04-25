@@ -24,7 +24,7 @@
   var a = +prompt("请输入a")
   var b = +prompt("请输入b")
   var c = +prompt("请输入c")
-  var result = (a + b) / c
+  var result = Math.trunc((a + b) / c)
 
   console.log(result)
 </script>
@@ -73,7 +73,7 @@
 <script id="ch0103/08" type="over">
 
   var huashi = +prompt("请输入华氏温度")
-  var result = 5 * (huashi - 32) / 9
+  var result = (5 * (huashi - 32) / 9).toFixed(5)
 
   console.log(result)
 </script>
