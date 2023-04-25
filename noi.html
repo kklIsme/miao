@@ -1,0 +1,200 @@
+<script id="ch0103/01" type="over">
+
+  var a = +prompt("请输入a")
+  var b = +prompt("请输入b")
+  var c = a + b
+
+  console.log("c=" + c)
+
+</script>
+
+<script id="ch0103/02" type="over">
+
+  var a = +prompt("请输入a")
+  var b = +prompt("请输入b")
+  var c = +prompt("请输入c")
+  var sum = (a + b) * c
+
+  console.log("sum=" + sum)
+
+</script>
+
+<script id="ch0103/03" type="over">
+
+  var a = +prompt("请输入a")
+  var b = +prompt("请输入b")
+  var c = +prompt("请输入c")
+  var result = (a + b) / c
+
+  console.log("result=" + result)
+</script>
+
+
+<script id="ch0103/04" type="over">
+
+  var a = +prompt("请输入a")
+  var b = +prompt("请输入b")
+  var result = Math.trunc(a / b)
+  var yushu = a % b
+
+  console.log("整数商为" + result + "余数为" + yushu)
+</script>
+
+<script id="ch0103/05" type="over">
+
+  var a = +prompt("请输入a")
+  var b = +prompt("请输入b")
+  var result = (a / b).toFixed(9)
+
+  console.log("结果为" + result)
+</script>
+
+<script id="ch0103/06" type="over">
+
+  var confirmnum = +prompt("请输入确诊数")
+  var deathnum = +prompt("请输入死亡数")
+  var result = ((deathnum / confirmnum) * 100).toFixed(3)
+
+  console.log("死亡率为" + result + "%")
+</script>
+
+<script id="ch0103/07" type="over" >
+
+  var x = +prompt("请输入x")
+  var a = +prompt("请输入a")
+  var b = +prompt("请输入b")
+  var c = +prompt("请输入c")
+  var d = +prompt("请输入d")
+  var result = ((a * x ** 3) + (b * x ** 2) + (c * x) + d).toFixed(7)
+
+  console.log("f(x)的结果为" + result)
+</script>
+
+<script id="ch0103/08" type="over">
+
+  var huashi = +prompt("请输入华氏温度")
+  var result = 5 * (huashi - 32) / 9
+
+  console.log("摄氏温度为" + result)
+</script>
+
+<script id="ch0103/09" type="over">
+
+  var r = +prompt("请输入圆的半径")
+  var zhijing = (2 * r).toFixed(4)
+  var C = (2 * Math.PI * r).toFixed(4)
+  var S = (Math.PI * r ** 2).toFixed(4)
+
+  console.log("直径为" + zhijing + "周长为" + C + "面积为" + S)
+</script>
+
+<script id="ch0103/10" type="over">
+
+  var r1 = +prompt("请输入电阻r1的阻值")
+  var r2 = +prompt("请输入电阻r2的阻值")
+  var result = ( 1 / (1 / r1 + 1 / r2) ).toFixed(2)
+
+  console.log("并联电阻的阻值为" + result)
+</script>
+
+<script id="ch0103/11" type="over">
+
+  var a = +prompt("请输入a")
+  var b = +prompt("请输入b")
+  var result = (a % b).toFixed(4)
+
+  console.log("余数为" + result)
+</script>
+
+<script id="ch0103/12" type="over">
+
+  var r = +prompt("请输入球的半径")
+  var V = ( 4 / 3 * (3.14 * r ** 3)).toFixed(2)
+
+  console.log("球的体积为" + V)
+</script>
+
+<script id="ch0103/13" type="over">
+
+  var num = +prompt("请输入一个数")
+  var baiwei = Math.trunc(num / 100)
+  var shiwei = (Math.trunc(num / 10)) % 10
+  var gewei = num % 10
+  var result = gewei + "" + shiwei + "" + baiwei + ""
+
+  console.log("反向输出的结果为" + result)
+</script>
+
+<script id="ch0103/14" type="over">
+
+  var h = +prompt("请输入桶的高度")
+  var r = +prompt("请输入桶的底面半径")
+  var V = Math.PI * r ** 2 *h
+  var result = Math.ceil(20000 / V)
+
+  console.log("大象需要喝" + result + "桶水")
+</script>
+
+<script id="ch0103/15" type="over">
+
+  var sum = +prompt("请输入苹果数量")
+  var eat = +prompt("虫子几个小时能吃一个苹果")
+  var time = +prompt("经过了多少个小时")
+  var result = sum - Math.ceil(time / eat)
+
+  console.log("此时还剩下" + result + "个苹果")
+</script>
+
+<script id="ch0103/16" type="over">
+
+  var Xa = +prompt("请输入A的横坐标")
+  var Ya = +prompt("请输入A的纵坐标")
+  var Xb = +prompt("请输入A的横坐标")
+  var Yb = +prompt("请输入A的纵坐标")
+  var result = Math.sqrt(((Xa - Xb) ** 2) + ((Ya - Yb) ** 2)).toFixed(3)
+
+  console.log("AB的长度为" + result)
+</script>
+
+<script id="ch0103/17" type="over">
+
+  var X1 = +prompt("请输入A的横坐标")
+  var Y1 = +prompt("请输入A的纵坐标")
+  var X2 = +prompt("请输入B的横坐标")
+  var Y2 = +prompt("请输入B的纵坐标")
+  var X3 = +prompt("请输入C的横坐标")
+  var Y3 = +prompt("请输入C的纵坐标")
+  var result = ((Math.max(X1,X2,X3) - Math.min(X1,X2,X3)) * (Math.max(Y1,Y2,Y3) - Math.min(Y1,Y2,Y3)) * 0.5).toFixed(2)
+
+  console.log("三角形的面积为" + result)
+
+</script>
+
+<script id="ch0103/18" type="over">
+
+  var a1 = +prompt("请输入a1")
+  var a2 = +prompt("请输入a2")
+  var num = +prompt("请输入要求的项数")
+  var result = a1 + (num - 1) * (a2 - a1)
+
+  console.log("第100项为" + result)
+</script>
+
+<script id="ch0103/19" type="over">
+
+  var A = +prompt("请输入A(小于或等于50000的正整数)")
+  var B = +prompt("请输入B(小于或等于50000的正整数)")
+  var result = A * B
+
+  console.log("结果为" + result)
+</script>
+
+<script id="ch0103/20">
+
+  var n = +prompt("请输入幂的次数(需要0~31之间)")
+  var result = Math.pow(2,n)
+
+  console.log("2的" + n + "次幂为" + result)
+</script>
+
+
