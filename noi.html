@@ -430,7 +430,7 @@
   }
 </script>
 
-<script id="ch0104/19" >
+<script id="ch0104/19" type="over">
 
   var num1 = +prompt("请输入第一个整数")
   var num2 = +prompt("请输入第二个整数")
@@ -484,5 +484,55 @@
   var x = +prompt("虫子几个小时吃一个苹果")
   var y = +prompt("经过了多少个小时")
   var result = n - Math.ceil(y / x)
+  console.log(result)
+</script>
+
+
+<!-- ============================================================================================================================================ -->
+<script id="ch0105/01" type="ok">
+  var num = +prompt("请输入学生个数")
+  var sum = 0
+  for (i = 1; i <= num; i++) {
+    var age = +prompt("请输入年龄")
+    sum += age
+    // console.log(sum)
+  }
+
+
+  var result = (sum / num).toFixed(2)
+  console.log(result)
+</script>
+
+<script id="ch0105/02" type="ok">
+
+  var sum = 0
+  for(i = 1;i <= 12;i++){
+  var jieyu = +prompt("请输入" + i + "月的结余")
+  sum += jieyu
+  }
+
+  var result = (sum / 12).toFixed(2)
+  console.log("$" + result)
+</script>
+
+<script id="ch0105/03" type="ok">
+
+  var sum = 0
+  var total = +prompt("请输入样本容量")
+  if(total > 0 && total < 100){
+    for(i = 1;i <= total;i++){
+    var num = +prompt("请输入第" + i + "个数")
+    if(Math.abs(num) < 1000){
+    sum += num
+    }else{
+      alert("请输入绝对值小于1000的数")
+    }
+  }
+  }else{
+    alert("请输入1~100之间的数字")
+  }
+
+
+  var result = (sum / total).toFixed(4)
   console.log(result)
 </script>
