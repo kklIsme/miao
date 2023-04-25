@@ -58,7 +58,7 @@
   console.log(result + "%")
 </script>
 
-<script id="ch0103/07" type="over" >
+<script id="ch0103/07" type="over">
 
   var x = +prompt("请输入x")
   var a = +prompt("请输入a")
@@ -357,9 +357,127 @@
   }
 </script>
 
-<script id="ch0104/14">
+<script id="ch0104/14" type="over">
+
+  var weight = +prompt("请输入重量")
+  var jiaji = prompt("是否加急")
+  var price = 8
+  if (jiaji == "y") {
+    if (weight <= 1000) {
+      price += 5
+      console.log(price)
+    } else if (weight > 1000) {
+      price = 8 + 5 + Math.ceil((weight - 1000) / 500) * 4
+      console.log(price)
+    }
+  } else if(jiaji == "n"){
+    if (weight <= 1000) {
+      console.log(price)
+    } else if (weight > 1000) {
+      price = 8 + Math.ceil((weight - 1000) / 500) * 4
+      console.log(price)
+    }
+  }
+
+
 
 
 </script>
 
+<script id="ch0104/15" type="over">
 
+  var num1 = +prompt("请输第一个整数")
+  var num2 = +prompt("请输第二个整数")
+  var num3 = +prompt("请输第三个整数")
+  var result = Math.max(num1,num2,num3)
+
+  console.log(result)
+</script>
+
+<script id="ch0104/16" type="over">
+
+  var a = +prompt("请输入第一条边的长度")
+  var b = +prompt("请输入第二条边的长度")
+  var c = +prompt("请输入第三条边的长度")
+  if(a > 0 && b > 0 && c > 0){
+    if(a + b > c && b + c > a && a + c > b){
+      console.log("yes")
+    }
+  }else{
+    console.log("输入错误,请输入正数")
+  }
+</script>
+
+<script id="ch0104/17" type="over">
+
+  var year = +prompt("请输入年份")
+  if((year % 4 == 0 && year % 100 !== 0) || year % 400 == 0){
+    console.log("Y")
+  }else{
+    console.log("N")
+  }
+</script>
+
+<script id="ch0104/18" type="over">
+
+  var Ax = +prompt("请输入点A的横坐标")
+  var Ay = +prompt("请输入点A的纵坐标")
+
+  if(-1 <= Ax <= 1 && -1 <= Ay <= 1){
+    console.log("yes")
+  }else{
+    console.log("no")
+  }
+</script>
+
+<script id="ch0104/19" type="over">
+
+  var num1 = +prompt("请输入第一个整数")
+  var num2 = +prompt("请输入第二个整数")
+  var operator = prompt("请输入要进行的运算")
+
+  if(operator == "+"){
+    var result = num1 + num2
+    console.log(result)
+  }else if(operator == "-"){
+    var result = num1 - num2
+    console.log(result)
+  }else if(operator == "*"){
+    var result = num1 * num2
+    console.log(result)
+  }else if(operator == "/"){
+    var result = num1 / num2
+    console.log(result)
+  }else{
+    console.log("Invalid operator!")
+  }
+</script>
+
+<script id="ch0104/20" type="over">
+
+  var a = +prompt("请输入a")
+  var b = +prompt("请输入b")
+  var c = +prompt("请输入c")
+
+  if(b ** 2 == 4 * a * c){
+    var x1 = x2 =  (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a)
+    console.log("x1=x2=" + x1)
+  }else if (b ** 2 > 4 * a * c){
+    var x1 = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a)
+    var x2 = (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a)
+    console.log("x1=" + x1 + ";x2=" + x2)
+  }else{
+    var x1 = (-b / (2 * a)).toFixed(5) + "+" + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
+    var x2 = (-b / (2 * a)).toFixed(5) + "-" + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
+    console.log("x1=" + x1 + ";x2=" + x2)
+  }
+</script>
+
+<script id="ch0104/21" type="over">
+
+  var n = +prompt("苹果数量")
+  var x = +prompt("虫子几个小时吃一个苹果")
+  var y = +prompt("经过了多少个小时")
+  var result = n - Math.ceil(y / x)
+  console.log(result)
+</script>
