@@ -290,7 +290,7 @@
   }
 </script>
 
-<script id="ch0104/09" >
+<script id="ch0104/09" type="ok">
 
 
   var n = +prompt("请输入一个整数")
@@ -839,4 +839,37 @@
 
 
 
+</script>
+
+<script id="ch0105/19" type="ok">
+
+  var housenum = +prompt("有几个屋顶")
+  var totaltime = 0
+
+  for(var i = 1;i <= housenum;i++){
+    var x = +prompt("请输入屋顶横坐标")
+    var y = +prompt("请输入屋顶纵坐标")
+    var personnum = +prompt("请输入该屋顶有几个人")
+    var distance = Math.sqrt(x ** 2 + y ** 2)
+    var time = 2 * (distance / 50) + 1 * personnum + 0.5 * personnum
+    totaltime += time
+  }
+
+  console.log(Math.ceil(totaltime))
+</script>
+
+<script id="ch0105/20">
+
+  var h = +prompt("请输入初始高度")
+  var total_h = h
+  var arr = [h]
+
+  for(var i = 1;i < 10;i++){
+    arr[i] = 1/2 * arr[i-1]
+    arr.push(arr[i])
+    total_h += (arr[i]) * 2
+    var last_h = arr[9] / 2
+  }
+
+  console.log(total_h.toFixed(4),last_h.toFixed(7))
 </script>
