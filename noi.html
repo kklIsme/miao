@@ -310,6 +310,29 @@
   }else{
     console.log("n")
   }
+
+  <!-- 高效方法 -->
+  var n = +prompt("请输入一个整数")
+  var flag = false
+
+  if(n % 3 == 0){
+    console.log("3")
+    flag = true
+  }
+
+  if(n % 5 == 0){
+    console.log("5")
+    flag = true
+  }
+
+  if(n % 7 == 0){
+    console.log("7")
+    flag = true
+  }
+
+  if(flag == false){
+    console.log("n")
+  }
 </script>
 
 <script id="ch0104/10" type="over">
@@ -321,6 +344,8 @@
   }else{
     console.log("0")
   }
+
+
 </script>
 
 <script id="ch0104/11" type="over">
@@ -727,4 +752,110 @@
   }
 
   console.log(same)
+</script>
+
+<script id="ch0105/13" type="ok">
+
+  var a = +prompt("请输入a")
+  var n = +prompt("请输入n")
+  var result = a
+  if (a >= 2) {
+    for (var i = 2; i <= n; i++) {
+      result *= a
+    }
+  }
+
+  console.log(result)
+
+</script>
+
+<script id="ch0105/14" type="ok">
+
+  var total = +prompt("请输入人口数")
+  var year = +prompt("请输入多少年后")
+
+  for(var i = 1;i <= year;i++){
+    total = total + total * 0.001
+  }
+
+  console.log(total.toFixed(4))
+
+</script>
+
+<script id="ch0105/15" type="ok">
+
+  var R = +prompt("请输入年利率")
+  var M = +prompt("请输入总值")
+  var Y = +prompt("请输入投资多少年")
+
+  for(var i = 1;i <= Y;i++){
+    M = (1 + R / 100) * M
+  }
+
+  console.log(Math.trunc(M))
+</script>
+
+<script id="ch0105/16" type="ok">
+
+  var N = +prompt("请输入年薪")
+  var K = +prompt("请输入房子的增长率")
+  var price = 200
+  var year = 1
+  var savings = N
+
+  while (savings < price) {
+    savings += N
+    price *= (1 + K / 100)
+    year++
+  }
+
+  if (year <= 20) {
+    console.log(year)
+  } else {
+    console.log("Impossible")
+  }
+
+</script>
+
+<script id="ch0105/17" type="ok">
+
+  var k = +prompt("请输入正整数k")
+  var arr = [1,1]
+  for(var i = 2;i <= 46;i++){
+    arr[i] = arr[i-1] + arr[i-2]
+    arr.push(arr[i])
+  }
+
+  i = k-1
+  console.log(arr[i])
+
+</script>
+
+<script id="ch0105/18" type="ok">
+
+  var n = +prompt("请确定要输入几组数据")
+  var arr = []
+  for (var i = 0; i <= (n - 1); i++) {
+    var experiment = +prompt("请输入第" + (i + 1) + "组的临床实验的总病例数")
+    var effective = +prompt("请输入第" + (i + 1) + "组的疗效有效的病例数")
+    arr[i] = effective / experiment
+    arr.push(arr[i])
+
+    if (i > 0 && i < n) {
+      if (arr[i] - arr[0] > 0.05) {
+        console.log("better")
+      }
+      if (Math.abs(arr[i] - arr[0]) < 0.05) {
+        console.log("same")
+      }
+      if (arr[0] - arr[i] > 0.05) {
+        console.log("worse")
+      }
+    }
+
+  }
+
+
+
+
 </script>
