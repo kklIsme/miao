@@ -290,28 +290,9 @@
   }
 </script>
 
-<script id="ch0104/09" type="over">
+<script id="ch0104/09" >
 
-  var num = +prompt("请输入一个整数")
-  if(num % 3 == 0 && num % 5 == 0 &&num % 7 == 0){
-    console.log("3 5 7")
-  }else if(num % 3 == 0 && num % 5 ==0){
-    console.log("3 5")
-  }else if(num % 3 == 0 && num % 7 ==0){
-    console.log("3 7")
-  }else if(num % 5 == 0 && num % 7 ==0){
-    console.log("5 7")
-  }else if(num % 3 == 0){
-    console.log("3")
-  }else if(num % 5 == 0){
-    console.log("5")
-  }else if(num % 7 == 0){
-    console.log("7")
-  }else{
-    console.log("n")
-  }
 
-  <!-- 高效方法 -->
   var n = +prompt("请输入一个整数")
   var flag = false
 
@@ -330,7 +311,7 @@
     flag = true
   }
 
-  if(flag == false){
+  if(!flag){
     console.log("n")
   }
 </script>
