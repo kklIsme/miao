@@ -578,24 +578,153 @@
 <script id="ch0105/05" type="ok">
 
   var total = +prompt("请输入参加考试的人数")
+  var max = -1
 
   for (var i = 1; i <= total; i++) {
     var score = +prompt("请输入第" + i + "个的学生成绩")
+    if(score > max){
+      max = score
+    }
   }
 
-  var result = Math.max(score)
-  console.log(result)
+  console.log(max)
 
 </script>
 
-<script id="ch0105/06" type="ing">
+<script id="ch0105/06" type="ok">
 
   var total = +prompt("请输入总个数")
+  var max = -1
+  var min = 1000
   for (var i = 1; i <= total; i++) {
     var num = +prompt("请输入第" + i + "个数")
+    if(num > max){
+      max = num
+    }
+
+    if(num <= min){
+      min = num
+    }
   }
 
-  var max = Math.max(num)
-  var min = Math.min(num)
+  var result = max - min
   console.log(result)
+</script>
+
+
+<script id="ch0105/07" type="ok">
+
+  var day = +prompt("参与决赛的天数")
+  var goldtotal = 0
+  var silvertotal = 0
+  var coppertotal = 0
+
+  for (var i = 1; i <= day; i++) {
+    var gold = +prompt("第" + i + "天获得的金牌数")
+    var silver = +prompt("第" + i + "天获得的银牌数")
+    var copper = +prompt("第" + i + "天获得的铜牌数")
+
+    goldtotal += gold
+    silvertotal += silver
+    coppertotal += copper
+    var totalmedal = goldtotal + silvertotal + coppertotal
+  }
+
+  console.log(goldtotal + "\t" + silvertotal + "\t" + coppertotal + "\t" + totalmedal)
+
+</script>
+
+<script id="ch0105/08" type="ok">
+
+  var n = +prompt("需要计算几边形")
+  var degtotal = 0
+
+  for(var i = 1;i < n;i++){
+    var deg = +prompt("请输入第" + i + "条边的角度")
+    degtotal += deg
+  }
+
+  var lastdeg = (n - 2) * 180 - degtotal
+
+  console.log(lastdeg)
+
+</script>
+
+<script id="ch0105/09" type="ok">
+
+  var m = +prompt("请输入m")
+  var n = +prompt("请输入n")
+  var total = 0
+
+  if (m > 0 && m < n && n < 300) {
+    for (var i = m; i <= n; i++) {
+      if (i % 2 !== 0) {
+        total += i
+      }
+    }
+  } else {
+    alert("m必须小于n并为非负整数,且n不大于300")
+  }
+
+
+
+  console.log(total)
+</script>
+
+<script id="ch0105/10" type="ok">
+  var m = +prompt("请输入m")
+  var n = +prompt("请输入n")
+  var total = 0
+
+  if (m > 0 && m < n && n < 1000) {
+    for (var i = m; i <= n; i++) {
+      if (i % 17 == 0) {
+        total += i
+      }
+    }
+  }else{
+    alert("必须满足'0 < m < n < 1000'该条件!!!")
+  }
+
+
+
+  console.log(total)
+
+</script>
+
+<script id="ch0105/11" type="ok">
+
+  var total = +prompt("请输入样本容量")
+  var firstline = 0
+  var secondline = 0
+  var thridline = 0
+
+  for (var i = 1; i <= total; i++) {
+    var num = +prompt("请输入第" + i + "个正整数")
+    if(num == 1){
+      firstline++
+    }else if(num == 5){
+      secondline++
+    }else if(num == 10){
+      thridline++
+    }
+  }
+
+  console.log(firstline + "\n" + secondline + "\n" + thridline)
+</script>
+
+<script id="ch0105/12" type="ok">
+
+  var N = +prompt("请输入N的值")
+  var m = +prompt("请输入m的值")
+  var same = 0
+
+  for (var i = 1; i <= N; i++) {
+    var num = +prompt("请输入第" + i + "个整数")
+    if (num == m) {
+      same++
+    }
+  }
+
+  console.log(same)
 </script>
