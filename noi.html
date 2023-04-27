@@ -355,17 +355,17 @@
 
 <script id="ch0104/13" type="over">
 
-  var num = +prompt("请输入一个整数")
-  if(num > 0 && num <= 5){
-    var y = (2.5 - num).toFixed(3)
+  var x = +prompt("请输入一个整数")
+  var y = 0
+  if(x <= 5){
+     y = (2.5 - x).toFixed(3)
     console.log(y)
-  }else if(x >= 5 && x <= 10){
-    var y = (2 - 1.5 * (x - 3) * (x - 3)).toFixed(3)
+  }else if(x <= 10){
+     y = (2 - 1.5 * (x - 3) * (x - 3)).toFixed(3)
     console.log(y)
-  }else if(x >= 10 && x <= 20){
-    var y = (x / 2 - 1.5).toFixed(3)
   }else{
-    console.log("输入错误,请输入0~20之间的整数")
+     y = (x / 2 - 1.5).toFixed(3)
+    console.log(y)
   }
 </script>
 
@@ -414,6 +414,8 @@
   if(a > 0 && b > 0 && c > 0){
     if(a + b > c && b + c > a && a + c > b){
       console.log("yes")
+    }else{
+      console.log("no")
     }
   }else{
     console.log("输入错误,请输入正数")
@@ -423,7 +425,7 @@
 <script id="ch0104/17" type="over">
 
   var year = +prompt("请输入年份")
-  if((year % 4 == 0 && year % 100 !== 0) || year % 400 == 0){
+  if((year % 4 == 0 && year % 100 !== 0) || (year % 400 == 0 && year % 3200 !==)){
     console.log("Y")
   }else{
     console.log("N")
@@ -464,7 +466,6 @@
     var result = num1 / num2
     console.log(result)
     }
-
   }else{
     console.log("Invalid operator!")
   }
@@ -476,16 +477,21 @@
   var b = +prompt("请输入b")
   var c = +prompt("请输入c")
 
-  if(b ** 2 == 4 * a * c){
-    var x1 = x2 =  (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a)
+  if (b ** 2 == 4 * a * c) {
+    var x1 = x2 = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a)
     console.log("x1=x2=" + x1)
-  }else if (b ** 2 > 4 * a * c){
+  } else if (b ** 2 > 4 * a * c) {
     var x1 = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a)
     var x2 = (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a)
     console.log("x1=" + x1 + ";x2=" + x2)
-  }else{
-    var x1 = (-b / (2 * a)).toFixed(5) + "+" + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
-    var x2 = (-b / (2 * a)).toFixed(5) + "-" + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
+  } else {
+    if ((Math.sqrt(4 * a * c - b * b) / (2 * a) > 0)) {
+      var x1 = (-b / (2 * a)).toFixed(5) + "+" + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
+      var x2 = (-b / (2 * a)).toFixed(5) + "+" + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
+    } else {
+      var x1 = "" + (-b / (2 * a)).toFixed(5) + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
+      var x2 = "" + (-b / (2 * a)).toFixed(5) + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + "i"
+    }
     console.log("x1=" + x1 + ";x2=" + x2)
   }
 </script>
