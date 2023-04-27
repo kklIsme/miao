@@ -1,0 +1,16 @@
+<script>
+
+	var num = Math.round(Math.random() * 100)
+
+	do {
+		var input = +prompt("请输入你猜的的数")
+		if (input > num) {
+			alert("猜大了")
+		} else if (input < num) {
+			alert("猜小了")
+		}
+	} while (input != num)
+
+	alert("恭喜你,猜对了")
+
+</script>

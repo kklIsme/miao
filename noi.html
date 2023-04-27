@@ -848,8 +848,8 @@
   var totaltime = 0
 
   for(var i = 1;i <= housenum;i++){
-    var x = +prompt("请输入屋顶横坐标")
-    var y = +prompt("请输入屋顶纵坐标")
+    var x = +prompt("请输入第" + i + "个屋顶的横坐标")
+    var y = +prompt("请输入第" + i + "个屋顶的纵坐标")
     var personnum = +prompt("请输入该屋顶有几个人")
     var distance = Math.sqrt(x ** 2 + y ** 2)
     var time = 2 * (distance / 50) + 1 * personnum + 0.5 * personnum
@@ -874,4 +874,119 @@
   }
 
   console.log(total_h.toFixed(4),last_h.toFixed(7))
+</script>
+
+<script id="ch0105/21" type="ok">
+
+  var N = +prompt("请输入一个正整数")
+
+  for (var i = 0; i < 999; i++) {
+
+    if (N == 1) {
+      console.log("End");
+      break
+    } else if (N % 2 === 0) {
+      console.log(`${N}/2=${N / 2}`);
+      N = N / 2
+    } else {
+      console.log(`${N}*3+1=${N * 3 + 1}`)
+      N = N * 3 + 1
+    }
+  }
+
+
+
+
+
+</script>
+
+<script id="ch0105/22" type="fail">
+
+  var totalrest = 0
+  var totalsave = 0
+  var count = 0
+  for (var i = 1; i <= 12; i++) {
+    var pre = +prompt("请输入" + i + "月的预算")
+    var receive = 300
+    var cost = pre
+    var save = (300 - (Math.ceil(pre / 100) * 100))
+    var rest = (Math.ceil(pre / 100) * 100) - cost
+
+    totalrest += rest
+    totalsave += save
+
+    count++
+    if (pre > receive) {
+    console.log("-" + count)
+      break
+    }
+  }
+  if (count == 12) {
+    console.log(totalsave * 1.2 + totalrest)
+  }
+</script>
+
+<script id="ch0105/23" type="ok">
+
+  var m = +prompt("药品总量")
+  var n = +prompt("取药人数")
+  var rest_m = m
+  var count = 0
+
+  for(var i = 1;i <= n;i++){
+    var num = +prompt("第" + i + "个病人要取走的药品数量")
+    rest_m -= num
+
+    if(rest_m < num){
+      count++
+      rest_m += num
+      continue;
+    }
+  }
+
+  console.log(count - 1)
+</script>
+
+<script id="ch0105/24" type="ok">
+
+  var n = +prompt("请输入测量血压的次数")
+  var count = 0
+  for(var i = 1;i <= n;i++){
+    var 收缩压 = +prompt("收缩压")
+    var 舒张压 = +prompt("舒张压")
+    if((收缩压 >= 90 && 收缩压 <= 140) && (舒张压 >= 60 && 舒张压 <= 90)){
+      count++
+    }else{
+      count = 0
+    }
+  }
+
+  console.log(count)
+</script>
+
+<script id="ch0105/25" type="ing">
+
+
+</script>
+
+<script id="ch0105/26" type="ok">
+  var n = +prompt("四位数的个数")
+  var count = 0
+  for(var i = 1;i <= n;i++){
+    var num = +prompt("请输入第" + i + "个数")
+    var gewei = num % 10
+    var shiwei = (num - gewei) % 100 / 10
+    var baiwei = (num - gewei - shiwei * 10) % 1000 / 100
+    var qianwei = (num - gewei - shiwei * 10 - baiwei * 100) / 1000
+    if(gewei - qianwei - baiwei - shiwei > 0){
+      count++
+    }
+  }
+
+  console.log(count)
+</script>
+
+<script id="ch0105/27">
+
+
 </script>
