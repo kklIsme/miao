@@ -986,7 +986,128 @@
   console.log(count)
 </script>
 
-<script id="ch0105/27">
+<script id="ch0105/27" type="ok">
 
+  var total = 0
+  var count = 0
+  var  K = +prompt("请输入一个整数")
+  for(var i = 1;i <= Infinity;i++){
+    var An = 1 / i;
+    count ++
+    total += An
+    if(total > K){
+      console.log(count)
+      break
+    }
+  }
+</script>
+
+<script id="0105/28" type="ok">
+
+  var n = +prompt("请输入一个数字")
+  var str = ""
+  while(n > 0){
+    var last = n % 10
+    n = Math.trunc(n / 10)
+    str += last + "\xa0"  //将数字拼接在一起
+
+  }
+  console.log(str)
+
+</script>
+
+<script id="0105/29" type="ing">
+
+  var n = +prompt("请输入一个数字")
+  var str = ""
+  var last = n % 10
+
+  if (n > 0) {
+    while (n > 0) {
+      if (last !== 0) {
+        str += last
+      }
+      n = Math.trunc(n / 10)
+    }
+    console.log(str)
+
+  }
+
+  // if (n < 0) {
+  //   n = -n
+  //   while (n > 0) {
+  //     var last = n % 10
+  //     n = Math.trunc(n / 10)
+  //   }
+  //   console.log("-" + str)
+  // }
+
+
+
+
+</script>
+
+<script id="0105/30" type="ok">
+
+  var m = +prompt("请输入m")
+  var k = +prompt("请输入k")
+  var count = 0
+  if (m % 19 == 0) {
+    for (var i = 1; i <= 9; i++) {
+      if (m % 10 == 3) {
+        count++
+      }
+      m = Math.trunc(m / 10)
+    }
+
+  }
+  if (count == k) {
+    console.log("YES")
+  } else {
+    console.log("NO")
+  }
+</script>
+
+<script id="0105/31" type="ing">
+
+  var N = +prompt("灯的数量")
+  var M = +prompt("人的数量")
+  var flag = true
+  var str = ""
+
+  for (var i = 1; i <= N; i++) {
+
+    for (var j = 3; j <= M; j++) {
+
+      flag = false  //第一个人关闭所有灯
+      if (i % 2 == 0) {  //第二个人
+        flag = true
+      }
+
+      if (i % j == 0) {
+        if (flag == true) {
+          flag = false
+        }
+        if (flag == false) {
+          flag = true
+        }
+      }
+
+      if(flag == false){
+        console.log(str + i)
+      }
+    }
+  }
+</script>
+
+<script id="0105/34">
+  var n = +prompt("请输入一个正整数")
+  var jiecheng = 1
+  var sum = 0
+  for(var i = 1;i <= n;i++){
+    jiecheng = jiecheng * i
+    sum += jiecheng
+  }
+  console.log(sum)
 
 </script>
