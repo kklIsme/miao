@@ -801,15 +801,29 @@
 
 <script id="ch0105/17" type="ok">
 
-  var k = +prompt("请输入正整数k")
-  var arr = [1,1]
-  for(var i = 2;i <= 46;i++){
-    arr[i] = arr[i-1] + arr[i-2]
-    arr.push(arr[i])
+  //  var k = +prompt("请输入正整数k")
+  // var arr = [1,1]
+  // for(var i = 2;i <= 46;i++){
+  //   arr[i] = arr[i-1] + arr[i-2]
+  //   arr.push(arr[i])
+  // }
+
+  // i = k-1
+  // console.log(arr[i])
+
+  // 不用数组做的方法
+  var n = +prompt()
+  var a = 0
+  var b = 1
+  var c = 0
+
+  for(var i = 1;i <= n;i++){
+    c = a + b
+    b = b + a
+    a = b - a
   }
 
-  i = k-1
-  console.log(arr[i])
+  console.log(a)
 
 </script>
 
@@ -1100,7 +1114,7 @@ var a =  111
   }
 </script>
 
-<script id="0105/34">
+<script id="0105/34" type="ok">
   var n = +prompt("请输入一个正整数")
   var jiecheng = 1
   var sum = 0
