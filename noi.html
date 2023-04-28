@@ -989,7 +989,7 @@
     var c9   = (n - b9 * 9 - a9 ) / 9 / 9 % 9   //九进制的"八十一位数"
 
     if(a7 == c9 && b7 == b9 && c7 == a9){
-      console.log(n, ' ' + c7 + b7 + a7, ' ' + c9 + b9 + a9)
+      console.log(n, '' + c7 + b7 + a7, '' + c9 + b9 + a9)
       break
     }
   }
@@ -1045,7 +1045,7 @@
       res += a + ' '
       n = (n - a) / 10
     } while(n > 0)
-    console.log(res)
+    console.log(res.trim())
 
 </script>
 
