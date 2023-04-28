@@ -912,32 +912,39 @@
 
 
 
+
 </script>
 
-<script id="ch0105/22" type="fail">
+<script id="ch0105/22">
 
-  var totalrest = 0
-  var totalsave = 0
-  var count = 0
-  for (var i = 1; i <= 12; i++) {
-    var pre = +prompt("请输入" + i + "月的预算")
-    var receive = 300
-    var cost = pre
-    var save = (300 - (Math.ceil(pre / 100) * 100))
-    var rest = (Math.ceil(pre / 100) * 100) - cost
 
-    totalrest += rest
-    totalsave += save
+  var money = 0 //手上的钱
+  var stock = 0 //存起来的钱
+  var 不够花 = false
 
-    count++
-    if (pre > receive) {
-    console.log("-" + count)
+  for (var month = 1; month <= 12; month++) {
+    money += 300
+    var budget = +prompt("请输入" + month + "月的预算")
+    if (budget > money) { //预算比手上的钱多
+      console.log(-month)
+      不够花 = true
       break
+    } else {  //如果手上的钱比预算多，则要把预算花掉
+      money -= budget
+    }
+
+    //花完以后如果手上还有整百，则将整百存起来
+    if (money >= 100) {
+      var toBeStock = money - money % 100
+      money -= toBeStock
+      stock += toBeStock
     }
   }
-  if (count == 12) {
-    console.log(totalsave * 1.2 + totalrest)
+
+  if (不够花 == false) {
+    console.log(money + stock * 1.2)
   }
+
 </script>
 
 <script id="ch0105/23" type="ok">
