@@ -946,21 +946,18 @@
 
   var m = +prompt("药品总量")
   var n = +prompt("取药人数")
-  var rest_m = m
   var count = 0
 
-  for(var i = 1;i <= n;i++){
+  for (var i = 1; i <= n; i++) {
     var num = +prompt("第" + i + "个病人要取走的药品数量")
-    rest_m -= num
-
-    if(rest_m < num){
+    if (m > num) {
+      m = m - num
+    } else {
       count++
-      rest_m += num
-      continue;
     }
   }
 
-  console.log(count - 1)
+    console.log(count)
 </script>
 
 <script id="ch0105/24" type="ok">
@@ -978,6 +975,24 @@
   }
 
   console.log(count)
+</script>
+
+<script id="ch0105/25" type="ok">
+
+  for(var n = 81;n <= 342;n++){
+    var a7 = n % 7 //七进制的个位数
+    var b7 = (n - a7) / 7 % 7 //七进制的"七位数" (相当于十进制里的的十位数)
+    var c7 = (n - b7 * 7 - a7) / 7 / 7 % 7 //七进制的"四十九位数"
+
+    var a9   = n % 9   //九进制的个位数
+    var b9   = (n - a9  ) / 9  % 9  //九进制的"九位数"
+    var c9   = (n - b9 * 9 - a9 ) / 9 / 9 % 9   //九进制的"八十一位数"
+
+    if(a7 == c9 && b7 == b9 && c7 == a9){
+      console.log(n, ' ' + c7 + b7 + a7, ' ' + c9 + b9 + a9)
+      break
+    }
+  }
 </script>
 
 
@@ -1001,14 +1016,11 @@
 <script id="ch0105/27" type="ok">
 
   var total = 0
-  var count = 0
   var  K = +prompt("请输入一个整数")
-  for(var i = 1;i <= Infinity;i++){
-    var An = 1 / i;
-    count ++
-    total += An
+  for(var  n= 1;n <= Infinity;n++){
+    total += 1 / n
     if(total > K){
-      console.log(count)
+      console.log(n)
       break
     }
   }
@@ -1016,15 +1028,24 @@
 
 <script id="ch0105/28" type="ok">
 
-  var n = +prompt("请输入一个数字")
-  var str = ""
-  while(n > 0){
-    var last = n % 10
-    n = Math.trunc(n / 10)
-    str += last + " "   //将数字拼接在一起
+  // var n = +prompt("请输入一个数字")
+  // var str = ""
+  // do {
+  //   var last = n % 10
+  //   n = Math.trunc(n / 10)
+  //   str += last + " "   //将数字拼接在一起
 
-  }
-  console.log(str.trim())
+  // } while (n > 0)
+  // console.log(str.trim())
+
+    var n = +prompt("请输入一个数字")
+    var res = ''
+    do{
+      var a = n % 10 //得到个位数上的数字
+      res += a + ' '
+      n = (n - a) / 10
+    } while(n > 0)
+    console.log(res)
 
 </script>
 
