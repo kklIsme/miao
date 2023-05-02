@@ -1351,12 +1351,23 @@
 </script>
 
 <script id="narcissistic" type="ok">
-  var n = +prompt("n")
-  var gewei = n % 10
-  var shiwei = (n - gewei) / 10 % 10
-  var baiwei = Math.trunc(n / 100)
 
-  if(gewei ** 3 + shiwei ** 3 + baiwei ** 3 == n){
+  var isShuixian = function (n) {
+    var sum = 0
+    var origin = n
+
+    while (n > 0) {
+      var gewei = n % 10
+      sum += gewei ** 3
+      n = (n - gewei) / 10
+    }
+    if (sum == origin) {
+      return true
+    }
+  }
+
+  var n = +prompt("n")
+  if(isShuixian(n)){
     console.log("YES")
   }else{
     console.log("NO")
@@ -1366,17 +1377,27 @@
 
 </script>
 
-<script id="narcissistics" type="ing">
+<script id="narcissistics" type="ok">
 
+  var isShuixian = function (n) {
     var sum = 0
+    var origin = n
 
-    for(var num = 1;num <= 10000;num++){
-      sum += (num % 10) ** 3
-      num = Math.trunc(num / 10)
+    while (n > 0) {
+      var gewei = n % 10
+      sum += gewei ** 3
+      n = (n - gewei) / 10
     }
-    if(sum == num){
+    if (sum == origin) {
+      return true
+    }
+  }
+
+  for (var num = 1; num <= 10000; num++) {
+    if (isShuixian(num)) {
       console.log(num)
     }
+  }
 </script>
 
 <script id="palindrom" type="ok">
@@ -1416,22 +1437,22 @@
   }
 </script>
 
-<script id="complete-numbers" type="ok">
+<script id="complete-numbers">
 
-  var str = ""
-  var sum = 0
-  for (var i = 1; i <= 1000 ; i++) {
-    for(var j = 1;j <= i;j++){
-      if(i % j == 0){
-        sum += j
-        if(i == sum){
-          str += i
-        }
-      }
-    }
-  }
+  // var str = ""
+  // var sum = 0
+  // for (var i = 1; i <= 1000 ; i++) {
+  //   for(var j = 1;j < i;j++){
+  //     if(i % j == 0){
+  //       sum += j
+  //       if(i == sum){
+  //         console.log(str)
+  //       }
+  //     }
+  //   }
+  // }
 
-  console.log(str)
+  // console.log(str)
 </script>
 
 <script id="prime" type="ok">
