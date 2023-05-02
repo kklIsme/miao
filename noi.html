@@ -1188,3 +1188,143 @@
 
 </script>
 
+<script id="narcissisitc" type="ok">
+  var n = +prompt("n")
+  var gewei = n % 10
+  var shiwei = (n - gewei) / 10 % 10
+  var baiwei = Math.trunc(n / 100)
+
+  if(gewei ** 3 + shiwei ** 3 + baiwei ** 3 == n){
+    console.log("YES")
+  }else{
+    console.log("NO")
+  }
+
+
+
+</script>
+
+<script id="narcissisitc" type="ok">
+
+    var n = +prompt("n")
+    var sum = 0
+    var num = n
+    while(num > 0){
+      sum += (num % 10) ** 3
+      num = Math.trunc(num / 10)
+    }
+    if(sum == n){
+      console.log("YES")
+    }else{
+      console.log("NO")
+    }
+</script>
+
+<script id="palindrom" type="ok">
+
+  var n = +prompt("n")
+  var str = ""
+  var num = n
+  while (num > 0) {
+    str += (num % 10)
+    num = Math.trunc(num / 10)
+  }
+  if (str == n) {
+    console.log("YES")
+  } else {
+    console.log("NO")
+  }
+</script>
+
+<script id="weekday" type="ing">
+
+</script>
+
+<script id="complete-number" type="ok">
+
+  var n = +prompt("n")
+  var sum = 0
+  for(var i = 1;i < n;i++){
+    if(n % i == 0){
+      sum += i
+    }
+  }
+
+  if(sum == n){
+    console.log("YES")
+  }else{
+    console.log("NO")
+  }
+</script>
+
+<script id="complete-number" type="ing">
+
+  var str = ""
+  var sum = 0
+  for (var i = 1; i <= 1000 ; i++) {
+    for(var j = 1;j <= i;j++){
+      if(i % j == 0){
+        sum += j
+        if(i == sum){
+          str += i
+        }
+      }
+    }
+  }
+
+  console.log(str)
+</script>
+
+<script id="prime" type="ok">
+  var n = +prompt("n")
+  if((n !=1 && n % 2 == 0 || n % 3 == 0 || n % 5 == 0 || n % 7 == 0) && n !== 2 && n !== 3 && n !== 5 && n !== 7){
+    console.log("NO")
+  }else{
+    console.log("YES")
+  }
+</script>
+
+<script id="primes" type="ok">
+
+  for(var n = 1;n <=100;n++){
+    if ((n != 1 && n % 2 == 0 || n % 3 == 0 || n % 5 == 0 || n % 7 == 0) && n !== 2 && n !== 3 && n !== 5 && n !== 7) {
+      console.log(n)
+    }
+  }
+</script>
+
+<script id="itob" type="ing">
+
+  var n = +prompt("n")
+</script>
+
+<script id="lcf&lcm" type="ok">
+
+  var n = +prompt("n")
+  var m = +prompt("m")
+  var bigger = Math.max(n,m)
+  var smaller = Math.max(n,m)
+  var max  = -1
+  var min = 1000
+  for (var i = 1;i <= bigger; i++) {
+    if(n % i == 0 && m % i == 0){
+      max = i
+    }
+  }
+
+  min = n * m / max
+
+  console.log(max,min)
+</script>
+
+<script id="sqrt" type="ok">
+  var n = +prompt("n")
+  if(n > 0){
+    console.log((n ** 0.5).toFixed(3))
+  }else if(n < 0){
+    console.log((Math.abs(n) ** 0.5).toFixed(3) + "i")
+  }else{
+    alert("请输入不为0的数")
+  }
+
+</script>
