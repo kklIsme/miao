@@ -1049,35 +1049,17 @@
 
 </script>
 
-<script id="ch0105/29" type="ing">
+<script id="ch0105/29" type="ok">
 
   var n = +prompt("请输入一个数字")
-  var str = ""
-  var last = n % 10
-
-  if (n > 0) {
-    while (n > 0) {
-      if (last !== 0) {
-        str += last
-      }
-      n = Math.trunc(n / 10)
-    }
-    console.log(str)
-
+  var result = 0
+  while(n != 0){
+    var gewei = n % 10
+    result = result * 10 + gewei //若个位为0 则乘10仍为0
+    n = (n - gewei) / 10
   }
 
-  // if (n < 0) {
-  //   n = -n
-  //   while (n > 0) {
-  //     var last = n % 10
-  //     n = Math.trunc(n / 10)
-  //   }
-  //   console.log("-" + str)
-  // }
-
-
-
-
+  console.log(result)
 </script>
 
 <script id="ch0105/30" type="ok">
@@ -1093,44 +1075,73 @@
       m = Math.trunc(m / 10)
     }
 
-  }
-  if (count == k) {
-    console.log("YES")
-  } else {
+    if (count == k) {
+      console.log("YES")
+    } else {
+      console.log("NO")
+    }
+
+  }else {
     console.log("NO")
   }
 </script>
 
-<script id="ch0105/31" type="ing">
+<script id="ch0105/31" type="ok">
 
-  var N = +prompt("灯的数量")
-  var M = +prompt("人的数量")
-  var flag = true
-  var str = ""
+  var n = +prompt("灯的数量")
+  var m = +prompt("人的数量")
+  var result = ''
+  var count = 0
 
-  for (var i = 1; i <= N; i++) {
+  for (var light = 1; light <= n; light++) { //light是灯的编号
+    var state = true;
 
-    for (var j = 3; j <= M; j++) {
-
-      flag = false  //第一个人关闭所有灯
-      if (i % 2 == 0) {  //第二个人
-        flag = true
+    for (var p = 1; p <= m; p++) { //p是人的编号
+      if (light % p == 0) {  //如果灯的编号是人的编号的倍数
+        state = !state //人将灯的状态切换
       }
-
-      if (i % j == 0) {
-        if (flag == true) {
-          flag = false
-        }
-        if (flag == false) {
-          flag = true
-        }
-      }
-
-      if(flag == false){
-        console.log(str + i)
+    }
+    if (state == false) {
+      count++ //记录关着的灯的数量
+      if (count == 1) { //遇到的第一盏关着的灯
+        result += light
+      } else {
+        result += ',' + light
       }
     }
   }
+
+  console.log(result)
+</script>
+
+<script id="ch0105/32" type="ok">
+
+  var n = +prompt("n")
+  var a = 1
+  var b = 2
+  var sum = 0
+
+  for(var i = 0;i < n;i++){
+    sum += b / a
+    b = b + a
+    a = b - a
+  }
+
+  console.log(sum.toFixed(4))
+</script>
+
+<script id="ch0105/33" type="ok">
+
+  var n = +prompt("n")
+  var sum = 0
+  var x = 1
+
+  for(var i = 1;i <= n;i++){
+    sum += 1 / i * x
+    x = -x
+  }
+
+  console.log(sum.toFixed(4))
 </script>
 
 <script id="ch0105/34" type="ok">
@@ -1188,7 +1199,7 @@
 
 </script>
 
-<script id="narcissisitc" type="ok">
+<script id="narcissistic" type="ok">
   var n = +prompt("n")
   var gewei = n % 10
   var shiwei = (n - gewei) / 10 % 10
@@ -1204,7 +1215,7 @@
 
 </script>
 
-<script id="narcissisitc" type="ok">
+<script id="narcissistics" type="ok">
 
     var n = +prompt("n")
     var sum = 0
@@ -1277,17 +1288,17 @@
 
 <script id="prime" type="ok">
   var n = +prompt("n")
-  if((n !=1 && n % 2 == 0 || n % 3 == 0 || n % 5 == 0 || n % 7 == 0) && n !== 2 && n !== 3 && n !== 5 && n !== 7){
+  if((n == 1 && n % 2 == 0 || n % 3 == 0 || n % 5 == 0 || n % 7 == 0) && n !== 2 && n !== 3 && n !== 5 && n !== 7){
     console.log("NO")
   }else{
     console.log("YES")
   }
 </script>
 
-<script id="primes" type="ok">
+<script id="primes">
 
   for(var n = 1;n <=100;n++){
-    if ((n != 1 && n % 2 == 0 || n % 3 == 0 || n % 5 == 0 || n % 7 == 0) && n !== 2 && n !== 3 && n !== 5 && n !== 7) {
+    if ((n != 1 && n % 2 != 0 || n % 3 != 0 || n % 5 != 0 || n % 7 != 0) && n == 2 || n == 3 || n == 5 || n == 7) {
       console.log(n)
     }
   }
