@@ -1028,16 +1028,6 @@
 
 <script id="ch0105/28" type="ok">
 
-  // var n = +prompt("请输入一个数字")
-  // var str = ""
-  // do {
-  //   var last = n % 10
-  //   n = Math.trunc(n / 10)
-  //   str += last + " "   //将数字拼接在一起
-
-  // } while (n > 0)
-  // console.log(str.trim())
-
     var n = +prompt("请输入一个数字")
     var res = ''
     do{
@@ -1315,7 +1305,7 @@
 
 <script id="ch0105/43" type="ok">
   var n = +prompt("n")
-  for(var i = 2;i <= n ** 0.5;i++){
+  for(var i = 2;i <= n ** 0.5;i++){ //由于质数只能被自己或1整除,所以从2开始筛选到根号n结束
     if(n % i == 0){
       console.log(n / i)
       break
@@ -1457,7 +1447,7 @@
   }
 </script>
 
-<script id="complete-numbers">
+<script id="complete-numbers" type="ok">
 
   var str = ""
   for (var i = 1; i <= 1000; i++) {
@@ -1521,7 +1511,7 @@
 
 <script id="itob" type="ing">
 
-  var n = +prompt("n")
+  <!-- var n = +prompt("n") -->
 </script>
 
 <script id="lcf&lcm" type="ok">
@@ -1544,13 +1534,13 @@
 </script>
 
 <script id="sqrt" type="ok">
-  var n = +prompt("n")
+  <!-- var n = +prompt("n")
   if(n > 0){
     console.log((n ** 0.5).toFixed(3))
   }else if(n < 0){
     console.log((Math.abs(n) ** 0.5).toFixed(3) + "i")
   }else{
     alert("请输入不为0的数")
-  }
+  } -->
 
 </script>
