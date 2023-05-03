@@ -67,6 +67,18 @@
   // 不可更改上面的代码
   // 你的代码写在这里
 
+  function line(x1,y1,x2,y2,color='black') {
+    var dx = x2 - x1
+    var dy = y2 - y1
+    var stepy = dy / dx
+    var y = y1
+    for(var x = x1;x <= x2;x++){
+      dot(x,y,color)
+      y += stepy
+    }
+  }
+  line(100,100,800,100,'red')
+
   //第一题
   dot(5, 5, 'lightblue')
 
