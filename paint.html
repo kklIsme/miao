@@ -246,7 +246,7 @@
   var cx = 950
   var cy = 260
 
-  for(var t = 0;t < 1;t+=0.01){
+  for(var t = 0;t < 1;t+=0.001){
     var x = (ax * t + bx * (1 - t)) * t + ((bx * t + cx * (1 - t))) * (1 - t)
     var y = (ay * t + by * (1 - t)) * t + ((by * t + cy * (1 - t))) * (1 - t)
     dot(x,y,'skyblue')
@@ -262,7 +262,7 @@
   var Dx = 800
   var Dy = 200
 
-  for(var t = 0;t < 1;t+=0.01){
+  for(var t = 0;t < 1;t+=0.001){
     var x = t * ((t * (Ax * t + Bx * (1 - t))) + (Bx * t + Cx * (1 - t)) * (1 - t) ) + (1 - t) * ((Bx * t + Cx * (1 - t)) * t + (Cx * t + Dx * (1 - t)) * (1 - t))
     var y = t * ((t * (Ay * t + By * (1 - t))) + (By * t + Cy * (1 - t)) * (1 - t) ) + (1 - t) * ((By * t + Cy * (1 - t)) * t + (Cy * t + Dy * (1 - t)) * (1 - t))
     dot(x,y,'red')
