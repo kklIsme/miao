@@ -221,10 +221,10 @@
     }
   }
 
-  var theta = Math.PI / 6  //旋转角度
+  var theta = Math.PI / 3  //旋转角度
 
-  for(var x = 0;x < 256;x++){
-    for(var y = 0;y < 256;y++){
+  for (var x = 0; x < 256; x++) {
+    for (var y = 0; y < 256; y++) {
       var x1 = x
       var y1 = Math.floor(y - Math.tan(theta / 2) * x)
 
@@ -234,9 +234,42 @@
       var x3 = x2
       var y3 = Math.floor(y2 - Math.tan(theta / 2) * x2)
 
-      dot(x3,y3 + 800,'rgb(' + x + ',' + y + ',' + '255)')
+      dot(x3, y3 + 800, 'rgb(' + x + ',' + y + ',' + '255)')
     }
   }
+
+  // 二阶贝塞尔曲线
+  var ax = 500
+  var ay = 300
+  var bx = 630
+  var by = 550
+  var cx = 950
+  var cy = 260
+
+  for(var t = 0;t < 1;t+=0.01){
+    var x = (ax * t + bx * (1 - t)) * t + ((bx * t + cx * (1 - t))) * (1 - t)
+    var y = (ay * t + by * (1 - t)) * t + ((by * t + cy * (1 - t))) * (1 - t)
+    dot(x,y,'skyblue')
+  }
+
+  // 三阶贝塞尔曲线
+  var Ax = 400
+  var Ay = 280
+  var Bx = 500
+  var By = 120
+  var Cx = 700
+  var Cy = 180
+  var Dx = 800
+  var Dy = 200
+
+  for(var t = 0;t < 1;t+=0.01){
+    var x = t * ((t * (Ax * t + Bx * (1 - t))) + (Bx * t + Cx * (1 - t)) * (1 - t) ) + (1 - t) * ((Bx * t + Cx * (1 - t)) * t + (Cx * t + Dx * (1 - t)) * (1 - t))
+    var y = t * ((t * (Ay * t + By * (1 - t))) + (By * t + Cy * (1 - t)) * (1 - t) ) + (1 - t) * ((By * t + Cy * (1 - t)) * t + (Cy * t + Dy * (1 - t)) * (1 - t))
+    dot(x,y,'red')
+  }
+
+
+
 
 
 
