@@ -1,0 +1,74 @@
+<script>
+
+	//求x的幂
+	function pow(x, n) {
+		if (n == 0) {
+			return 1
+		} else {
+			return x * pow(x, n - 1)
+		}
+	}
+
+	//阶乘
+	function factorial(n) {
+
+		if (n == 1) {
+			return 1
+		} else {
+			return n * factorial(n - 1)
+		}
+	}
+
+
+	//等差数列和
+	function S(n) {
+		if (n == 1) {
+			return a(1)
+		} else {
+			return a(n) + S(n - 1)
+		}
+	}
+
+	function a(n) {
+		return n
+	}
+
+
+	//最大公约数
+	function gcd(a, b) {
+		if (a % b == 0) {
+			return b
+		} else {
+			return gcd(b, a % b)
+		}
+	}
+
+	//最大公约数
+	function lcf(a, b) {
+		if (a == b) {
+			return a
+		} else if (a < b) {
+			return lcf(a, b - a)
+		} else if (a > b) {
+			return lcf(b, a - b)
+		}
+	}
+
+
+</script>
+
+<script>
+	//输入一个所在点，利用递归写出到达(2,3)的路径
+	function solve(x,y,how) {
+		if(x == 2 && y == 3){
+			console.log(how)
+			return
+		}else if (x > 2 || y > 3){
+			return
+		}
+
+		solve(x + 1,y,how + '>')
+		solve(x,y + 1,how + 'v')
+	}
+</script>
+
