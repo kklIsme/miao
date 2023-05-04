@@ -1426,9 +1426,7 @@
   }
 </script>
 
-<script id="weekday" type="ing">
 
-</script>
 
 <script id="complete-number" type="ok">
 
@@ -1509,12 +1507,97 @@
   }
 </script>
 
-<script id="itob" type="ing">
+<script id="itob" type="ok">
 
-  <!-- var n = +prompt("n") -->
+  // function itob(x) {
+  //   var result = ''
+
+  //   do {
+  //     var g = x % 10
+  //     var c
+  //     if (g == 0) {
+  //       c = '0'
+  //     }
+  //     if (g == 1) {
+  //       c = '1'
+  //     }
+  //     if (g == 2) {
+  //       c = '2'
+  //     }
+  //     if (g == 3) {
+  //       c = '3'
+  //     }
+  //     if (g == 4) {
+  //       c = '4'
+  //     }
+  //     if (g == 5) {
+  //       c = '5'
+  //     }
+  //     if (g == 6) {
+  //       c = '6'
+  //     }
+  //     if (g == 7) {
+  //       c = '7'
+  //     }
+  //     if (g == 8) {
+  //       c = '8'
+  //     }
+  //     if (g == 9) {
+  //       c = '9'
+  //     }
+
+  //     result = c + result
+  //     x = (x - g) / 10
+  //   } while (x > 0)
+
+  //   return result
+
+
+  // }
+
+  function itob(x) {
+    var result = ''
+    do{
+      var g = x % 10
+      result = digitToChar(g) + result
+      x = (x - g) / 10
+    }while(x > 0)
+    return result
+  }
+
+  function digitToChar(digit){
+    if(digit < 10){
+      return String.fromCharCode(digit + 48)
+    }else{
+      return String.fromCharCode(digit + 65)
+    }
+  }
+
+
+
+
 </script>
 
+
+
+
 <script id="lcf&lcm" type="ok">
+
+  // function lcf(a,b) {
+
+  //   var yushu
+  //   do{
+  //     yushu = a % b
+  //     a = b
+  //     b = yushu
+
+  //     if(yushu == 0){
+  //       var lcf = b
+  //     }
+  //   }while(yushu !== 0)
+
+  //   return a //当最后一次余数为0时 会再执行一次循环,因此会将0赋给b,将原来得到余数0时的除数b赋给a,此时需要返回a
+  // }
 
   var n = +prompt("n")
   var m = +prompt("m")
@@ -1533,3 +1616,74 @@
   console.log(max,min)
 </script>
 
+<script id="sqrt" type="ok">
+
+  function sqrt(n) {
+    var left = 0
+    var right = n
+    while(right - left > 0.0000000001){
+      var mid = (left + right) / 2
+      if(mid * mid > n){
+        right = mid
+      }else if(mid * mid < n){
+        left = mid
+      }else{
+        return mid
+      }
+    }
+    return (right + left) / 2
+  }
+</script>
+
+<script id="weekday" type="ok">
+  function getMonth天数(y, month) {
+    if (month == 2) {
+      if (y % 400 == 0 || y % 100 !== 0 && y % 4 == 0) {
+        return 29
+      } else {
+        return 28
+      }
+    } else {
+      switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+          return 31
+        default:
+          return 30
+      }
+    }
+  }
+  function weekday(year, month) {
+    var daySum = 0
+    for (var i = 1; i < year; i++) {
+      if (i % 400 == 0 || i % 100 !== 0 && i % 4 == 0) {
+        daySum += 366
+      } else {
+        daySum += 365
+      }
+    }
+
+    for (var m = 1; m < month; m++) {
+      daySum += getMonth天数(year, m)
+    }
+
+    return (daySum + 1) % 7
+  }
+
+  // function weekday2(year, month) { //第二种方法
+  //   var y = year - 1
+
+  //   var daySum = y * 365 + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400)
+
+  //   for (var m = 1; m < month; m++) {
+  //     daySum += getMonth天数(year, m)
+  //   }
+
+  //   return (daySum + 1) % 7
+  // }
+</script>
