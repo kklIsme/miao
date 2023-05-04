@@ -1599,6 +1599,7 @@
 
 <script id="lcf&lcm" type="ok">
 
+  //辗转相除法求最大公约数
   // function lcf(a,b) {
 
   //   var yushu
@@ -1660,9 +1661,28 @@
   var month = +prompt("month")
   console.log(weekday(year, month))
 
-  function getMonth天数(y, month) {
+
+  function weekday(year, month) {
+    var daySum = 0
+    for (var i = 1; i < year; i++) {
+      if (i % 400 == 0 || i % 100 !== 0 && i % 4 == 0) {
+        daySum += 366
+      } else {
+        daySum += 365
+      }
+    }
+
+    for (var m = 1; m < month; m++) {
+      daySum += getMonth天数(year, m)
+    }
+
+    return (daySum + 1) % 7
+  }
+
+
+  function getMonth天数(year, month) {
     if (month == 2) {
-      if (y % 400 == 0 || y % 100 !== 0 && y % 4 == 0) {
+      if (year % 400 == 0 || year % 100 !== 0 && year % 4 == 0) {
         return 29
       } else {
         return 28
@@ -1682,22 +1702,7 @@
       }
     }
   }
-  function weekday(year, month) {
-    var daySum = 0
-    for (var i = 1; i < year; i++) {
-      if (i % 400 == 0 || i % 100 !== 0 && i % 4 == 0) {
-        daySum += 366
-      } else {
-        daySum += 365
-      }
-    }
 
-    for (var m = 1; m < month; m++) {
-      daySum += getMonth天数(year, m)
-    }
-
-    return (daySum + 1) % 7
-  }
 
 
 
