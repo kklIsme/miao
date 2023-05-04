@@ -1509,72 +1509,85 @@
 
 <script id="itob" type="ok">
 
-  // function itob(x) {
-  //   var result = ''
-
-  //   do {
-  //     var g = x % 10
-  //     var c
-  //     if (g == 0) {
-  //       c = '0'
-  //     }
-  //     if (g == 1) {
-  //       c = '1'
-  //     }
-  //     if (g == 2) {
-  //       c = '2'
-  //     }
-  //     if (g == 3) {
-  //       c = '3'
-  //     }
-  //     if (g == 4) {
-  //       c = '4'
-  //     }
-  //     if (g == 5) {
-  //       c = '5'
-  //     }
-  //     if (g == 6) {
-  //       c = '6'
-  //     }
-  //     if (g == 7) {
-  //       c = '7'
-  //     }
-  //     if (g == 8) {
-  //       c = '8'
-  //     }
-  //     if (g == 9) {
-  //       c = '9'
-  //     }
-
-  //     result = c + result
-  //     x = (x - g) / 10
-  //   } while (x > 0)
-
-  //   return result
-
-
-  // }
-
-  var x = +prompt("x")
-  console.log((itob(x)))
+  var x = +prompt('x')
+  console.log(itob(x))
 
   function itob(x) {
     var result = ''
-    do{
-      var g = x % 10
-      result = digitToChar(g) + result
-      x = (x - g) / 10
-    }while(x > 0)
-    return result
+    var n = x
+    if(n < 0){
+      n = -n
+    }
+    do {
+      var g = n % 10
+      var c
+      if (g == 0) {
+        c = '0'
+      }
+      if (g == 1) {
+        c = '1'
+      }
+      if (g == 2) {
+        c = '2'
+      }
+      if (g == 3) {
+        c = '3'
+      }
+      if (g == 4) {
+        c = '4'
+      }
+      if (g == 5) {
+        c = '5'
+      }
+      if (g == 6) {
+        c = '6'
+      }
+      if (g == 7) {
+        c = '7'
+      }
+      if (g == 8) {
+        c = '8'
+      }
+      if (g == 9) {
+        c = '9'
+      }
+
+      result = c + result
+      n = (n - g) / 10
+    } while (n > 0)
+
+    if(x < 0){
+      return '-' + result
+    }else{
+      return result
+    }
+
+
   }
 
-  function digitToChar(digit){
-    if(digit < 10){
-      return String.fromCharCode(digit + 48)
-    }else{
-      return String.fromCharCode(digit + 65)
-    }
-  }
+
+  //更高效的方法
+  // var x = +prompt("x")
+  // console.log((itob(x)))
+
+  // function itob(x) {
+  //   var result = ''
+  //   do{
+  //     var g = x % 10
+  //     result = digitToChar(g) + result
+  //     x = (x - g) / 10
+  //   }while(x > 0)
+
+  //   return result
+  // }
+
+  // function digitToChar(digit){
+  //   if(digit < 10){
+  //     return String.fromCharCode(digit + 48)
+  //   }else{
+  //     return String.fromCharCode(digit + 65)
+  //   }
+  // }
 
 
 
