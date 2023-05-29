@@ -59,16 +59,68 @@
 
 <script>
 	//输入一个所在点，利用递归写出到达(2,3)的路径
-	function solve(x,y,how) {
-		if(x == 2 && y == 3){
+	function solve(x, y, how) {
+		if (x == 2 && y == 3) {
 			console.log(how)
 			return
-		}else if (x > 2 || y > 3){
+		} else if (x > 2 || y > 3) {
 			return
 		}
 
-		solve(x + 1,y,how + '>')
-		solve(x,y + 1,how + 'v')
+		solve(x + 1, y, how + '>')
+		solve(x, y + 1, how + 'v')
 	}
 </script>
 
+
+<script>
+	function solve(x, y, how) {
+		if (x == 5 && y == 5) {
+			console.log(how)
+			return
+		} else if (x > 5 || y > 5) {
+			return
+		} else {
+			solve(x + 1, y, how + '>')
+			solve(x, y + 1, how + 'v')
+		}
+
+	}
+</script>
+
+<script>
+	function get(n, how) {
+		if (n == 150) {
+			console.log(how)
+			return
+		} else if (n > 150 || n > 150) {
+			return
+		} else {
+			get(n + 5,how + '+ 5')
+			get(n * 5, '(' + how + ')' + '* 5')
+		}
+
+	}
+</script>
+
+<script>
+	//可以避免合成效益 将已求出的数放在对象中 用到时直接在对象中查找使用
+var cache = {
+  1: 1,
+  2: 1,
+  3: 2,
+  4: 3,
+}
+
+function fibb(n) {
+  if (n in cache) {
+    return cache[n]
+  }
+  if (n < 2) {
+    return 1
+  } else {
+    return cache[n] = fibb(n - 1) + fibb(n - 2)
+  }
+}
+
+</script>
