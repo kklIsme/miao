@@ -329,3 +329,166 @@
     }
   }
 
+
+
+  //堆的实现
+  //函数版本
+  var heap = [1,4,2,2,45,3,2,2,43,2,4,4,5]
+  // 从堆里删除堆顶元素并维护堆的性质
+  function pop(heap) {
+    if (heap.length == 0) {
+      return undefined
+    }
+    if (heap.length == 1) {
+      return heap.pop()
+    }
+    var result = heap[0]
+    var last = heap.pop()
+    heap[0] = last
+    heapDown(heap, 0)
+    return result
+  }
+
+  // 往堆里增加一个元素并维护堆的性质
+  function push(heap, val) {
+    heap.push(val)
+    heapUp(heap, heap.length - 1)
+    return heap
+  }
+  function heapUp(heap, pos) {
+    if (pos == 0) {
+      return
+    }
+    var parentPos = (pos - 1) >> 1 // 计算pos位置的元素的父结点的位置
+    if (heap[pos] >  heap[parentPos]) {
+      swap(heap, pos, parentPos)
+      heapUp(heap, parentPos)
+    }
+  }
+
+
+  // 从pos位置开始向下调整
+  // pos位置的左右子树都是合法的堆
+  // stop表示只认为数组中小于stop位置的元素是堆中的元素
+  // 用以后面的堆排序代码
+  function heapDown(heap, pos, stop = heap.length) {
+    var leftPos = 2 * pos + 1
+    var rightPos = 2 * pos + 2
+    var maxIdx = pos
+    if (leftPos < stop && heap[leftPos] > heap[maxIdx]) {
+      maxIdx = leftPos
+    }
+    if (rightPos < stop && heap[rightPos] > heap[maxIdx]) {
+      maxIdx = rightPos
+    }
+    if (maxIdx !== pos) {
+      swap(heap, maxIdx, pos)
+      heapDown(heap, maxIdx, stop)
+    }
+  }
+
+
+
+  function swap(array, i, j) {
+    var t = array[i]
+    array[i] = array[j]
+    array[j] = t
+  }
+
+
+  //面向对象版本
+  class PriorityQueue {
+    constructor(inits = [], predicate = it => it) { //predicate为传入的函数 (若传入it => -it则会生成小顶堆)
+      if (typeof predicate !== 'function') {
+        throw new TypeError('predicate must be a function, got: ' + predicate)
+      }
+      this._elements = []
+      this._predicate = predicate
+      for (var item of inits) {
+        this.push(item)
+      }
+    }
+
+    _swap(i, j) {
+      var t = this._elements[i]
+      this._elements[i] = this._elements[j]
+      this._elements[j] = t
+    }
+
+    _heapDown(pos) {
+      var predicate = this._predicate
+      var leftPos = pos * 2 + 1
+      var rightPos = pos * 2 + 2
+      var maxIdx = pos
+      if (leftPos < this._elements.length && predicate(this._elements[leftPos]) > predicate(this._elements[maxIdx])) {
+        maxIdx = leftPos
+      }
+      if (rightPos < this._elements.length && predicate(this._elements[rightPos]) > predicate(this._elements[maxIdx])) {
+        maxIdx = rightPos
+      }
+      if (maxIdx !== pos) {
+        this._swap(maxIdx, pos)
+        this._heapDown(maxIdx)
+      }
+    }
+
+    _heapUp(pos) {
+      var predicate = this._predicate
+      if (pos == 0) {
+        return
+      }
+      var parentPos = (pos - 1) >> 1
+      if (predicate(this._elements[pos]) > predicate(this._elements[parentPos])) {
+        this._swap(pos, parentPos)
+        this._heapUp(parentPos)
+      }
+    }
+
+    pop() {
+      if (!this._elements) {
+        return undefined
+      }
+      if (this._elements.length == 1) {
+        return this._elements.pop()
+      }
+      var result = this._elements[0]
+      var last = this._elements.pop()
+      this._elements[0] = last
+      this._heapDown(0)
+      return result
+    }
+
+    push(val) {
+      this._elements.push(val)
+      this._heapUp(this._elements.length - 1)
+      return this
+    }
+
+    peek() {
+      return this._elements[0]
+    }
+
+    get size() {
+      return this._elements.length
+    }
+
+  }
+
+  //堆排序
+  function heapify(ary){
+    var start = (ary.length - 1) >> 1 //从位于最后的有子结点的元素开始
+    for(var i = start;i >= 0;i--){
+      heapDown(ary,i)
+    }
+    return ary
+  }
+
+  function heapSort(ary) {
+    heapify(ary)
+    for(var i = ary.length - 1;i > 0;i--){  //从最后一个元素开始递归依次交换并排序
+      swap(ary,0,i)
+      heapDown(ary,0,i)
+    }
+    return ary
+  }
+
