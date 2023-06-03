@@ -173,10 +173,18 @@ var kklisme = {
 
   join: function (array,separator = ',') {
     var res = ''
-    for(var item of array){
-      item += separator
-      res += item
+    if(typeof separator == 'number'){
+      for(var item of array){
+        item = item + String(separator)
+        res += item
+      }
+    }else{
+      for(var item of array){
+        item += separator
+        res += item
+      }
     }
+
     return res.slice(0,-1)
   },
 
