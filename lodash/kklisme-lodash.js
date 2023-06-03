@@ -12,41 +12,41 @@ var kklisme = {
     return result
   },
 
-  chunk: function (ary, size) {
+  chunk: function (array, size) {
     var result = []
-    for (var i = 0; i < ary.length; i += size) {
-      result.push(ary.slice(i, i + size))
+    for (var i = 0; i < array.length; i += size) {
+      result.push(array.slice(i, i + size))
     }
     return result
   },
 
-  fill: function (ary, value, start = 0, end = ary.length) {
+  fill: function (array, value, start = 0, end = array.length) {
     for (var i = start; i < end; i++) {
-      ary[i] = value
+      array[i] = value
     }
-    return ary
+    return array
   },
 
-  drop: function (ary,n = 1) {
-    ary = ary.slice(n,ary.length)
-    return ary
+  drop: function (array,n = 1) {
+    array = array.slice(n,array.length)
+    return array
   },
 
-  // findIndex: function (ary, predicate = it => it, fromIndex = 0) {
-  //   for(var i = 0;i < ary.length;i++){
-  //     if( predicate(ary[i]) ){
+  // findIndex: function (array, predicate = it => it, fromIndex = 0) {
+  //   for(var i = 0;i < array.length;i++){
+  //     if( predicate(array[i]) ){
   //       return i
   //     }
   //   }
   // },
 
-  // findLastIndex: function (ary, predicate = it => it, fromIndex = 0) {
+  // findLastIndex: function (array, predicate = it => it, fromIndex = 0) {
   //
   // },
 
-  flatten: function (ary) {
+  flatten: function (array) {
     var result = []
-    for(var item of ary){
+    for(var item of array){
       if(Array.isArray(item)){
         for(var val of item){
           result.push(val)
@@ -59,9 +59,9 @@ var kklisme = {
   },
 
 
-  flattenDeep: function (ary) {
+  flattenDeep: function (array) {
     var result = []
-    for(var item of ary){
+    for(var item of array){
       if(Array.isArray(item)){
         var flattedItem = this.flattenDeep(item)
         for(var val of flattedItem){
@@ -74,12 +74,12 @@ var kklisme = {
     return result
   },
 
-  flattenDepth: function (ary,depth = 1) {
+  flattenDepth: function (array,depth = 1) {
     if(depth == 0){
-      return ary.slice()
+      return array.slice()
     }
     var result = []
-    for(var item of ary){
+    for(var item of array){
       if(Array.isArray(item)){
         var flattedItem = this.flattenDepth(item,depth - 1)
         for(var val of flattedItem){
@@ -90,6 +90,54 @@ var kklisme = {
       }
     }
     return result
+  },
+
+  fromPairs: function (pairs) {
+    var res = {}
+
+    for(var i = 0;i < pairs.length;i++){
+      var key = pairs[i][0]
+      res[key] = pairs[i][1]
+    }
+    return res
+
+  },
+
+  toPairs: function (object) {
+    var res = []
+    var obj = Object.keys(object) //Object.keys()静态方法返回一个由给定对象自身的可枚举的字符串键属性名组成的数组。
+    for(var i = 0;i < obj.length;i++){
+      var key = obj[i]
+      res[i] = []
+      res[i][0] = key
+      res[i][1] = object[key]
+    }
+
+    return res
+
+  },
+
+  head: function (array) {
+    if(!array){
+      return undefined
+    }
+
+    return array[0]
+  },
+
+  indexOf: function (array, value, fromIndex = 0) {
+    var res = 0
+    if(fromIndex >= 0){
+      for(var i = fromIndex;i < array.length;i++){
+        if(array[i] == value){
+          res = i
+          return res
+        }
+      }
+      return -1
+    }else{
+      return res - array.length
+    }
   },
 
 
