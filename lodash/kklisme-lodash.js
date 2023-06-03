@@ -1,4 +1,11 @@
 var kklisme = {
+
+  swap: function(array,i,j) {
+    var t = array[i]
+    array[i] = array[j]
+    array[j] = t
+  },
+
   compact: function (array) {
     var result = [];
     for (var item of array) {
@@ -159,4 +166,74 @@ var kklisme = {
   //     return -1;
   //   }
   // },
+
+  initial: function (array) {
+    return array.slice(0,-1)
+  },
+
+  join: function (array,separator = ',') {
+    var res = ''
+    for(var item of array){
+      item += separator
+      res += item
+    }
+    return res.slice(0,-1)
+  },
+
+  last: function (array) {
+    var last = array.length - 1
+    return array[last]
+  },
+
+  pull: function (array,...args) { //利用剩余参数
+    for(var i = 0;i < args.length;i++){
+      for(var j = 0;j < array.length;j++){
+        if(args[i] == array[j]){
+          array.splice(j,1)
+        }
+      }
+    }
+    return array
+  },
+
+  reverse: function (array){
+    var i = 0
+    var j = array.length - 1
+    while(i < j){
+      this.swap(array,i,j)
+      i++
+      j--
+    }
+    return array
+  },
+
+  // every: function (collection,predicate){
+  //   var result = true
+  //   for(var item of collection){
+  //     if( !predicate(item) ){
+  //       result = false
+  //       break
+  //     }
+  //   }
+  //   return result
+  // },
+
+  // some: function (collection,predicate){
+  //   var result = false
+  //   for(var item of collection){
+  //     if( !predicate(item) ){
+  //       result = true
+  //       break
+  //     }
+  //   }
+  //   return result
+  // },
+
+    // countBy: function(collection,iteratee){
+
+    // },
+
+
+
+
 };
