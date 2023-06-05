@@ -352,10 +352,10 @@ var kklisme = {
   },
 
   pullAll: (array, values) => {
-    for(let i = 0;i < array.length;i++){
-      for(let j = 0;j < values.length;j++){
-        if(array[i] == values[j]){
-          array.splice(i,1)
+    for(let i = 0;i < values.length;i++){
+      for(let j = 0;j < array.length;j++){
+        if(values[i] == array[j]){
+          array.splice(j,1)
         }
       }
     }
