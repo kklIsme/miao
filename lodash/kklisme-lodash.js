@@ -24,6 +24,8 @@ var kklisme = {
     return result;
   },
 
+
+
   chunk: function (array, size) {
     var result = [];
     for (var i = 0; i < array.length; i += size) {
@@ -32,6 +34,86 @@ var kklisme = {
     return result;
   },
 
+  difference: (array,...values) => {
+    return array.filter( item => values.flat().indexOf(item) < 0)
+  },
+
+  // differenceBy: function(array,...values){
+  //   let iteratee = values.pop() //将剩余参数的最后一个提出来作为iteratee(迭代器)
+  //   for(var i = 0;i < array.length;i++){
+  //     if(typeof iteratee == 'function'){
+  //       array[i] = iteratee(array[i])
+  //       values[i] = iteratee(values[i])
+  //       return array.filter( item => values.flat().indexOf(item) < 0)
+  //     }
+  //     if(Array.isArray(iteratee)){
+  //       return array.filter( item => values.flat().indexOf(item) < 0)
+  //     }
+  //     if(typeof iteratee == 'string'){
+
+  //     }
+
+  //   }
+  //   return array.filter( item => values.flat().indexOf(item) < 0)
+
+  // },
+
+  // differenceWith: function(array,values = [],comparator){
+
+  // },
+  drop: function (array, n = 1) {
+    array = array.slice(n, array.length);
+    return array;
+  },
+
+
+
+  dropRight: (array,n = 1) => {
+    for(let i = array.length - 1;i >= 0;i--){
+      if(n > 0){
+        array.splice(i,1)
+        n--
+      }
+      if(n == 0){
+        break
+      }
+    }
+    return array
+  },
+
+  // dropRightWhile: (array,predicate) => {
+  //   const length = array.length - 1
+  //   for(let i = 0;i < length;i++){
+  //     if(typeof predicate == 'function'){
+  //         if(predicate(array[i])){
+  //           array.splice(i,1)
+  //         }
+  //     }
+  //     if(Array.isArray(predicate)){
+  //       let key = predicate[0]
+  //       let val = predicate[1]
+  //       if(key in array[i] && val == array[i][key]){
+  //         array.splice(i,1)
+  //       }
+  //     }
+  //     if(typeof predicate == 'object'){
+  //       for(let key in predicate){
+  //         if(key in array[i] && predicate[key] == array[i][ predicate[key] ]){
+  //           array.splice(i,1)
+  //         }
+  //       }
+  //     }
+  //     if(typeof predicate == 'string'){
+  //       if(predicate in array[i]){
+  //         array.splice(i,1)
+  //       }
+  //     }
+  //   }
+
+  //   return array
+
+  // },
+
   fill: function (array, value, start = 0, end = array.length) {
     for (var i = start; i < end; i++) {
       array[i] = value;
@@ -39,10 +121,7 @@ var kklisme = {
     return array;
   },
 
-  drop: function (array, n = 1) {
-    array = array.slice(n, array.length);
-    return array;
-  },
+
 
   findIndex: function (array, predicate, fromIndex = 0) {
     for (let i = fromIndex; i < array.length; i++) {
@@ -210,6 +289,23 @@ var kklisme = {
 
   initial: function (array) {
     return array.slice(0, -1);
+  },
+
+  intersection: function (...arrays) {
+    let length = arrays.length
+    let map = {}
+    arrays = this.flattenDeep(arrays)
+    for(let item of arrays){
+      if(!(item in map)){
+        map[item] = 1
+      }else{
+        map[item]++
+      }
+
+      if(map[item] == length){
+        return [item]
+      }
+    }
   },
 
   join: function (array, separator = ",") {
