@@ -425,6 +425,16 @@ var kklisme = {
     return res
   },
 
+  tail: (array) => {
+    return array.slice(1)
+  },
+  take: (array,n = 1) => {
+    if(n == 0){
+      return []
+    }
+    return array.slice(0,n)
+  },
+
   // every: function (collection,predicate){
   //   for(var item of collection){
   //       if(Array.isArray(predicate)){
