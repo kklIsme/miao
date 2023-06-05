@@ -191,41 +191,21 @@ var kklisme = {
   },
 
   indexOf: function (array, value, fromIndex = 0) {
-    var res = 0;
-    if (fromIndex >= 0) {
-      for (var i = fromIndex; i < array.length; i++) {
-        if (array[i] == value) {
-          res = i;
-          return res;
-        }
-      }
-      return -1;
-    } else {
-      if (fromIndex % array.length !== 0) {
-        return this.indexOf(array, value, (fromIndex += array.length));
-      } else {
-        return this.indexOf(array, value, (fromIndex = 0));
+    for(let i = fromIndex < 0 ?fromIndex + array.length : fromIndex;i < array.length;i++){
+      if(array[i] == value){
+        return i
       }
     }
+    return -1
   },
 
   lastIndexOf: function (array, value, fromIndex = array.length - 1) {
-    var res = 0;
-    if (fromIndex >= 0) {
-      for (var i = fromIndex; i >= 0;i--) {
-        if (array[i] == value) {
-          res = i;
-          return res;
-        }
-      }
-      return -1;
-    } else {
-      if (fromIndex % array.length !== 0) {
-        return this.indexOf(array, value, (fromIndex += array.length));
-      } else {
-        return this.indexOf(array, value, (fromIndex = 0));
+    for(let i = fromIndex < 0 ? fromIndex + array.length : fromIndex;i >= 0;i--){
+      if(array[i] == value){
+        return i
       }
     }
+    return -1
   },
 
   initial: function (array) {
@@ -277,16 +257,34 @@ var kklisme = {
     return array;
   },
 
-  // every: function (collection,predicate){
-  //   var result = true
-  //   for(var item of collection){
-  //     if( !predicate(item) ){
-  //       result = false
-  //       break
-  //     }
-  //   }
-  //   return result
-  // },
+  every: function (collection,predicate){
+    var result = true
+    for(var item of collection){
+        if(Array.isArray(predicate)){
+          if(predicate[0] in item && predicate[1] == item[ predicate[0] ]){
+            result = true
+          }else{
+            result = false
+          }
+        }
+        if(typeof predicate == 'object'){
+          for(let key in predicate){
+            if(item[key] !== predicate[key]){
+              result = false
+            }
+          }
+        }
+        if(typeof predicate == 'string'){
+
+        }
+        if(typeof predicate == 'function'){
+          if(!predicate(item)){
+            result = false
+          }
+        }
+    }
+    return result
+  },
 
   // some: function (collection,predicate){
   //   var result = false
