@@ -82,7 +82,7 @@ var kklisme = {
   },
 
   // dropRightWhile: (array,predicate) => {
-  //   const length = array.length - 1
+  //   const length = array.length
   //   for(let i = 0;i < length;i++){
   //     if(typeof predicate == 'function'){
   //         if(predicate(array[i])){
@@ -287,6 +287,15 @@ var kklisme = {
     return -1
   },
 
+  nth: (array,n = 0) =>{
+    n > 0 ? n : n += array.length
+    for(let i = 0;i < array.length;i++){
+      if(n == i){
+        return array[i]
+      }
+    }
+  },
+
   initial: function (array) {
     return array.slice(0, -1);
   },
@@ -342,6 +351,17 @@ var kklisme = {
     return array;
   },
 
+  pullAll: (array, values) => {
+    for(let i = 0;i < array.length;i++){
+      for(let j = 0;j < values.length;j++){
+        if(array[i] == values[j]){
+          array.splice(i,1)
+        }
+      }
+    }
+    return array
+  },
+
   reverse: function (array) {
     var i = 0;
     var j = array.length - 1;
@@ -351,6 +371,58 @@ var kklisme = {
       j--;
     }
     return array;
+  },
+
+  sortedIndex: (array, value) => {
+    for(let i = 0;i < array.length;i++){
+      if(value <= array[i]){
+        return i
+      }
+    }
+  },
+
+  sortedIndexOf: (array, value) => {
+    for(let i = 0;i < array.length;i++){
+      if(value == array[i]){
+        return i
+      }
+    }
+    return -1
+  },
+
+  sortedLastIndex: (array, value) => {
+    for(let i = array.length - 1;i >= 0;i--){
+      if(value <= array[i]){
+        return i
+      }
+    }
+  },
+
+  sortedLastIndexOf: (array, value) => {
+    for(let i = array.length - 1;i >= 0;i--){
+      if(value == array[i]){
+        return i
+      }
+    }
+  },
+
+  sortedUniq: (array) => {
+    for(let i = 0;i < array.length;i++){
+      if(array[i] == array[i + 1]){
+        array.splice(i,1)
+      }
+    }
+    return array
+  },
+
+  sortedUniqBy: (array,fn) => {
+    let res = []
+    for(let i = 0;i < array.length;i++){
+      if(fn(array[i]) == fn(array[i + 1])){
+        res.push(array[i])
+      }
+    }
+    return res
   },
 
   // every: function (collection,predicate){
