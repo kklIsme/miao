@@ -1,9 +1,8 @@
 var kklisme = {
-
-  swap: function(array,i,j) {
-    var t = array[i]
-    array[i] = array[j]
-    array[j] = t
+  swap: function (array, i, j) {
+    var t = array[i];
+    array[i] = array[j];
+    array[j] = t;
   },
 
   compact: function (array) {
@@ -45,17 +44,73 @@ var kklisme = {
     return array;
   },
 
-  // findIndex: function (array, predicate = it => it, fromIndex = 0) {
-  //   for(var i = 0;i < array.length;i++){
-  //     if( predicate(array[i]) ){
-  //       return i
-  //     }
-  //   }
-  // },
+  findIndex: function (array, predicate, fromIndex = 0) {
+    for (let i = fromIndex; i < array.length; i++) {
+      if (Array.isArray(predicate)) {
+        if (predicate[0] in array[i] && predicate[1] == array[i][ predicate[0] ]) {  //&&前为判断键是否存在，&&后面为判断值是否相等
+          return i;
+        }
+      }
 
-  // findLastIndex: function (array, predicate = it => it, fromIndex = 0) {
-  //
-  // },
+      if (typeof predicate == "object") {
+        let flat = true;
+        for (let key in predicate) {
+          if (array[i][key] !== predicate[key]) { //通过对象属性名，用[key]获取对象的值判断值是否相等
+            flat = false;
+          }
+        }
+        if (flat) {
+          return i;
+        }
+      }
+      if (typeof predicate == "string") {
+        if (predicate in array[i] && array[i][predicate]) {
+          return i;
+        }
+      }
+      if (typeof predicate == "function") {
+        for (let i = fromIndex; i < array.length; i++) {
+          if (predicate(array[i])) {
+            return i;
+          }
+        }
+      }
+    }
+    return -1
+  },
+
+  findLastIndex: function (array, predicate, fromIndex = array.length - 1) {
+    for (let i = fromIndex; i >= 0; i--) {
+      if (Array.isArray(predicate)) {
+        if (predicate[0] in array[i] && predicate[1] == array[i][ predicate[0] ]) {  //&&前为判断键是否存在，&&后面为判断值是否相等
+          return i;
+        }
+      }
+
+      if (typeof predicate == "object") {
+        let flat = true;
+        for (let key in predicate) {
+          if (array[i][key] !== predicate[key]) { //通过对象属性名，用[key]获取对象的值判断值是否相等
+            flat = false;
+          }
+        }
+        if (flat) {
+          return i;
+        }
+      }
+      if (typeof predicate == "string") {
+        if (predicate in array[i] && array[i][predicate]) {
+          return i;
+        }
+      }
+      if (typeof predicate == "function") {
+          if (predicate(array[i])) {
+            return i;
+        }
+      }
+    }
+    return -1
+  },
 
   flatten: function (array) {
     var result = [];
@@ -136,83 +191,90 @@ var kklisme = {
   },
 
   indexOf: function (array, value, fromIndex = 0) {
-    var res = 0
+    var res = 0;
     if (fromIndex >= 0) {
-        for (var i = fromIndex; i < array.length; i++) {
-            if (array[i] == value) {
-                res = i
-                return res
-            }
+      for (var i = fromIndex; i < array.length; i++) {
+        if (array[i] == value) {
+          res = i;
+          return res;
         }
-        return -1
+      }
+      return -1;
     } else {
-      if(fromIndex % array.length !== 0){
-        return this.indexOf(array, value, fromIndex += array.length)
-      }else{
-        return this.indexOf(array, value, fromIndex = 0)
+      if (fromIndex % array.length !== 0) {
+        return this.indexOf(array, value, (fromIndex += array.length));
+      } else {
+        return this.indexOf(array, value, (fromIndex = 0));
       }
     }
   },
 
-  // lastIndexOf: function (array, value, fromIndex = array.length - 1) {
-  //   var res = 0;
-  //   if (fromIndex >= 0) {
-  //     for (var i = fromIndex; i >= 0; i--) {
-  //       if (array[i] == value) {
-  //         res = i;
-  //         return res;
-  //       }
-  //     }
-  //     return -1;
-  //   }
-  // },
+  lastIndexOf: function (array, value, fromIndex = array.length - 1) {
+    var res = 0;
+    if (fromIndex >= 0) {
+      for (var i = fromIndex; i >= 0;i--) {
+        if (array[i] == value) {
+          res = i;
+          return res;
+        }
+      }
+      return -1;
+    } else {
+      if (fromIndex % array.length !== 0) {
+        return this.indexOf(array, value, (fromIndex += array.length));
+      } else {
+        return this.indexOf(array, value, (fromIndex = 0));
+      }
+    }
+  },
 
   initial: function (array) {
-    return array.slice(0,-1)
+    return array.slice(0, -1);
   },
 
-  join: function (array,separator = ',') {
-    var res = ''
-    if(typeof separator == 'number'){
-      for(var item of array){
-        item = item + String(separator)
-        res += item
+  join: function (array, separator = ",") {
+    var res = "";
+    if (typeof separator == "number") {
+      for (var item of array) {
+        item = item + String(separator);
+        res += item;
       }
-    }else{
-      for(var item of array){
-        item += separator
-        res += item
+    } else {
+      for (var item of array) {
+        item += separator;
+        res += item;
       }
     }
 
-    return res.slice(0,-1)
+    return res.slice(0, -1);
   },
 
   last: function (array) {
-    var last = array.length - 1
-    return array[last]
+    var last = array.length - 1;
+    return array[last];
   },
 
-  pull: function (array,...args) { //利用剩余参数
-    for(var i = 0;i < args.length;i++){
-      for(var j = 0;j < array.length;j++){
-        if(args[i] == array[j]){
-          array.splice(j,1)
+  pull: function (array, ...args) {
+    //利用剩余参数
+    for (var i = 0; i < args.length; i++) {
+      for (var j = 0; j < array.length; j++) {
+        if (args[i] == array[j]) {
+          array.splice(j, 1);
         }
       }
     }
-    return array
+    return array;
   },
 
-  reverse: function (array){
-    var i = 0
-    var j = array.length - 1
-    while(i < j){
-      this.swap(array,i,j)
-      i++
-      j--
+  reverse: function (array) {
+    var i = 0;
+    var j = array.length - 1;
+    while (i < j) {
+      this.swap(array, i, j);
+      i++;
+      j--;
     }
-    return array
+    return array;
   },
 
   // every: function (collection,predicate){
@@ -237,11 +299,7 @@ var kklisme = {
   //   return result
   // },
 
-    // countBy: function(collection,iteratee){
+  // countBy: function(collection,iteratee){
 
-    // },
-
-
-
-
+  // },
 };
