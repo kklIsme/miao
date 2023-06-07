@@ -132,13 +132,13 @@ var kklisme = {
       }
 
       if (typeof predicate == "object") {
-        let flat = true;
+        let flag = true;
         for (let key in predicate) {
           if (array[i][key] !== predicate[key]) { //通过对象属性名，用[key]获取对象的值判断值是否相等
-            flat = false;
+            flag = false;
           }
         }
-        if (flat) {
+        if (flag) {
           return i;
         }
       }
@@ -167,13 +167,13 @@ var kklisme = {
       }
 
       if (typeof predicate == "object") {
-        let flat = true;
+        let flag = true;
         for (let key in predicate) {
           if (array[i][key] !== predicate[key]) { //通过对象属性名，用[key]获取对象的值判断值是否相等
-            flat = false;
+            flag = false;
           }
         }
-        if (flat) {
+        if (flag) {
           return i;
         }
       }
@@ -381,6 +381,24 @@ var kklisme = {
     }
   },
 
+  sortedIndexBy: (array, value,iteratee) => {
+    for(let i = 0;i < array.length;i++){
+      if(typeof iteratee == 'function'){
+        if(iteratee(array[i])){
+          return i
+        }
+      }
+
+      if(typeof iteratee == 'string'){
+        for(let key in array[i]){
+          if(iteratee == key){
+            return i
+          }
+        }
+      }
+    }
+  },
+
   sortedIndexOf: (array, value) => {
     for(let i = 0;i < array.length;i++){
       if(value == array[i]){
@@ -394,6 +412,24 @@ var kklisme = {
     for(let i = array.length - 1;i >= 0;i--){
       if(value <= array[i]){
         return i
+      }
+    }
+  },
+
+  sortedLastIndexBy: (array, value,iteratee) => {
+    for(let i = array.length - 1;i >= 0;i--){
+      if(typeof iteratee == 'function'){
+        if(iteratee(array[i])){
+          return i
+        }
+      }
+
+      if(typeof iteratee == 'string'){
+        for(let key in array[i]){
+          if(iteratee == key){
+            return i
+          }
+        }
       }
     }
   },
@@ -434,6 +470,30 @@ var kklisme = {
     }
     return array.slice(0,n)
   },
+
+  takeRight: (array,n = 1) => {
+    if(n == 0){
+      return []
+    }
+    return array.slice(-n)
+  },
+
+  // takeRightWhile: (array,n = 1) => {
+
+  // },
+
+  // takeWhile: (array,n = 1) => {
+
+  // },
+
+     union: (...arrays) => {
+      let set = new Set()
+      for(let i = 0;i < arrays.length;i++){
+        set.add(arrays[i].flat())
+      }
+      return set
+     },
+
 
   // every: function (collection,predicate){
   //   for(var item of collection){
